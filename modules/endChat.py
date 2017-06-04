@@ -58,6 +58,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
 
 
     else:
+        print("pay", payload)
         if isinstance(payload, str):
             payload = json.loads(payload)
         if payload["ans"] == "y":
