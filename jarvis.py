@@ -4,13 +4,7 @@ import json
 import os
 import modules
 from templates import TextTemplate
-from modules.postback import handle_postback
-from modules.ActiveChats import ActiveChatsDB
-from modules.WaitingList import WaitingListDB
-from modules.utilities import send_message
-from modules.interrupts import *
-from modules.quick_replies import handle_quick_reply
-from modules.setup import setup_all
+from modules import *
 
 
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
