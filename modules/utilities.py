@@ -9,12 +9,12 @@ ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 
 def send_gender_menu(sender):
     out = {"keyword":"gender"}
-    message = TextTemplate(text="Please select your gender")
+    message = TextTemplate(text="Please select your gender").get_message()
     out["gender"] = "male"
     message = add_quick_reply(message=message, title="Male", payload=json.dumps(out))
     out["gender"] = "female"
     message = add_quick_reply(message=message, title="Female", payload=json.dumps(out))
-    send_message(message.get_message(), sender)
+    send_message(message, sender)
 
 
 def send_interest_menu(sender, gender):
