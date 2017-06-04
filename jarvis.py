@@ -2,14 +2,15 @@ import config
 from flask import Flask, request
 import json
 import os
-import requests
 import modules
 from templates import TextTemplate
+from modules.postback import handle_postback
 from modules.ActiveChats import ActiveChatsDB
 from modules.WaitingList import WaitingListDB
 from modules.utilities import send_message
 from modules.interrupts import *
 from modules.quick_replies import handle_quick_reply
+from modules.setup import setup_all
 
 
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
@@ -43,7 +44,7 @@ def webhook():
 
             if 'postback' in event and 'payload' in event['postback']:
                 postback_payload = event['postback']['payload']
-                message = modules.search(postback_payload, sender=sender, postback=True)
+                handle_postback(payload=postback_payload, sender=sender, activechatsdb=activedb)
 
             if activedb.isActive(sender):
                 alias = activedb.get_alias(sender)
@@ -65,7 +66,6 @@ def webhook():
                         quick_reply_payload = event['message']['quick_reply']['payload']
                         handle_quick_reply(sender=sender, payload=quick_reply_payload, activeChatsDB=activedb, waitListDB=waitlistdb)
                     else:
-                        #text = event['message']['text']
                         message = TextTemplate(text="I didn't understand what you intended")
                         send_message(message.get_message(), id=recipient)
 
@@ -81,4 +81,5 @@ def webhook():
 
 
 if __name__ == '__main__':
+    setup_all()
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
