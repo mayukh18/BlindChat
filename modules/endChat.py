@@ -10,6 +10,8 @@ ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 
 def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
 
+    payload = json.loads(payload)
+
     try:
         partner = activeChatsDB.get_partner(sender)
         alias1 = activeChatsDB.get_alias(sender)
