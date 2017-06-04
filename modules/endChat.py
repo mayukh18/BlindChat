@@ -34,8 +34,8 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
             }
         ]
         imurl = "https://0.s3.envato.com/files/38938444/end%20title%20590.jpg"
-        message = GenericTemplate()
         # SENDER
+        message = GenericTemplate()
         title = "You have ended the chat with "+alias2
         subtitle = "Would you like to share your profile with "+alias2+"?"
         #message = TextTemplate(text = "You have ended the chat with. Would you like to share your profile with "+alias2+"?")
@@ -46,6 +46,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
         send_message(message=message.get_message(), id=sender)
 
         # PARTNER
+        message = GenericTemplate()
         title = alias1+" has quit the chat"
         subtitle = "Would you like to share your profile with " + alias1 + "?"
         #message = TextTemplate(text=alias1+" has quit the chat. Would you like to share your profile with " + alias1 + "?")
