@@ -1,5 +1,5 @@
 from templates import TextTemplate
-from utilities import send_help, send_message
+from utilities import send_help, send_message, send_gender_menu
 from endChat import endChat
 from interrupts import handle_global_interrupt
 
@@ -21,4 +21,5 @@ def handle_postback(payload, sender, activechatsdb):
         send_help(sender = sender)
     elif payload == "quit":
         endChat(sender, activechatsdb, payload="")
-
+    elif payload == "getstarted":
+        send_gender_menu(sender=sender)

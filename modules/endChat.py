@@ -17,6 +17,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
     except:
         message = TextTemplate(text="No open chat was found which can be closed")
         send_message(message.get_message(), id=sender)
+        send_gender_menu(sender=sender)
         return
 
     if sharePromptDone == False:

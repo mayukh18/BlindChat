@@ -38,7 +38,7 @@ def setup_menu():
 def setup_getStarted():
     data = {
     "get_started":{
-        "payload": "GET_STARTED_PAYLOAD"
+        "payload": "getstarted"
     }
     }
     r = requests.post(url=URL, params={'access_token': ACCESS_TOKEN},
