@@ -6,6 +6,7 @@ import json
 def handle_quick_reply(sender, payload, activeChatsDB, waitListDB):
 
     payload = json.loads(payload)
+    print("PAY",payload)
 
     if payload["keyword"] == "profile_share":
         endChat(sender, activeChatsDB, payload=payload, sharePromptDone=True)
