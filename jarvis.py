@@ -40,6 +40,7 @@ def webhook():
             if 'postback' in event and 'payload' in event['postback']:
                 postback_payload = event['postback']['payload']
                 handle_postback(payload=postback_payload, sender=sender, activechatsdb=activedb)
+                continue
 
             if activedb.isActive(sender):
                 alias = activedb.get_alias(sender)
