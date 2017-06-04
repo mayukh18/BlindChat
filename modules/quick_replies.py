@@ -15,5 +15,5 @@ def handle_quick_reply(sender, payload, activeChatsDB, waitListDB):
 
     elif payload["keyword"] == "interest":
         print("PAY", payload)
-        startChat(sender=sender, gender=payload["gender"],interest="male",\
+        startChat(sender=sender, gender=payload["gender"],interest=payload["interest"],\
                   activeChatsDB=activeChatsDB, waitingListDB=waitListDB)

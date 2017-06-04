@@ -10,8 +10,6 @@ ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 
 def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
 
-    payload = json.loads(payload)
-
     try:
         partner = activeChatsDB.get_partner(sender)
         alias1 = activeChatsDB.get_alias(sender)
@@ -42,7 +40,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
 
 
     else:
-
+        payload = json.loads(payload)
         if payload["ans"] == "y":
             message = TextTemplate(text="www.facebook.com/"+partner)
             send_message(message=message.get_message(), id=partner)
