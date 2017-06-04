@@ -27,5 +27,5 @@ def handle_postback(payload, sender, activechatsdb):
     elif payload == "getstarted":
         print("GET STARTED DETECTED")
         send_gender_menu(sender=sender)
-    elif payload["keyword"] == "profile_share":
+    elif json.loads(payload)["keyword"] == "profile_share":
         endChat(sender, activechatsdb, payload=payload, sharePromptDone=True)
