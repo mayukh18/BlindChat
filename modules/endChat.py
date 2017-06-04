@@ -24,17 +24,19 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
 
         # SENDER
         message = TextTemplate(text = "You have ended the chat with. Would you like to share your profile with "+alias2+"?")
+        message = message.get_message()
         message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
         message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
 
-        send_message(message=message.get_message(), id=sender)
+        send_message(message=message, id=sender)
 
         # PARTNER
         message = TextTemplate(text=alias1+" has quit the chat. Would you like to share your profile with " + alias1 + "?")
+        message = message.get_message()
         message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
         message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
 
-        send_message(message=message.get_message(), id=partner)
+        send_message(message=message, id=partner)
 
 
     else:
