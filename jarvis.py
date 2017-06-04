@@ -62,6 +62,7 @@ def webhook():
                     else:
                         message = TextTemplate(text="I didn't understand what you intended")
                         send_message(message.get_message(), id=recipient)
+                        print(event)
 
 
         return ''  # 200 OK
