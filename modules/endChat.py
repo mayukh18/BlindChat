@@ -58,9 +58,9 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
 
 
     else:
-        print("pay", payload)
         if isinstance(payload, str):
             payload = json.loads(payload)
+        print("pay", payload)
         if payload["ans"] == "y":
             message = TextTemplate(text="www.facebook.com/"+partner)
             send_message(message=message.get_message(), id=partner)
