@@ -48,7 +48,7 @@ def webhook():
                     text = event['message']['text']
                     if 'quick_reply' in event['message'] and 'payload' in event['message']['quick_reply']:
                         quick_reply_payload = event['message']['quick_reply']['payload']
-                        handle_quick_reply(sender=sender, payload=quick_reply_payload, activeChatsDB=activedb)
+                        handle_quick_reply(sender=sender, payload=quick_reply_payload, activeChatsDB=activedb, waitListDB=waitlistdb)
                     elif isChatInterrupt(text):
                         handle_chat_interrupt(text, sender, activedb)
                     else:

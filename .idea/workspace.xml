@@ -15,8 +15,8 @@
       <file leaf-file-name="jarvis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jarvis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+            <state relative-caret-position="193">
+              <caret line="50" column="132" lean-forward="false" selection-start-line="50" selection-start-column="132" selection-end-line="50" selection-end-column="132" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quick_replies.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="quick_replies.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/quick_replies.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="17" column="73" lean-forward="false" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -94,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utilities.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utilities.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/utilities.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -168,10 +168,10 @@
         <option value="$PROJECT_DIR$/modules/startChat.py" />
         <option value="$PROJECT_DIR$/modules/endChat.py" />
         <option value="$PROJECT_DIR$/modules/postback.py" />
-        <option value="$PROJECT_DIR$/jarvis.py" />
         <option value="$PROJECT_DIR$/modules/WaitingList.py" />
-        <option value="$PROJECT_DIR$/modules/quick_replies.py" />
         <option value="$PROJECT_DIR$/modules/utilities.py" />
+        <option value="$PROJECT_DIR$/modules/quick_replies.py" />
+        <option value="$PROJECT_DIR$/jarvis.py" />
       </list>
     </option>
   </component>
@@ -702,16 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jarvis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/WaitingList.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -750,22 +740,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/quick_replies.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/utilities.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jarvis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="50" column="132" lean-forward="false" selection-start-line="50" selection-start-column="132" selection-end-line="50" selection-end-column="132" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/quick_replies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="73" lean-forward="false" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
