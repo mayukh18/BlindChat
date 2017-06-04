@@ -5,6 +5,7 @@ class WaitingListDB:
         self.waitList = []
 
     def get_match(self, gender, interest):
+        print(self.waitList)
         for i in range(len(self.waitList)):
             user = self.waitList[i]
             if user["interest"] == gender or user["interest"] == "random":
