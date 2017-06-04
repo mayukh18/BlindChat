@@ -34,6 +34,7 @@ def webhook():
         data = request.get_json(force=True)
         messaging_events = data['entry'][0]['messaging']
         for event in messaging_events:
+            print("EVENT", event)
             sender = event['sender']['id']
 
             if 'postback' in event and 'payload' in event['postback']:
@@ -62,7 +63,7 @@ def webhook():
                     else:
                         message = TextTemplate(text="I didn't understand what you intended")
                         send_message(message.get_message(), id=recipient)
-                        print(event)
+
 
 
         return ''  # 200 OK
