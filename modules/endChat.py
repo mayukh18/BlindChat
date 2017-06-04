@@ -39,7 +39,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
         title = "You have ended the chat with "+alias2
         subtitle = "Would you like to share your profile with "+alias2+"?"
         #message = TextTemplate(text = "You have ended the chat with. Would you like to share your profile with "+alias2+"?")
-        message = message.add_element(title=title, subtitle=subtitle, image_url=imurl, buttons=buttons)
+        message.add_element(title=title, subtitle=subtitle, image_url=imurl, buttons=buttons)
         #message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
         #message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
 
@@ -49,7 +49,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
         title = alias1+" has quit the chat"
         subtitle = "Would you like to share your profile with " + alias1 + "?"
         #message = TextTemplate(text=alias1+" has quit the chat. Would you like to share your profile with " + alias1 + "?")
-        message = message.add_element(title=title, subtitle=subtitle, image_url=imurl, buttons=buttons)
+        message.add_element(title=title, subtitle=subtitle, image_url=imurl, buttons=buttons)
         #message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
         #message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
 

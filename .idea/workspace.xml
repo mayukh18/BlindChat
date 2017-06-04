@@ -39,8 +39,8 @@
       <file leaf-file-name="endChat.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/endChat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+            <state relative-caret-position="136">
+              <caret line="47" column="17" lean-forward="true" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -171,8 +171,8 @@
         <option value="$PROJECT_DIR$/jarvis.py" />
         <option value="$PROJECT_DIR$/modules/quick_replies.py" />
         <option value="$PROJECT_DIR$/templates/__init__.py" />
-        <option value="$PROJECT_DIR$/modules/endChat.py" />
         <option value="$PROJECT_DIR$/modules/postback.py" />
+        <option value="$PROJECT_DIR$/modules/endChat.py" />
       </list>
     </option>
   </component>
@@ -375,7 +375,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2579425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -785,8 +785,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/endChat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="65" column="14" lean-forward="true" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        <state relative-caret-position="136">
+          <caret line="47" column="17" lean-forward="true" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
