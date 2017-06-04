@@ -1,5 +1,4 @@
-from templates import TextTemplate
-from templates import add_quick_reply
+from templates import *
 from utilities import send_gender_menu, send_message
 import requests
 import config
@@ -22,19 +21,37 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
 
     if sharePromptDone == False:
 
+        buttons = [
+            {
+                "type":"postback",
+                "title":"Share profile",
+                "payload":json.dumps({"keyword":"profile_share","ans":"y"})
+            },
+            {
+                "type":"postback",
+                "title":"Don't share",
+                "payload":json.dumps({"keyword":"profile_share","ans":"n"})
+            }
+        ]
+        imurl = "https://0.s3.envato.com/files/38938444/end%20title%20590.jpg"
+        message = GenericTemplate()
         # SENDER
-        message = TextTemplate(text = "You have ended the chat with. Would you like to share your profile with "+alias2+"?")
-        message = message.get_message()
-        message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
-        message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
+        title = "You have ended the chat with "+alias2
+        subtitle = "Would you like to share your profile with "+alias2+"?"
+        #message = TextTemplate(text = "You have ended the chat with. Would you like to share your profile with "+alias2+"?")
+        message = message.add_element(title=title, subtitle=subtitle, image_url=imurl, buttons=buttons)
+        #message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
+        #message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
 
         send_message(message=message, id=sender)
 
         # PARTNER
-        message = TextTemplate(text=alias1+" has quit the chat. Would you like to share your profile with " + alias1 + "?")
-        message = message.get_message()
-        message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
-        message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
+        title = alias1+" has quit the chat"
+        subtitle = "Would you like to share your profile with " + alias1 + "?"
+        #message = TextTemplate(text=alias1+" has quit the chat. Would you like to share your profile with " + alias1 + "?")
+        message = message.add_element(title=title, subtitle=subtitle, image_url=imurl, buttons=buttons)
+        #message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
+        #message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
 
         send_message(message=message, id=partner)
 
