@@ -6,7 +6,6 @@ import json
 def handle_quick_reply(sender, payload, activeChatsDB, waitListDB):
 
     payload = json.loads(payload)
-    print("PAY",payload)
 
     if payload["keyword"] == "profile_share":
         endChat(sender, activeChatsDB, payload=payload, sharePromptDone=True)
@@ -15,5 +14,6 @@ def handle_quick_reply(sender, payload, activeChatsDB, waitListDB):
         send_interest_menu(sender=sender, gender=payload["gender"])
 
     elif payload["keyword"] == "interest":
+        print("PAY", payload)
         startChat(sender=sender, gender=payload["gender"],interest=payload["interest"],\
                   activeChatsDB=activeChatsDB, waitingListDB=waitListDB)
