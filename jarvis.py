@@ -34,11 +34,12 @@ def webhook():
         data = request.get_json(force=True)
         messaging_events = data['entry'][0]['messaging']
         for event in messaging_events:
-            print("EVENT", event, 'postback' in event, 'payload' in event['postback'])
+            print("EVENT", event)
             sender = event['sender']['id']
 
             if 'postback' in event and 'payload' in event['postback']:
                 postback_payload = event['postback']['payload']
+                print("payload", postback_payload)
                 handle_postback(payload=postback_payload, sender=sender, activechatsdb=activedb)
                 continue
 
