@@ -4,9 +4,10 @@ from endChat import endChat
 from interrupts import handle_global_interrupt
 
 valid_payloads = [
-    "RESTART",
-    "HELP",
-    "QUITCHAT"
+    "restart",
+    "help",
+    "quit",
+    "getstarted"
 ]
 
 def handle_postback(payload, sender, activechatsdb):
