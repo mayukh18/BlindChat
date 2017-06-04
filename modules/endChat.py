@@ -43,7 +43,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
         #message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
         #message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
 
-        send_message(message=message, id=sender)
+        send_message(message=message.get_message(), id=sender)
 
         # PARTNER
         title = alias1+" has quit the chat"
@@ -53,7 +53,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
         #message = add_quick_reply(message=message, title="Share", payload=json.dumps({"keyword":"profile_share","ans":"y"}))
         #message = add_quick_reply(message=message, title="Don't share", payload=json.dumps({"keyword":"profile_share","ans":"n"}))
 
-        send_message(message=message, id=partner)
+        send_message(message=message.get_message(), id=partner)
 
 
     else:
