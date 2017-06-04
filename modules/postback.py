@@ -22,4 +22,5 @@ def handle_postback(payload, sender, activechatsdb):
     elif payload == "quit":
         endChat(sender, activechatsdb, payload="")
     elif payload == "getstarted":
+        print("GET STARTED DETECTED")
         send_gender_menu(sender=sender)
