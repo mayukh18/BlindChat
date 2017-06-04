@@ -34,7 +34,7 @@ def webhook():
         data = request.get_json(force=True)
         messaging_events = data['entry'][0]['messaging']
         for event in messaging_events:
-            print("EVENT", event)
+            print("EVENT", event, 'postback' in event, 'payload' in event['postback'])
             sender = event['sender']['id']
 
             if 'postback' in event and 'payload' in event['postback']:
