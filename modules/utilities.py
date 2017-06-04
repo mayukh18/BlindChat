@@ -21,12 +21,12 @@ def send_interest_menu(sender, gender):
     out = {"keyword":"interest"}
     out["gender"] = gender
     message = TextTemplate(text="Whom do you want to chat with?").get_message()
-    message = add_quick_reply(message=message, title="Men", payload=json.dumps(out))
     out["interest"] = "male"
-    message = add_quick_reply(message=message, title="Women", payload=json.dumps(out))
+    message = add_quick_reply(message=message, title="Men", payload=json.dumps(out))
     out["interest"] = "female"
-    message = add_quick_reply(message=message, title="Random", payload=json.dumps(out))
+    message = add_quick_reply(message=message, title="Women", payload=json.dumps(out))
     out["interest"] = "random"
+    message = add_quick_reply(message=message, title="Random", payload=json.dumps(out))
 
     send_message(message, sender)
 
