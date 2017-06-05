@@ -65,7 +65,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
 
         if payload["ans"] == "y":
             r = requests.get('https://graph.facebook.com/v2.6/' + str(sender), params={
-                'fields[]': 'first_name,last_name,profile_pic',
+                'fields': 'first_name,last_name,profile_pic',
                 'access_token': os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
             })
             userData = r.json()
