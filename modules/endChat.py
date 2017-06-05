@@ -62,8 +62,15 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
         if isinstance(payload, str) or isinstance(payload, unicode):
             payload = json.loads(str(payload))
         print("pay", payload)
+
         if payload["ans"] == "y":
-            message = TextTemplate(text="www.facebook.com/"+partner)
+            r = requests.get('https://graph.facebook.com/v2.6/' + str(sender), params={
+                'fields': ['first_name','last_name','profile_pic'],
+                'access_token': os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
+            })
+            userData = r.json()
+            message = GenericTemplate()
+            message.add_element(title=userData["first_name"]+" "+userData["last_name"],image_url=userData["profile_pic"])
             send_message(message=message.get_message(), id=partner)
 
         send_gender_menu(sender=sender)
