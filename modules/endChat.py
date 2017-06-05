@@ -69,6 +69,7 @@ def endChat(sender, activeChatsDB, payload, sharePromptDone=False):
                 'access_token': os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
             })
             userData = r.json()
+            print("data", userData)
             message = GenericTemplate()
             message.add_element(title=userData["first_name"]+" "+userData["last_name"],image_url=userData["profile_pic"])
             send_message(message=message.get_message(), id=partner)
