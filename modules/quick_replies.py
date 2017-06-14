@@ -3,17 +3,21 @@ from startChat import startChat
 from utilities import *
 import json
 
-def handle_quick_reply(sender, payload, activeChatsDB, waitListDB):
+def handle_quick_reply(sender, payload):
 
     payload = json.loads(payload)
     print("PAYLOAD", payload)
 
     if payload["keyword"] == "profile_share":
-        endChat(sender, activeChatsDB, payload=payload, sharePromptDone=True)
+        endChat(sender, payload=payload, sharePromptDone=True)
 
-    elif payload["keyword"] == "gender":
-        send_interest_menu(sender=sender, gender=payload["gender"])
+    elif payload["keyword"] == "newchat":
+        if payload["ans"] == "y":
+            send_interest_menu(sender=sender)
+        if payload["ans"] == "n":
+            message = TextTemplate(text="Cool. When you come back use the menu to look for a new chat")
+            send_message(message=message.get_message(), id = sender)
 
     elif payload["keyword"] == "interest":
-        startChat(sender=sender, gender=payload["gender"],interest=payload["interest"],\
-                  activeChatsDB=activeChatsDB, waitingListDB=waitListDB)
+        startChat(sender=sender,interest=payload["interest"])
+

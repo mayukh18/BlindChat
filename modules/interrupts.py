@@ -1,5 +1,7 @@
 from endChat import endChat
 from utilities import send_help
+from app import waitlistdb, activechatsdb
+from critical_operations import restart_bot
 
 def isChatInterrupt(text):
     text = text.lower().strip(" ")
@@ -8,10 +10,10 @@ def isChatInterrupt(text):
         return True
     return False
 
-def handle_chat_interrupt(text, sender, activeChatsDB):
+def handle_chat_interrupt(text, sender):
     text = text.lower().strip(" ")
     if text == "quit" or text == "exit":
-        endChat(sender, activeChatsDB, payload="")
+        endChat(sender, activechatsdb, payload="")
     if text == "help":
         send_help(sender)
 
@@ -22,9 +24,9 @@ def isGlobalInterrupt(text):
         return True
     return False
 
-def handle_global_interrupt(text, sender, activeChatsDB):
+def handle_global_interrupt(text, sender):
     text = text.lower().strip(" ")
     if text == "restart":
-        endChat(sender, activeChatsDB, payload="")
+        restart_bot(sender)
     if text == "help":
         send_help(sender)

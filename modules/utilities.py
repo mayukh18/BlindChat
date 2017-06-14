@@ -6,20 +6,8 @@ import json
 
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 
-
-def send_gender_menu(sender):
-    out = {"keyword":"gender"}
-    message = TextTemplate(text="Please select your gender").get_message()
-    out["gender"] = "male"
-    message = add_quick_reply(message=message, title="Male", payload=json.dumps(out))
-    out["gender"] = "female"
-    message = add_quick_reply(message=message, title="Female", payload=json.dumps(out))
-    send_message(message, sender)
-
-
-def send_interest_menu(sender, gender):
+def send_interest_menu(sender):
     out = {"keyword":"interest"}
-    out["gender"] = gender
     message = TextTemplate(text="Whom do you want to chat with?").get_message()
     out["interest"] = "male"
     message = add_quick_reply(message=message, title="Men", payload=json.dumps(out))
@@ -29,6 +17,16 @@ def send_interest_menu(sender, gender):
     message = add_quick_reply(message=message, title="Random", payload=json.dumps(out))
 
     send_message(message, sender)
+
+
+def send_newchat_prompt(id):
+    payload = {"keyword": "newchat"}
+    payload["ans"] = "y"
+    message = TextTemplate(text="Are you ready to start a new chat").get_message()
+    message = add_quick_reply(message=message, title="Oh! Yes!", payload=json.dumps(payload))
+    payload["ans"] = "n"
+    message = add_quick_reply(message=message, title="No. Later", payload=json.dumps(payload))
+    send_message(message, id)
 
 
 def send_message(message, id):
@@ -54,4 +52,20 @@ def send_help(sender):
     message = TextTemplate(text=helptext)
     send_message(message.get_message(), sender)
 
+
+def show_typing(id, duration):
+    from time import sleep
+    payload = {
+        'recipient': {
+            'id': id
+        },
+        "sender_action":"typing_on"
+    }
+    r = requests.post('https://graph.facebook.com/v2.6/me/messages', params={'access_token': ACCESS_TOKEN},
+                      json=payload)
+
+    sleep(duration)
+    payload["sender_action"] = "typing_off"
+    r = requests.post('https://graph.facebook.com/v2.6/me/messages', params={'access_token': ACCESS_TOKEN},
+                      json=payload)
 

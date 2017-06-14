@@ -1,23 +1,32 @@
+from models import WaitingListUser
 
-
-class WaitingListDB:
-    def __init__(self):
-        self.waitList = []
+class WaitingListDB():
+    def __init__(self, db):
+        self.db = db
 
     def get_match(self, gender, interest):
-        print(self.waitList)
-        for i in range(len(self.waitList)):
-            user = self.waitList[i]
-            if user["interest"] == gender or user["interest"] == "random":
-                if user["gender"] == interest or interest == "random":
-                    data = self.waitList.pop(i)
-                    return data["id"]
+        list = WaitingListUser.query.all()
+        print(list)
+        for i in range(len(list)):
+            user = list[i]
+            if user.interest == gender or user.interest == "random":
+                if user.gender == interest or interest == "random":
+                    self.db.session.delete(user)
+                    return user.id
 
         return None
 
     def enlist(self, id, gender, interest):
-        data = {"id": id, "gender": gender, "interest": interest}
-        self.waitList.append(data)
+        user = WaitingListUser(id = id, gender=gender, interest=interest)
+        self.db.session.add(user)
 
+    def isWaiting(self, id):
+        user = WaitingListUser.get(id)
+        if user is None:
+            return False
+        return True
 
-
+    def delist(self, id):
+        user = WaitingListUser.get(id)
+        self.db.session.delete(user)
+        self.db.session.commit()

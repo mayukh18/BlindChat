@@ -1,37 +1,38 @@
-import os
-import config
-import json
-
+from models import ActiveChatsUser
 
 class ActiveChatsDB:
-    def __init__(self):
-        self.active_chats = {}
-        self.aliases = {}
+    def __init__(self, db):
+        self.db = db
 
     def isActive(self, user):
-        if user in self.active_chats:
+        u = ActiveChatsUser.get(user)
+        if u != None:
             return True
         else:
             return False
 
     def get_partner(self, user):
-        if user in self.active_chats:
-            return self.active_chats[user]
-        else:
-            return None
+        user = ActiveChatsUser.get(user)
+        return user.partner
 
     def create_new_chat(self, user1, user2):
-        self.active_chats[user1] = user2
-        self.active_chats[user2] = user1
+        u1 = ActiveChatsUser(id=user1, partner=user2)
+        u2 = ActiveChatsUser(id=user2, partner=user1)
+        self.db.session.add(u1)
+        self.db.session.add(u2)
+        self.db.session.commit()
 
     def delete_chat_entries(self, user):
-        partner = self.active_chats[user]
-        del self.active_chats[user]
-        del self.active_chats[partner]
+        partner = ActiveChatsUser.get(user).partner
+        self.db.session.delete(user)
+        self.db.session.delete(partner)
+        self.db.session.commit()
 
     def get_alias(self, user):
-        return self.aliases[user]
+        return ActiveChatsUser.get(user).alias
 
     def set_alias(self, user, alias):
-        self.aliases[user] = alias
+        u = ActiveChatsUser.get(user)
+        u.alias = alias
+        self.db.session.commit()
 
