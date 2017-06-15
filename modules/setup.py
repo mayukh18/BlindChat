@@ -14,7 +14,7 @@ def setup_menu():
         "locale":"default",
         "call_to_actions":[
             {
-              "title": "Helpallooo",
+              "title": "Help",
               "type": "postback",
               "payload": "help"
             },

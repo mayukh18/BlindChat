@@ -39,8 +39,7 @@ def webhook():
             sender = event['sender']['id']
             print("EVENT", event)
 
-            print("between")
-
+            """
             try:
                 if usersdb.hasDataOf(sender) is False:
                     usersdb.add(sender)
@@ -55,6 +54,7 @@ def webhook():
                 print("status error", str(e))
 
             print("status check ends")
+            """
 
             try:
                 if 'postback' in event and 'payload' in event['postback']:
