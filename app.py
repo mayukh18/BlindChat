@@ -25,6 +25,7 @@ waitlistdb = WaitingListDB(db=db)
 activechatsdb = ActiveChatsDB(db=db)
 
 from modules import *
+setup_all()
 
 # --------------------------------------------------------------- #
 
