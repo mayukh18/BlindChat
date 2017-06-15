@@ -13,4 +13,4 @@ simplejson==3.10.0
 six==1.10.0
 SQLAlchemy==1.1.10
 sqlalchemy-migrate==0.11.0
-psycopg2=2.7.1
+psycopg2==2.7.1
