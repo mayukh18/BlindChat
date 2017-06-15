@@ -3,9 +3,10 @@ from templates import TextTemplate
 from utilities import send_message, show_typing, send_newchat_prompt
 
 def restart_bot(id):
-    show_typing(id=id, duration=1000)
-
+    show_typing(id=id, duration=1)
+    print("here")
     if activechatsdb.isActive(id):
+        print("ACTIVE", id)
         partner = activechatsdb.get_partner(id)
         activechatsdb.delete_chat_entries(id)
         message = TextTemplate(text="Your active chat has been ended.")
@@ -13,8 +14,8 @@ def restart_bot(id):
         message = TextTemplate(text="Your active chat has been ended from the other side.")
         send_message(message=message.get_message(), id=partner)
 
-        show_typing(id=partner, duration=1000)
-        send_newchat_prompt(sender=partner)
+        show_typing(id=partner, duration=1)
+        send_newchat_prompt(id=partner)
 
 
     if waitlistdb.isWaiting(id):
@@ -22,6 +23,6 @@ def restart_bot(id):
         message = TextTemplate(text="You have been removed from the waitlist")
         send_message(message=message.get_message(), id=id)
 
-    show_typing(id=id, duration=1000)
-    send_newchat_prompt(sender=id)
+    show_typing(id=id, duration=1)
+    send_newchat_prompt(id=id)
 

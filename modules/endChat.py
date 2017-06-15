@@ -17,8 +17,8 @@ def endChat(sender, payload, sharePromptDone=False):
     except:
         message = TextTemplate(text="No open chat was found which can be closed")
         send_message(message.get_message(), id=sender)
-        show_typing(id=sender, duration=2000)
-        send_newchat_prompt(sender=sender)
+        show_typing(id=sender, duration=2)
+        send_newchat_prompt(id=sender)
         return
 
     if sharePromptDone == False:
@@ -77,7 +77,8 @@ def endChat(sender, payload, sharePromptDone=False):
             message = TextTemplate(text=alias1 + " has chosen not to share his/her profile with you")
             send_message(message=message.get_message(), id=partner)
 
+
         activechatsdb.delete_chat_entries(user=sender)
 
-        show_typing(id=sender, duration=2000)
-        send_newchat_prompt(sender=sender)
+        show_typing(id=sender, duration=2)
+        send_newchat_prompt(id=sender)

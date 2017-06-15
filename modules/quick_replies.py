@@ -19,5 +19,6 @@ def handle_quick_reply(sender, payload):
             send_message(message=message.get_message(), id = sender)
 
     elif payload["keyword"] == "interest":
+        print("interest selected")
         startChat(sender=sender,interest=payload["interest"])
 

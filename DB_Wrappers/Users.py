@@ -8,7 +8,7 @@ class UsersDB:
         self.db = db
 
     def hasDataOf(self, id):
-        u = User.get(id)
+        u = User.query.get(id)
         if u is None:
             return False
         return True
@@ -26,5 +26,5 @@ class UsersDB:
         self.db.session.commit()
 
     def get(self, id):
-        user = User.get(id)
+        user = User.query.get(id)
         return user

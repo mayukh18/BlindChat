@@ -24,9 +24,9 @@ def handle_postback(payload, sender):
     elif payload == "help":
         send_help(sender = sender)
     elif payload == "quit":
-        endChat(sender, activechatsdb, payload="")
+        endChat(sender, payload="")
     elif payload == "getstarted":
         print("GET STARTED DETECTED")
         send_newchat_prompt(id=sender)
     elif json.loads(payload)["keyword"] == "profile_share":
-        endChat(sender, activechatsdb, payload=payload, sharePromptDone=True)
+        endChat(sender, payload=payload, sharePromptDone=True)

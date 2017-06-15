@@ -1,8 +1,6 @@
+import os
 import config
 from flask import Flask, request
-import os
-from templates import TextTemplate
-from modules import *
 from flask_sqlalchemy import SQLAlchemy
 
 # --------------------------------------------------------------- #
@@ -19,9 +17,14 @@ db = SQLAlchemy(app)
 # --------------------------------------------------------------- #
 
 from models import User, WaitingListUser, ActiveChatsUser
+from templates import TextTemplate
+from DB_Wrappers import *
+
 usersdb = UsersDB(db=db)
 waitlistdb = WaitingListDB(db=db)
 activechatsdb = ActiveChatsDB(db=db)
+
+from modules import *
 
 # --------------------------------------------------------------- #
 
@@ -33,20 +36,47 @@ def webhook():
         messaging_events = data['entry'][0]['messaging']
         for event in messaging_events:
             sender = event['sender']['id']
+            print("EVENT", event)
 
-            if usersdb.hasDataOf(sender) is False:
-                usersdb.add(sender)
+            print("between")
 
-            if 'postback' in event and 'payload' in event['postback']:
-                postback_payload = event['postback']['payload']
-                print("payload", postback_payload)
-                handle_postback(payload=postback_payload, sender=sender)
-                continue
+            try:
+                if usersdb.hasDataOf(sender) is False:
+                    usersdb.add(sender)
+            except Exception, e:
+                print("ERROR", str(e))
+
+            print("status check starts")
+
+            try:
+                print("STATUS", activechatsdb.isActive(sender))
+            except Exception, e:
+                print("status error", str(e))
+
+            print("status check ends")
+
+            try:
+                if 'postback' in event and 'payload' in event['postback']:
+                    postback_payload = event['postback']['payload']
+                    print("payload", postback_payload)
+                    handle_postback(payload=postback_payload, sender=sender)
+                    print("handled")
+                else:
+                    print("NOT POSTBACK")
+            except Exception, e:
+                print("POSTBACK ERROR", str(e))
+                return ''
+
+
 
             if activechatsdb.isActive(sender):
                 alias = activechatsdb.get_alias(sender)
                 if 'message' in event and 'text' in event['message']:
                     text = event['message']['text']
+
+                    if text == "hi":
+                        send_help(sender=sender)
+
                     if 'quick_reply' in event['message'] and 'payload' in event['message']['quick_reply']:
                         quick_reply_payload = event['message']['quick_reply']['payload']
                         handle_quick_reply(sender=sender, payload=quick_reply_payload)
@@ -79,5 +109,4 @@ def webhook():
 
 
 if __name__ == '__main__':
-    setup_all()
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)

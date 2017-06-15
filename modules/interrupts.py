@@ -13,7 +13,7 @@ def isChatInterrupt(text):
 def handle_chat_interrupt(text, sender):
     text = text.lower().strip(" ")
     if text == "quit" or text == "exit":
-        endChat(sender, activechatsdb, payload="")
+        endChat(sender, payload="")
     if text == "help":
         send_help(sender)
 
@@ -27,6 +27,7 @@ def isGlobalInterrupt(text):
 def handle_global_interrupt(text, sender):
     text = text.lower().strip(" ")
     if text == "restart":
+        print("GOT RESTART COMMAND")
         restart_bot(sender)
     if text == "help":
         send_help(sender)

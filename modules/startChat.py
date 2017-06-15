@@ -4,7 +4,11 @@ from app import waitlistdb, activechatsdb, usersdb
 
 
 def startChat(sender, interest):
-    gender = usersdb.get(sender).gender
+    try:
+        gender = usersdb.get(sender).gender
+    except Exception, e:
+        print("ERROR", str(e))
+    print("GENDER", gender)
     match = waitlistdb.get_match(gender, interest)
     if match == None:
         waitlistdb.enlist(id=sender, gender=gender, interest=interest)
