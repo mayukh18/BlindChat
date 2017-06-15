@@ -2,7 +2,7 @@ from app import db
 
 
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(64), primary_key=True)
     name = db.Column(db.String(64))
     gender = db.Column(db.String(10))
     first_name = db.Column(db.String(64))
@@ -33,7 +33,7 @@ class User(db.Model):
 
 
 class WaitingListUser(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(64), primary_key=True)
     gender = db.Column(db.String(10))
     interest = db.Column(db.String(10))
 
@@ -43,7 +43,7 @@ class WaitingListUser(db.Model):
         self.interest = interest
 
 class ActiveChatsUser(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(64), primary_key=True)
     partner = db.Column(db.Integer)
     alias = db.Column(db.String(50))
 

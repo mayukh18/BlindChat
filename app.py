@@ -66,6 +66,7 @@ def webhook():
                     print("NOT POSTBACK")
             except Exception, e:
                 print("POSTBACK ERROR", str(e))
+                db.session.rollback()
                 return ''
 
 
