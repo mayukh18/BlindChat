@@ -34,7 +34,8 @@ class ActiveChatsDB:
         print("5")
 
     def get_alias(self, user):
-        return ActiveChatsUser.query.get(user).alias
+        u = ActiveChatsUser.query.get(user)
+        return u.alias
 
     def set_alias(self, user, alias):
         u = ActiveChatsUser.query.get(user)

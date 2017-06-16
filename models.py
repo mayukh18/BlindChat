@@ -44,8 +44,8 @@ class WaitingListUser(db.Model):
 
 class ActiveChatsUser(db.Model):
     id = db.Column(db.String(64), primary_key=True)
-    partner = db.Column(db.Integer)
-    alias = db.Column(db.String(50))
+    partner = db.Column(db.String(64))
+    alias = db.Column(db.String(80))
 
     def __init__(self, id, partner):
         self.id = id
