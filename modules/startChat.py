@@ -17,9 +17,12 @@ def startChat(sender, interest):
         send_message(message.get_message(), id=sender)
 
     else:
-        activechatsdb.create_new_chat(user1=sender, user2=match)
-        activechatsdb.set_alias(user=sender, alias="SuperLaserMan")
-        activechatsdb.set_alias(user=match, alias="LegendaryLeo")
+        try:
+            activechatsdb.create_new_chat(user1=sender, user2=match)
+            activechatsdb.set_alias(user=sender, alias="SuperLaserMan")
+            activechatsdb.set_alias(user=match, alias="LegendaryLeo")
+        except Exception, e:
+            print("STARTCHAT ERROR", str(e))
 
         message = TextTemplate(text="You are matched with "+"SuperLaserMan")
         send_message(message.get_message(), id=match)
