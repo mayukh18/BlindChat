@@ -5,14 +5,18 @@ class WaitingListDB():
         self.db = db
 
     def get_match(self, gender, interest):
-        list = WaitingListUser.query.all()
-        print("WAITLIST", list)
-        for i in range(len(list)):
-            user = list[i]
+        waitlist = WaitingListUser.query.all()
+        print("WAITLIST", waitlist, gender, interest)
+        for i in range(len(waitlist)):
+            user = waitlist[i]
+            print("user is", user.id)
             if user.interest == gender or user.interest == "random":
+                print("IN 1")
                 if user.gender == interest or interest == "random":
+                    print("IN 2")
+                    Id = user.id
                     self.db.session.delete(user)
-                    return user.id
+                    return Id
 
         return None
 
