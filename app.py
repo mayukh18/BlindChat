@@ -38,7 +38,7 @@ def webhook():
         for event in messaging_events:
             sender = event['sender']['id']
             print("EVENT", event)
-
+            print("PAGE_ID", os.environ.get(config.PAGE_ID))
 
             try:
                 if sender != os.environ.get(config.PAGE_ID) and usersdb.hasDataOf(sender) is False:
