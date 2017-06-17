@@ -78,7 +78,10 @@ def endChat(sender, payload, sharePromptDone=False):
             send_message(message=message.get_message(), id=partner)
 
 
-        activechatsdb.delete_chat_entries(user=sender)
+        try:
+            activechatsdb.delete_chat_entries(user=sender)
 
-        show_typing(id=sender, duration=2)
-        send_newchat_prompt(id=sender)
+            show_typing(id=sender, duration=2)
+            send_newchat_prompt(id=sender)
+        except Exception, e:
+            print("ENDCHAT ERROR", str(e))

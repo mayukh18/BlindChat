@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 VERIFY_TOKEN = os.environ.get('VERIFY_TOKEN', config.VERIFY_TOKEN)
+PAGE_ID = os.environ.get('PAGE_ID', config.PAGE_ID)
 
 # --------------------------------------------------------------- #
 
@@ -38,10 +39,9 @@ def webhook():
         for event in messaging_events:
             sender = event['sender']['id']
             print("EVENT", event)
-            print("PAGE_ID", os.environ.get('PAGE_ID', config.PAGE_ID))
 
             try:
-                if sender != os.environ.get('PAGE_ID', config.PAGE_ID) and usersdb.hasDataOf(sender) is False:
+                if sender != PAGE_ID and usersdb.hasDataOf(sender) is False:
                     usersdb.add(sender)
             except Exception, e:
                 print("ERROR", str(e))
