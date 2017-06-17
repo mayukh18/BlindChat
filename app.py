@@ -41,19 +41,19 @@ def webhook():
 
 
             try:
-                if usersdb.hasDataOf(sender) is False:
+                if sender != os.environ.get(config.PAGE_ID) and usersdb.hasDataOf(sender) is False:
                     usersdb.add(sender)
             except Exception, e:
                 print("ERROR", str(e))
 
-            print("status check starts")
 
-            try:
-                print("STATUS", activechatsdb.isActive(sender))
-            except Exception, e:
-                print("status error", str(e))
 
-            print("status check ends")
+            #print("status check starts")
+            #try:
+            #    print("STATUS", activechatsdb.isActive(sender))
+            #except Exception, e:
+            #    print("status error", str(e))
+            #print("status check ends")
 
 
             try:
