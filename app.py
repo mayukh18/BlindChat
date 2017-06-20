@@ -46,16 +46,6 @@ def webhook():
             except Exception, e:
                 print("ERROR", str(e))
 
-            print("1 here")
-            if text == "hi" or text == "hello":
-                send_help(sender=sender)
-            print("2 here")
-            try:
-                if text[:3] is ":::":
-                    handle_debug(text)
-            except Exception, e:
-                print("ERROR", str(e))
-            print("3 here")
             #print("status check starts")
             #try:
             #    print("STATUS", activechatsdb.isActive(sender))
@@ -96,6 +86,16 @@ def webhook():
             else:
                 recipient = sender
                 if 'message' in event and 'text' in event['message']:
+                    text = event['message']['text']
+                    if text == "hi" or text == "hello":
+                        send_help(sender=sender)
+
+                    try:
+                        if text[:3] is ":::":
+                            handle_debug(text)
+                    except Exception, e:
+                        print("ERROR", str(e))
+
                     if 'quick_reply' in event['message'] and 'payload' in event['message']['quick_reply']:
                         quick_reply_payload = event['message']['quick_reply']['payload']
                         handle_quick_reply(sender=sender, payload=quick_reply_payload)
