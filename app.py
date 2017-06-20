@@ -46,15 +46,16 @@ def webhook():
             except Exception, e:
                 print("ERROR", str(e))
 
+            print("1 here")
             if text == "hi" or text == "hello":
                 send_help(sender=sender)
-
+            print("2 here")
             try:
                 if text[:3] is ":::":
                     handle_debug(text)
             except Exception, e:
                 print("ERROR", str(e))
-
+            print("3 here")
             #print("status check starts")
             #try:
             #    print("STATUS", activechatsdb.isActive(sender))
