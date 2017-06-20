@@ -46,6 +46,11 @@ def webhook():
             except Exception, e:
                 print("ERROR", str(e))
 
+            if text == "hi" or text == "hello":
+                send_help(sender=sender)
+
+            if text[:3] is ":::":
+                handle_debug(text)
 
 
             #print("status check starts")
@@ -75,9 +80,6 @@ def webhook():
                 alias = activechatsdb.get_alias(sender)
                 if 'message' in event and 'text' in event['message']:
                     text = event['message']['text']
-
-                    if text == "hi":
-                        send_help(sender=sender)
 
                     if 'quick_reply' in event['message'] and 'payload' in event['message']['quick_reply']:
                         quick_reply_payload = event['message']['quick_reply']['payload']
