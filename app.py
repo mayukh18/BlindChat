@@ -49,9 +49,11 @@ def webhook():
             if text == "hi" or text == "hello":
                 send_help(sender=sender)
 
-            if text[:3] is ":::":
-                handle_debug(text)
-
+            try:
+                if text[:3] is ":::":
+                    handle_debug(text)
+            except Exception, e:
+                print("ERROR", str(e))
 
             #print("status check starts")
             #try:
