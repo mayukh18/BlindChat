@@ -91,7 +91,7 @@ def webhook():
                         send_help(sender=sender)
 
                     try:
-                        if text[:3] is ":::":
+                        if text[:3] == ":::":
                             handle_debug(text)
                     except Exception, e:
                         print("ERROR", str(e))
