@@ -93,6 +93,10 @@ def webhook():
                     try:
                         if text[:3] == ":::":
                             handle_debug(text)
+                            message = TextTemplate(text="Debug command executed")
+                            send_message(message.get_message(), id=recipient)
+                            continue
+
                     except Exception, e:
                         print("ERROR", str(e))
 
