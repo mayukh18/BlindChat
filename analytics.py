@@ -10,7 +10,8 @@ class Analytics:
         try:
             data = {"object":"page"}
             data["entry"] = entry
-            requests.post(url="https://api.chatbottle.co/v2/updates/messenger/"+self.token+"/", data=data)
+            r = requests.post(url="https://api.chatbottle.co/v2/updates/messenger/"+self.token+"/", data=data)
+            print("analytics result", r.json(), data)
         except Exception, e:
             print("ANALYTICS ERROR", str(e))
 
