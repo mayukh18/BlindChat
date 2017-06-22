@@ -90,8 +90,8 @@ def share_profile(sender, payload):
         message = TextTemplate(text=alias + " has shared his/her profile with you")
         send_message(message=message.get_message(), id=partner)
         message = GenericTemplate()
-        message.add_element(title=userData["first_name"] + " " + userData["last_name"],
-                            image_url=userData["profile_pic"])
+        message.add_element(title=userData["first_name"] + " " + userData["last_name"],image_url=userData["profile_pic"],
+                            subtitle="Search on Facebook by the name and recognise by the profile picture")
         send_message(message=message.get_message(), id=partner)
 
     else:
