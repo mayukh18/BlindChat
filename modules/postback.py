@@ -1,9 +1,8 @@
 from templates import TextTemplate
 from utilities import send_help, send_message, send_newchat_prompt
-from endChat import endChat
+from endChat import endChat, share_profile
 from interrupts import handle_global_interrupt
 import json
-from app import activechatsdb
 
 valid_payloads = [
     "restart",
@@ -24,9 +23,9 @@ def handle_postback(payload, sender):
     elif payload == "help":
         send_help(sender = sender)
     elif payload == "quit":
-        endChat(sender, payload="")
+        endChat(sender)
     elif payload == "getstarted":
         print("GET STARTED DETECTED")
         send_newchat_prompt(id=sender)
     elif json.loads(payload)["keyword"] == "profile_share":
-        endChat(sender, payload=payload, sharePromptDone=True)
+        share_profile(sender, payload=payload)

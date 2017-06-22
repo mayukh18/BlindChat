@@ -1,4 +1,3 @@
-from endChat import endChat
 from startChat import startChat
 from utilities import *
 import json
@@ -6,12 +5,9 @@ import json
 def handle_quick_reply(sender, payload):
 
     payload = json.loads(payload)
-    print("PAYLOAD", payload)
+    print("QUICKREPLYPAYLOAD", payload)
 
-    if payload["keyword"] == "profile_share":
-        endChat(sender, payload=payload, sharePromptDone=True)
-
-    elif payload["keyword"] == "newchat":
+    if payload["keyword"] == "newchat":
         if payload["ans"] == "y":
             send_interest_menu(sender=sender)
         if payload["ans"] == "n":
@@ -21,4 +17,3 @@ def handle_quick_reply(sender, payload):
     elif payload["keyword"] == "interest":
         print("interest selected")
         startChat(sender=sender,interest=payload["interest"])
-

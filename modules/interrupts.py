@@ -13,7 +13,7 @@ def isChatInterrupt(text):
 def handle_chat_interrupt(text, sender):
     text = text.lower().strip(" ")
     if text == "quit" or text == "exit":
-        endChat(sender, payload="")
+        endChat(sender)
     if text == "help":
         send_help(sender)
 
