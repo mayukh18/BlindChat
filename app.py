@@ -2,6 +2,7 @@ import os
 import config
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
+from analytics import Analytics
 
 # --------------------------------------------------------------- #
 
@@ -27,6 +28,7 @@ activechatsdb = ActiveChatsDB(db=db)
 
 from modules import *
 setup_all()
+metrics = Analytics()
 
 # --------------------------------------------------------------- #
 
@@ -35,6 +37,8 @@ setup_all()
 def webhook():
     if request.method == 'POST':
         data = request.get_json(force=True)
+        metrics.record(entry=data["entry"])
+
         messaging_events = data['entry'][0]['messaging']
         for event in messaging_events:
             sender = event['sender']['id']
@@ -45,13 +49,6 @@ def webhook():
                     usersdb.add(sender)
             except Exception, e:
                 print("ERROR", str(e))
-
-            #print("status check starts")
-            #try:
-            #    print("STATUS", activechatsdb.isActive(sender))
-            #except Exception, e:
-            #    print("status error", str(e))
-            #print("status check ends")
 
 
             try:
@@ -104,7 +101,9 @@ def webhook():
                         quick_reply_payload = event['message']['quick_reply']['payload']
                         handle_quick_reply(sender=sender, payload=quick_reply_payload)
                     else:
-                        message = TextTemplate(text="I didn't understand what you intended")
+                        message = TextTemplate(text="I didn't understand what you intended. Type \"help\" to"+
+                                                    " get the set of available commands. Use those commands or"+
+                                                    " the menu options to interact with the bot")
                         send_message(message.get_message(), id=recipient)
 
         return ''  # 200 OK
