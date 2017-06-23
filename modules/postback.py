@@ -1,7 +1,7 @@
 from templates import TextTemplate
 from utilities import send_help, send_message, send_newchat_prompt
 from endChat import endChat, share_profile
-from interrupts import handle_global_interrupt
+from interrupts import Interrupts
 import json
 
 valid_payloads = [
@@ -12,6 +12,8 @@ valid_payloads = [
     "profile_share"
 ]
 
+interrupts = Interrupts()
+
 def handle_postback(payload, sender):
 
     if payload not in valid_payloads and json.loads(payload)["keyword"] not in valid_payloads:
@@ -19,7 +21,7 @@ def handle_postback(payload, sender):
         send_message(message.get_message(), id=sender)
 
     elif payload == "restart":
-        handle_global_interrupt(text="restart", sender=sender)
+        interrupts.handleCommand(command="restart", sender=sender)
     elif payload == "help":
         send_help(sender = sender)
     elif payload == "quit":
