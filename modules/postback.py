@@ -8,6 +8,7 @@ valid_payloads = [
     "restart",
     "help",
     "quit",
+    "exit",
     "getstarted"
 ]
 
@@ -28,5 +29,3 @@ def handle_postback(payload, sender):
     elif payload == "getstarted":
         print("GET STARTED DETECTED")
         send_newchat_prompt(id=sender)
-    #elif json.loads(payload)["keyword"] == "profile_share":
-    #    share_profile(sender, payload=payload)

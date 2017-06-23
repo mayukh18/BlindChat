@@ -40,15 +40,14 @@ class Interrupts:
         self.commands = ["quit", "exit", "restart", "help", "start", "startchat"]
 
     def isValidCommand(self, command):
-        text = command.lower().strip(" ")
-        print("COMMAND", text)
+        text = command.lower().replace(" ", "")
         if text in self.commands:
             return True
         return False
 
     def handleCommand(self, command, sender):
-        text = command.lower().strip(" ")
-
+        text = command.lower().replace(" ", "")
+        print("INTERRUPT", text)
         if text == "help":
             send_help(sender)
         elif text == "restart":
