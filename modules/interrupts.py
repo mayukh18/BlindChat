@@ -41,6 +41,7 @@ class Interrupts:
 
     def isValidCommand(self, command):
         text = command.lower().strip(" ")
+        print("COMMAND", text)
         if text in self.commands:
             return True
         return False
