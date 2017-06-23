@@ -23,50 +23,60 @@ def endChat(sender):
 
     imurl = "https://0.s3.envato.com/files/38938444/end%20title%20590.jpg"
 
-    buttons_sender = [
+    # -------------------------- SENDER --------------------------- #
+
+    replies_sender = [
         {
-            "type":"postback",
             "title":"Share profile",
             "payload":json.dumps({"keyword":"profile_share","ans":"y", "alias":alias1, "partner":partner})
         },
         {
-            "type":"postback",
             "title":"Don't share",
             "payload":json.dumps({"keyword":"profile_share","ans":"n", "alias":alias1, "partner":partner})
         }
     ]
 
-    # SENDER
     message = GenericTemplate()
     title = "You have ended the chat with "+alias2
-    subtitle = "Would you like to share your profile with "+alias2+"?"
-    message.add_element(title=title, subtitle=subtitle, image_url=imurl, buttons=buttons_sender)
+    subtitle = "Hope you had a nice experience."
+    message.add_element(title=title, subtitle=subtitle, image_url=imurl)
     send_message(message=message.get_message(), id=sender)
 
-    buttons_partner = [
+    message = TextTemplate(text="Would you like to share your profile with "+alias2+"?").get_message()
+    message = add_quick_reply(message, title=replies_sender[0]["title"], payload=replies_sender[0]["payload"])
+    message = add_quick_reply(message, title=replies_sender[1]["title"], payload=replies_sender[1]["payload"])
+    send_message(message=message, id=sender)
+
+    # ----------------------------------------------------------------------- #
+
+    # ------------------------------- PARTNER ------------------------------- #
+
+    replies_partner = [
         {
-            "type": "postback",
             "title": "Share profile",
             "payload": json.dumps({"keyword": "profile_share", "ans": "y", "alias": alias2, "partner": sender})
         },
         {
-            "type": "postback",
             "title": "Don't share",
             "payload": json.dumps({"keyword": "profile_share", "ans": "n", "alias": alias2, "partner": sender})
         }
     ]
 
-    # PARTNER
     message = GenericTemplate()
     title = alias1+" has quit the chat"
-    subtitle = "Would you like to share your profile with " + alias1 + "?"
-    message.add_element(title=title, subtitle=subtitle, image_url=imurl, buttons=buttons_partner)
+    subtitle = "Hope you had a nice experience while it lasted."
+    message.add_element(title=title, subtitle=subtitle, image_url=imurl)
     send_message(message=message.get_message(), id=partner)
+
+    message = TextTemplate(text="Would you like to share your profile with " + alias1 + "?").get_message()
+    message = add_quick_reply(message, title=replies_partner[0]["title"], payload=replies_partner[0]["payload"])
+    message = add_quick_reply(message, title=replies_partner[1]["title"], payload=replies_partner[1]["payload"])
+    send_message(message=message, id=partner)
+
+    # --------------------------------------------------------------- #
 
     try:
         activechatsdb.delete_chat_entries(user=sender)
-        show_typing(id=sender, duration=1)
-        send_newchat_prompt(id=sender)
     except Exception, e:
         print("ENDCHAT ERROR", str(e))
 
@@ -97,3 +107,6 @@ def share_profile(sender, payload):
     else:
         message = TextTemplate(text=alias + " has chosen not to share his/her profile with you")
         send_message(message=message.get_message(), id=partner)
+
+    show_typing(id=sender, duration=1)
+    send_newchat_prompt(id=sender)

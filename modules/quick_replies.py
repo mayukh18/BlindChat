@@ -1,4 +1,5 @@
 from startChat import startChat
+from endChat import share_profile
 from utilities import *
 import json
 
@@ -17,3 +18,6 @@ def handle_quick_reply(sender, payload):
     elif payload["keyword"] == "interest":
         print("interest selected")
         startChat(sender=sender,interest=payload["interest"])
+
+    elif payload["keyword"] == "profile_share":
+        share_profile(sender, payload=payload)
