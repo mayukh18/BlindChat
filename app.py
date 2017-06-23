@@ -29,6 +29,7 @@ activechatsdb = ActiveChatsDB(db=db)
 from modules import *
 setup_all()
 metrics = Analytics()
+interrupts = Interrupts()
 
 # --------------------------------------------------------------- #
 
@@ -37,6 +38,8 @@ metrics = Analytics()
 def webhook():
     if request.method == 'POST':
         data = request.get_json(force=True)
+
+        # analytics api post
         metrics.record(entry=data["entry"])
 
         messaging_events = data['entry'][0]['messaging']
@@ -54,13 +57,20 @@ def webhook():
             try:
                 if 'postback' in event and 'payload' in event['postback']:
                     postback_payload = event['postback']['payload']
-                    print("payload", postback_payload)
+                    print("postback payload", postback_payload)
                     handle_postback(payload=postback_payload, sender=sender)
-                    print("handled")
+                    print("postback handled")
+                    continue
+                elif 'message' in event and 'text' in event['message']:
+                    if interrupts.isValidCommand(event['message']['text']):
+                        print("interrupt detected", event['message']['text'])
+                        interrupts.handleCommand(command=event['message']['text'], sender=sender)
+                        print("interrupt handled")
+                        continue
                 else:
-                    print("NOT POSTBACK")
+                    print("NOT POSTBACK OR INTERRUPT")
             except Exception, e:
-                print("POSTBACK ERROR", str(e))
+                print("POSTBACK/INTERRUPT ERROR", str(e))
                 db.session.rollback()
                 return ''
 
@@ -74,8 +84,6 @@ def webhook():
                     if 'quick_reply' in event['message'] and 'payload' in event['message']['quick_reply']:
                         quick_reply_payload = event['message']['quick_reply']['payload']
                         handle_quick_reply(sender=sender, payload=quick_reply_payload)
-                    elif isChatInterrupt(text):
-                        handle_chat_interrupt(text, sender)
                     else:
                         message = TextTemplate(text=alias+": "+text)
                         recipient = activechatsdb.get_partner(sender)
@@ -93,9 +101,8 @@ def webhook():
                             message = TextTemplate(text="Debug command executed")
                             send_message(message.get_message(), id=recipient)
                             continue
-
                     except Exception, e:
-                        print("ERROR", str(e))
+                        print("DEBUG ERROR", str(e))
 
                     if 'quick_reply' in event['message'] and 'payload' in event['message']['quick_reply']:
                         quick_reply_payload = event['message']['quick_reply']['payload']
@@ -113,9 +120,6 @@ def webhook():
             return request.args.get('hub.challenge')
         else:
             return 'Error, wrong validation token'
-
-
-
 
 
 if __name__ == '__main__':

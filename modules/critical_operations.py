@@ -1,6 +1,7 @@
 from app import waitlistdb, activechatsdb
 from templates import TextTemplate
 from utilities import send_message, show_typing, send_newchat_prompt
+from endChat import endChat
 
 def restart_bot(id):
     show_typing(id=id, duration=1)
@@ -25,4 +26,25 @@ def restart_bot(id):
 
     show_typing(id=id, duration=1)
     send_newchat_prompt(id=id)
+
+
+def execute_exit(id):
+    show_typing(id=id, duration=1)
+    print("EXECUTING EXIT")
+
+    if activechatsdb.isActive(id):
+        endChat(id)
+
+    elif waitlistdb.isWaiting(id):
+        waitlistdb.delist(id)
+        message = TextTemplate(text="You have been removed from the waitlist")
+        send_message(message=message.get_message(), id=id)
+
+        show_typing(id=id, duration=1)
+        send_newchat_prompt(id=id)
+
+    else:
+        message = TextTemplate(text="You are not in an active chat or in the waitlist. Type \"start\" to start a new chat")
+        send_message(message=message.get_message(), id=id)
+
 
