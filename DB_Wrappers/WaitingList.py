@@ -9,7 +9,7 @@ class WaitingListDB():
         print("WAITLIST", waitlist, gender, interest)
         for i in range(len(waitlist)):
             user = waitlist[i]
-            print("user is", user.id)
+            print("user waiting", user.gender, user.interest)
             if user.interest == gender or user.interest == "random":
                 print("IN 1")
                 if user.gender == interest or interest == "random":
@@ -17,7 +17,7 @@ class WaitingListDB():
                     Id = user.id
                     self.db.session.delete(user)
                     return Id
-
+        print("NO MATCH FOUND")
         return None
 
     def enlist(self, id, gender, interest):
@@ -32,6 +32,9 @@ class WaitingListDB():
         return True
 
     def delist(self, id):
-        user = WaitingListUser.query.get(id)
-        self.db.session.delete(user)
-        self.db.session.commit()
+        try:
+            user = WaitingListUser.query.get(id)
+            self.db.session.delete(user)
+            self.db.session.commit()
+        except Exception, e:
+            print("Not in waitlist", str(e))

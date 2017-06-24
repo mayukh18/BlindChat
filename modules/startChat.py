@@ -11,6 +11,7 @@ def startChat(sender, interest):
         print("ERROR", str(e))
     match = waitlistdb.get_match(gender, interest)
     if match == None:
+        waitlistdb.delist(id=sender)
         waitlistdb.enlist(id=sender, gender=gender, interest=interest)
         message = TextTemplate(text="No match found right now. You are in the wait list. We will match you as soon"+\
                                     " as someone becomes available")
