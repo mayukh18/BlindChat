@@ -51,7 +51,7 @@ class UsersDB:
     def addMessage(self, id, message):
         user = User.query.get(id)
         m = user.messages
-        if m == None:
+        if m == None or m == "":
             user.messages = message
         elif len(m.split('#&#')) == 1:
             user.messages = m + "#&#" + message
