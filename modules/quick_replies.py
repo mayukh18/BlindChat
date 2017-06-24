@@ -6,10 +6,8 @@ import json
 
 def handle_quick_reply(sender, payload):
 
-    print("quick_reply handling starts")
     try:
         usersdb.setPauseStatus(id=sender, status=False)
-        print("1")
         send_paused_messages(id=sender)
     except Exception, e:
         print("QUICK_REPLY_ERROR", str(e))
