@@ -25,7 +25,7 @@ def handle_postback(payload, sender):
     elif payload == "help":
         send_help(sender = sender)
     elif payload == "quit":
-        endChat(sender)
+        interrupts.handleCommand(command="quit", sender=sender)
     elif payload == "getstarted":
         print("GET STARTED DETECTED")
         message = TextTemplate("Hello there, a big welcome to BlindChat. Chat with people all over the "+
