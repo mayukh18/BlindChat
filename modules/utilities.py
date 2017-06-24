@@ -3,6 +3,7 @@ import requests
 import config
 import os
 import json
+from app import usersdb
 
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 
@@ -29,10 +30,18 @@ def send_newchat_prompt(id):
     send_message(message, id)
 
 
-def send_message(message, id):
+def send_message(message, id, pause_check=False):
 
     if isinstance(message, dict) == False:
         message = message.get_message()
+
+    if pause_check and usersdb.getPauseStatus(id):
+        print("USER PAUSED, MESSAGE STORED")
+        usersdb.addMessage(id=id, message=json.dumps(message))
+        return
+
+    if 'quick_replies' in message:
+        usersdb.setPauseStatus(id=id, status=True)
 
     payload = {
         'recipient': {
@@ -69,3 +78,8 @@ def show_typing(id, duration):
     r = requests.post('https://graph.facebook.com/v2.6/me/messages', params={'access_token': ACCESS_TOKEN},
                       json=payload)
 
+def send_paused_messages(id):
+    if usersdb.getPauseStatus(id) == False:
+        m_list = usersdb.getMessages(id)
+        for m in m_list:
+            send_message(message=json.loads(m), id=id)

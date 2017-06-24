@@ -7,9 +7,13 @@ class User(db.Model):
     gender = db.Column(db.String(10))
     first_name = db.Column(db.String(64))
     pic_url = db.Column(db.String(250))
+    status = db.Column(db.Boolean) # pause status-- True if messages are paused, may be at a quick reply
+    messages = db.Column(db.String(2000)) # upto two messages stored while convo is paused
 
     def __init__(self, id):
         self.id = id
+        self.status = False
+        self.messages = ""
 
     def add_details(self, name, first_name, gender, pic_url):
         if name is not None:

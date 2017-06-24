@@ -66,12 +66,12 @@ def endChat(sender):
     title = alias1+" has quit the chat"
     subtitle = "Hope you had a nice experience while it lasted."
     message.add_element(title=title, subtitle=subtitle, image_url=imurl)
-    send_message(message=message.get_message(), id=partner)
+    send_message(message=message.get_message(), id=partner, pause_check=True)
 
     message = TextTemplate(text="Would you like to share your profile with " + alias1 + "?").get_message()
     message = add_quick_reply(message, title=replies_partner[0]["title"], payload=replies_partner[0]["payload"])
     message = add_quick_reply(message, title=replies_partner[1]["title"], payload=replies_partner[1]["payload"])
-    send_message(message=message, id=partner)
+    send_message(message=message, id=partner, pause_check=True)
 
     # --------------------------------------------------------------- #
 
@@ -98,15 +98,15 @@ def share_profile(sender, payload):
         userData = r.json()
 
         message = TextTemplate(text=alias + " has shared his/her profile with you")
-        send_message(message=message.get_message(), id=partner)
+        send_message(message=message.get_message(), id=partner, pause_check=True)
         message = GenericTemplate()
         message.add_element(title=userData["first_name"] + " " + userData["last_name"],image_url=userData["profile_pic"],
                             subtitle="Search on Facebook by the name and recognise by the profile picture")
-        send_message(message=message.get_message(), id=partner)
+        send_message(message=message.get_message(), id=partner, pause_check=True)
 
     else:
         message = TextTemplate(text=alias + " has chosen not to share his/her profile with you")
-        send_message(message=message.get_message(), id=partner)
+        send_message(message=message.get_message(), id=partner, pause_check=True)
 
     show_typing(id=sender, duration=1)
     send_newchat_prompt(id=sender)

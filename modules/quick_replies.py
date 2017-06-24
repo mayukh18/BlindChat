@@ -1,9 +1,13 @@
 from startChat import startChat
 from endChat import share_profile
 from utilities import *
+from app import usersdb
 import json
 
 def handle_quick_reply(sender, payload):
+
+    usersdb.setPauseStatus(id=sender, status=False)
+    send_paused_messages(id=sender)
 
     payload = json.loads(payload)
     print("QUICKREPLYPAYLOAD", payload)

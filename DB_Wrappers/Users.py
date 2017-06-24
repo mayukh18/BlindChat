@@ -28,3 +28,36 @@ class UsersDB:
     def get(self, id):
         user = User.query.get(id)
         return user
+
+    def getPauseStatus(self, id):
+        user = User.query.get(id)
+        return user.status
+
+    def setPauseStatus(self, id, status):
+        user = User.query.get(id)
+        user.status = status
+        self.db.session.update(user)
+        self.db.session.commit()
+
+    def addMessage(self, id, message):
+        user = User.query.get(id)
+        m = user.messages
+        if len(m) == 0:
+            user.messages = message
+        elif len(m.split('#&#')) == 1:
+            user.messages = m + "#&#" + message
+
+        self.db.session.update(user)
+        self.db.session.commit()
+
+    def getMessages(self, id):
+        user = User.query.get(id)
+        m = user.messages
+        if m == "":
+            return None
+
+        user.messages = ""
+        self.db.session.update(user)
+        self.db.session.commit()
+
+        return m.split("#&#")
