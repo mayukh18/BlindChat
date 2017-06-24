@@ -16,6 +16,7 @@ class WaitingListDB():
                     print("IN 2")
                     Id = user.id
                     self.db.session.delete(user)
+                    self.db.session.commit()
                     return Id
         print("NO MATCH FOUND")
         return None
