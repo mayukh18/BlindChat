@@ -81,7 +81,7 @@ def send_paused_messages(id):
     if usersdb.getPauseStatus(id) == False:
         m_list = usersdb.getMessages(id)
         try:
-            if len(m_list[0]) == 0:
+            if m_list is None or len(m_list[0])==0:
                 return
         except Exception, e:
             print("problem is here", m_list)
