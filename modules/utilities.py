@@ -33,14 +33,19 @@ def send_message(message, id, pause_check=False):
 
     if isinstance(message, dict) == False:
         message = message.get_message()
+    try:
+        if pause_check and usersdb.getPauseStatus(id):
+            print("USER PAUSED, MESSAGE STORED")
+            usersdb.addMessage(id=id, message=json.dumps(message))
+            return
+    except Exception, e:
+        print("STORAGE", str(e))
 
-    if pause_check and usersdb.getPauseStatus(id):
-        print("USER PAUSED, MESSAGE STORED")
-        usersdb.addMessage(id=id, message=json.dumps(message))
-        return
-
-    if 'quick_replies' in message:
-        usersdb.setPauseStatus(id=id, status=True)
+    try:
+        if 'quick_replies' in message:
+            usersdb.setPauseStatus(id=id, status=True)
+    except:
+        print("hoola")
 
     payload = {
         'recipient': {
