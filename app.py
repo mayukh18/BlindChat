@@ -49,7 +49,8 @@ def webhook():
 
             try:
                 if sender != PAGE_ID and usersdb.hasDataOf(sender) is False:
-                    usersdb.add(sender)
+                    if 'message' in event or 'postback' in event:
+                        usersdb.add(sender)
             except Exception, e:
                 print("ERROR", str(e))
 
