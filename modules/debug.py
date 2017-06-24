@@ -16,7 +16,6 @@ def update_users():
     for u in User.query.all():
         u.status = False
         u.messages = ""
-        db.session.update(u)
         db.session.commit()
 
 def handle_debug(text):

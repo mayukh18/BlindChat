@@ -36,7 +36,6 @@ class UsersDB:
     def setPauseStatus(self, id, status):
         user = User.query.get(id)
         user.status = status
-        self.db.session.update(user)
         self.db.session.commit()
 
     def addMessage(self, id, message):
@@ -47,7 +46,6 @@ class UsersDB:
         elif len(m.split('#&#')) == 1:
             user.messages = m + "#&#" + message
 
-        self.db.session.update(user)
         self.db.session.commit()
 
     def getMessages(self, id):
@@ -57,7 +55,6 @@ class UsersDB:
             return None
 
         user.messages = ""
-        self.db.session.update(user)
         self.db.session.commit()
 
         return m.split("#&#")
