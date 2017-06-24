@@ -50,3 +50,8 @@ class ActiveChatsDB:
         u.alias = alias
         self.db.session.commit()
 
+    def clear_data(self, user):
+        user = ActiveChatsUser.query.get(user)
+        if user != None:
+            self.db.session.delete(user)
+            self.db.session.commit()

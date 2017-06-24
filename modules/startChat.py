@@ -22,6 +22,8 @@ def startChat(sender, interest):
         alias1 = generate_alias(gender=gender)
         alias2 = generate_alias(gender=match_gender)
         try:
+            activechatsdb.clear_data(user=sender)
+            activechatsdb.clear_data(user=match)
             activechatsdb.create_new_chat(user1=sender, user2=match)
             activechatsdb.set_alias(user=sender, alias=alias1)
             activechatsdb.set_alias(user=match, alias=alias2)
