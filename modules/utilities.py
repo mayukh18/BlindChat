@@ -80,5 +80,7 @@ def show_typing(id, duration):
 def send_paused_messages(id):
     if usersdb.getPauseStatus(id) == False:
         m_list = usersdb.getMessages(id)
+        if len(m_list[0]) == 0:
+            return
         for m in m_list:
             send_message(message=json.loads(m), id=id)
