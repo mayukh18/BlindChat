@@ -19,7 +19,17 @@ class UsersDB:
             'access_token': os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
         })
         data = r.json()
-        name = data["first_name"] + " " + data["last_name"]
+        try:
+            first_name = data["first_name"]
+        except:
+            first_name = ""
+
+        try:
+            last_name = data["last_name"]
+        except:
+            last_name = ""
+
+        name = first_name + " " + last_name
         user = User(id=id)
         user.add_details(name=name, first_name=data["first_name"], gender=data["gender"], pic_url=data["profile_pic"])
         self.db.session.add(user)

@@ -29,7 +29,7 @@ activechatsdb = ActiveChatsDB(db=db)
 from modules import *
 setup_all()
 metrics = Analytics()
-interrupts = Interrupts()
+Int = Interrupts()
 
 # --------------------------------------------------------------- #
 
@@ -49,8 +49,7 @@ def webhook():
 
             try:
                 if sender != PAGE_ID and usersdb.hasDataOf(sender) is False:
-                    if 'message' in event or 'postback' in event:
-                        usersdb.add(sender)
+                    usersdb.add(sender)
             except Exception, e:
                 print("ERROR", str(e))
 
@@ -63,9 +62,9 @@ def webhook():
                     print("postback handled")
                     continue
                 elif 'message' in event and 'text' in event['message']:
-                    if interrupts.isValidCommand(event['message']['text']):
+                    if Int.isValidCommand(event['message']['text']):
                         print("interrupt detected", event['message']['text'])
-                        interrupts.handleCommand(command=event['message']['text'], sender=sender)
+                        Int.handleCommand(command=event['message']['text'], sender=sender)
                         print("interrupt handled")
                         continue
                 else:
