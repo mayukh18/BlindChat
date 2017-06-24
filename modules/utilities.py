@@ -27,9 +27,7 @@ def send_newchat_prompt(id):
     message = add_quick_reply(message=message, title="Oh! Yes!", payload=json.dumps(payload))
     payload["ans"] = "n"
     message = add_quick_reply(message=message, title="No. Later", payload=json.dumps(payload))
-    print("error here")
     send_message(message, id)
-    print("error not here")
 
 def send_message(message, id, pause_check=False):
 
