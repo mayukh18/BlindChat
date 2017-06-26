@@ -18,4 +18,4 @@ def send_campaign():
     users = User.query.all()
     for user in users:
         id = user.id
-        send_message(message, id=id)
+        #send_message(message, id=id)
