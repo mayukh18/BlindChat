@@ -13,11 +13,11 @@ def send_subscription_prompt(id):
             "payload": json.dumps({"keyword": "subscribe", "ans": "y"})
         },
         {
-            "title": "Don't share",
-            "payload": json.dumps({"keyword": "profile_share", "ans": "n"})
+            "title": "No, thanks",
+            "payload": json.dumps({"keyword": "subscribe", "ans": "n"})
         },
         {
-            "title": "Don't show this again",
+            "title": "Don't show this",
             "payload": json.dumps({"keyword": "subscribe", "ans": "x"})
         }
     ]
