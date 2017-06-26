@@ -5,8 +5,8 @@ from app import usersdb
 
 
 def send_subscription_prompt(id):
-    message = TextTemplate(text="Subscribe to our notifications? We'll send out a message to you"+
-                           "when someone of your choice is waiting for a partner to chat with. Sounds good?").get_message()
+    message = TextTemplate(text="Subscribe to our notifications? We'll send out a message to you "+
+                           "when someone of your choice is looking for a partner to chat with. Sounds good?").get_message()
     replies = [
         {
             "title": "Yes. Subscribe",
@@ -28,7 +28,7 @@ def send_subscription_prompt(id):
     send_message(message,id)
 
 def send_pref_prompt(id):
-    message = TextTemplate(text="Whom do you prefer to chat with?").get_message()
+    message = TextTemplate(text="Whom do you want to chat with? We will notify when someone of the selected gender is waiting to chat.").get_message()
     replies = [
         {
             "title": "Men",
@@ -47,6 +47,8 @@ def handle_subscribe_payload(id, payload):
     print("inside this")
     if payload["ans"] == "male" or payload["ans"] == "female":
         usersdb.subscribe(id, pref=payload["ans"])
+        message = TextTemplate(text="You are subscribed. We will notify you. Promise.").get_message()
+        send_message(message, id)
 
     elif payload["ans"] == "y":
         send_pref_prompt(id)
