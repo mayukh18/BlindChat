@@ -44,6 +44,7 @@ def send_pref_prompt(id):
     send_message(message,id)
 
 def handle_subscribe_payload(id, payload):
+    print("inside this")
     if payload["ans"] == "male" or payload["ans"] == "female":
         usersdb.subscribe(id, pref=payload["ans"])
 

@@ -29,5 +29,6 @@ def handle_quick_reply(sender, payload):
 
     elif payload["keyword"] == "profile_share":
         share_profile(sender, payload=payload)
+
     elif payload["keyword"] == "subscribe":
-        handle_subscribe_payload(id, payload)
+        handle_subscribe_payload(id=sender, payload=payload)
