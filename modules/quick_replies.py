@@ -6,7 +6,6 @@ from app import usersdb
 import json
 
 def handle_quick_reply(sender, payload):
-    return
     try:
         usersdb.setPauseStatus(id=sender, status=False)
         print("1")
