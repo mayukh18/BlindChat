@@ -1,6 +1,6 @@
 from DB_Wrappers import WaitingListDB, UsersDB, ActiveChatsDB
 from models import User, WaitingListUser, ActiveChatsUser, db
-
+from campaign import send_campaign
 
 def log_waitlisted_users():
     waitlist = WaitingListUser.query.all()
@@ -21,6 +21,7 @@ def update_users():
 def handle_debug(text):
     if text[3:] == "waitlist":
         log_waitlisted_users()
-    if text[3:] == "update":
+    elif text[3:] == "update":
         update_users()
-
+    elif text[3:] == "campaign":
+        send_campaign()
