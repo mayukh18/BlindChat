@@ -68,3 +68,22 @@ class UsersDB:
         self.db.session.commit()
 
         return m.split("#&#")
+
+    def subscribe(self, id, pref):
+        user = User.query.get(id)
+        user.subscription = pref
+        self.db.session.commit()
+
+    def unsubscribe(self, id):
+        user = User.query.get(id)
+        user.subscription = None
+        self.db.session.commit()
+
+    def getSubsValue(self, id):
+        user = User.query.get(id)
+        return user.subscription
+
+    def setSubsValue(self, id, val):
+        user = User.query.get(id)
+        user.subscription = val
+        self.db.session.commit()

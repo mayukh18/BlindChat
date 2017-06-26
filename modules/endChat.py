@@ -1,11 +1,13 @@
 from templates import *
-from app import activechatsdb
+from app import activechatsdb, usersdb
+from subscription import send_subscription_prompt
 from utilities import send_message, send_newchat_prompt, show_typing
 import requests
 import config
 import os
 import json
 
+ADMIN_ID = os.environ.get('ADMIN_ID', config.ADMIN_ID)
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 
 def endChat(sender):
@@ -109,4 +111,8 @@ def share_profile(sender, payload):
         send_message(message=message.get_message(), id=partner, pause_check=True)
 
     show_typing(id=sender, duration=1)
-    send_newchat_prompt(id=sender)
+    if sender != ADMIN_ID:
+        send_newchat_prompt(id=sender)
+    elif usersdb.getSubsValue(id=sender) != "x":
+        send_subscription_prompt(id=sender)
+

@@ -1,5 +1,6 @@
 from startChat import startChat
 from endChat import share_profile
+from subscription import handle_subscribe_payload
 from utilities import *
 from app import usersdb
 import json
@@ -29,3 +30,5 @@ def handle_quick_reply(sender, payload):
 
     elif payload["keyword"] == "profile_share":
         share_profile(sender, payload=payload)
+    elif payload["keyword"] == "subscribe":
+        handle_subscribe_payload(id, payload)

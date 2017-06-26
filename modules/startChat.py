@@ -5,14 +5,23 @@ from app import waitlistdb, activechatsdb, usersdb
 
 
 def startChat(sender, interest):
+    # handles the initiation of a new chat after the user selects the interest
     try:
-        gender = usersdb.get(sender).gender
+        gender = usersdb.get(sender).gender # gets the gender from the
     except Exception, e:
-        print("ERROR", str(e))
-    match = waitlistdb.get_match(gender, interest)
+        print("ERROR #0001", str(e))
+    try:
+        # returns the PSID of the match
+        match = waitlistdb.get_match(gender, interest)
+    except Exception, e:
+        print("ERROR #0002", str(e))
+
     if match == None:
-        waitlistdb.delist(id=sender)
-        waitlistdb.enlist(id=sender, gender=gender, interest=interest)
+        try:
+            waitlistdb.delist(id=sender) # delist because there's no guarantee that it already isn't there
+            waitlistdb.enlist(id=sender, gender=gender, interest=interest)
+        except Exception, e:
+            print("ERROR #0003", str(e))
         message = TextTemplate(text="No match found right now. You are in the wait list. We will match you as soon"+\
                                     " as someone becomes available")
         send_message(message.get_message(), id=sender)
@@ -28,7 +37,7 @@ def startChat(sender, interest):
             activechatsdb.set_alias(user=sender, alias=alias1)
             activechatsdb.set_alias(user=match, alias=alias2)
         except Exception, e:
-            print("STARTCHAT ERROR", str(e))
+            print("ERROR #0004", str(e))
 
         message = TextTemplate(text="You are matched with "+alias1)
         send_message(message.get_message(), id=match)

@@ -30,8 +30,8 @@ def handle_postback(payload, sender):
         print("GET STARTED DETECTED")
         message = TextTemplate("Hello there, a big welcome to BlindChat. Chat with people all over the "+
                                "world anonymously. Share your profile only when you want to.\n\n"+
-                               "We are developing adding cool new features every single day, so keep "+
-                               "on chatting and exploring. Cheers!\n\nAnd by the way, when in need, type"+
+                               "We are adding cool new features every single day, so keep "+
+                               "on exploring. Cheers!\n\nAnd by the way, when in need, type"+
                                " \"help\" to see the list of available commands")
         send_message(message.get_message(), id=sender)
         send_newchat_prompt(id=sender)
