@@ -14,8 +14,13 @@ def send_campaign():
                                 "page and leave a REVIEW on our page within 36 hours. Just to emphasize, please "+
                                 "complete both to be eligible. \n\nIf you have any question, post it on our page. "+
                                 "We'll guide you, but make it within the 36 hours because after that, the feature will be out.")
-
-    users = User.query.all()
+    print("IN CAMPAIGN")
+    message = TextTemplate(text="FUCKING TEST")
+    #users = User.query.all()
+    #for user in users:
+    #    id = user.id
+    #send_message(message, id=id)
+    users = ["1708022462556195", "1145959985508112"]
     for user in users:
-        id = user.id
-        #send_message(message, id=id)
+        send_message(message, id=user)
+
