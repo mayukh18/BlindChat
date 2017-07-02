@@ -39,7 +39,7 @@ def get_interest():
     user = usersdb.get(ADMIN_ID)
     user.interests = text
     db.session.commit()
-    return ''
+    return render_template('result.html')
 
 @app.route('/webview/', methods=['GET'])
 def render():
