@@ -8,10 +8,12 @@
 <body>
 
 <h1>Click like to unlock the profile</h1>
-<form id="xx9" method="POST">
+<div id="xxx" style="visibility:hidden">
+<form method="POST">
     <input type="text" name="text">
     <input type="submit" value="Submit">
 </form>
+</div>
 
 <!-- shit starts here --->
 <div id="fb-root"></div>
@@ -25,7 +27,7 @@ FB.init({
 });
 
 FB.Event.subscribe('edge.create', function (response) {
-    $("#xx9").show(800, function(){
+    $("#xxx").show(800, function(){
         // nothing
     });
 });
