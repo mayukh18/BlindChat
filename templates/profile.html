@@ -7,7 +7,7 @@
 <body>
 
 <h1>Click like to unlock the profile</h1>
-<form hidden id="xx9" method="POST">
+<form id="xx9" method="POST">
     <input type="text" name="text">
     <input type="submit" value="Submit">
 </form>
@@ -16,8 +16,8 @@
 <div id="fb-root">
 <script>
 window.fbAsyncInit = function () {
-FB.Event.subscribe('edge.remove', function (response) {
-    $("#xx9").toggle(1000, function(){
+FB.Event.subscribe('edge.create', function (response) {
+    $("form").toggle(1000, function(){
         // nothing
     });
 });
