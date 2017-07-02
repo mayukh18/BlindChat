@@ -8,7 +8,7 @@
 <body>
 
 <h1>Click like to unlock the profile</h1>
-<form id="xx9" method="POST" visibility="hidden">
+<form id="xx9" method="POST" hidden>
     <input type="text" name="text">
     <input type="submit" value="Submit">
 </form>
@@ -25,11 +25,19 @@ FB.init({
 });
 
 FB.Event.subscribe('edge.create', function (response) {
-    $("#xx9").toggle(1000, function(){
+    $("#xx9").show(800, function(){
         // nothing
     });
 });
 };
+
+FB.Event.subscribe('edge.remove', function (response) {
+    $("#xx9").hide(500, function(){
+        // nothing
+    });
+});
+};
+
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
