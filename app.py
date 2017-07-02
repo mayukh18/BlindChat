@@ -33,7 +33,7 @@ Int = Interrupts()
 
 # --------------------------------------------------------------- #
 
-@app.route('/webview/', methods=['POST'])
+@app.route('/webview/', methods=['GET'])
 def render():
     return render_template('profile.html')
 

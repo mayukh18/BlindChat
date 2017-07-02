@@ -9,6 +9,7 @@ def startChat(sender, interest):
     try:
         gender = usersdb.get(sender).gender # gets the gender from the
     except Exception, e:
+        gender = "male"
         print("ERROR #0001", str(e))
     try:
         # returns the PSID of the match
