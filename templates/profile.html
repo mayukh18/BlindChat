@@ -8,12 +8,10 @@
 <body>
 
 <h1>Click like to unlock the profile</h1>
-<div id="xxx">
-<form method="POST">
+<form id="xxx" method="POST" style="visibility:hidden">
     <input type="text" name="text">
     <input type="submit" value="Submit">
 </form>
-</div>
 
 <!-- shit starts here --->
 <div id="fb-root"></div>
@@ -27,7 +25,7 @@ FB.init({
 });
 
 FB.Event.subscribe('edge.create', function (response) {
-    $("#xxx").toggle(800, function(){
+    $("form").show(800, function(){
         //
     });
 });
@@ -44,9 +42,6 @@ FB.Event.subscribe('edge.create', function (response) {
 
 
 <div class="fb-like" data-href="https://www.facebook.com/blindchat.go/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
-
-
-
 
 </body>
 </html>
