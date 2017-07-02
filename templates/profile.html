@@ -27,17 +27,10 @@ FB.init({
 });
 
 FB.Event.subscribe('edge.create', function (response) {
-    $("#xxx").show(800, function(){
+    $("#xxx").toggle(800, function(){
         //
     });
 });
-
-//FB.Event.subscribe('edge.remove', function (response) {
-//    $("#xx9").hide(500, function(){
-        // nothing
-//    });
-//});
-//};
 
 
 (function(d, s, id) {
