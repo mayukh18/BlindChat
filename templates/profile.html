@@ -16,9 +16,19 @@
 <div id="fb-root">
 <script>
 window.fbAsyncInit = function () {
+
+FB.init({
+    appId      : '1892929207634161',
+    xfbml      : true,
+    version    : 'v2.8'
+});
+
 FB.Event.subscribe('edge.create', function (response) {
-    $("form").toggle(1000, function(){
-        // nothing
+    var divbox = document.getElementById('xx9');
+    if(divbox.style.visibility == 'hidden')
+        divbox.style.visibility = 'visible';
+    else
+        divbox.style.visibility = 'hidden';
     });
 });
 };
