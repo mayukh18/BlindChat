@@ -6,15 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
-<h1>Click like to unlock the profile</h1>
-<form id="xxx" method="POST" style="visibility:hidden">
-    <input type="text" name="text">
-    <input type="submit" value="Submit">
-</form>
-
 <!-- shit starts here --->
-<div id="fb-root"></div>
 <script>
 window.fbAsyncInit = function () {
 
@@ -40,8 +32,20 @@ FB.Event.subscribe('edge.create', function (response) {
 }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<h1>Click like to unlock the profile</h1>
 
+
+<div id="fb-root"></div>
 <div class="fb-like" data-href="https://www.facebook.com/blindchat.go/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+
+
+
+<form id="xxx" method="POST" style="visibility:hidden">
+    <input type="text" name="text">
+    <input type="submit" value="Submit">
+</form>
+
+
 
 </body>
 </html>
