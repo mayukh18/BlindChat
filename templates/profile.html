@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
 <h1>Click like to unlock the profile</h1>
-<form id="xx9" method="POST">
+<form id="xx9" method="POST" visibility="hidden">
     <input type="text" name="text">
     <input type="submit" value="Submit">
 </form>
 
 <!-- shit starts here --->
-<div id="fb-root">
+<div id="fb-root"></div>
 <script>
 window.fbAsyncInit = function () {
 
@@ -24,11 +25,8 @@ FB.init({
 });
 
 FB.Event.subscribe('edge.create', function (response) {
-    var divbox = document.getElementById('xx9');
-    if(divbox.style.visibility == 'hidden')
-        divbox.style.visibility = 'visible';
-    else
-        divbox.style.visibility = 'hidden';
+    $("#xx9").toggle(1000, function(){
+        // nothing
     });
 });
 };
@@ -41,7 +39,7 @@ FB.Event.subscribe('edge.create', function (response) {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
-    </div>
+
 
 <div class="fb-like" data-href="https://www.facebook.com/blindchat.go/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
 
