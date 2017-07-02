@@ -56,7 +56,17 @@ def setup_greeting():
     r = requests.post(url=URL, params={'access_token': ACCESS_TOKEN},
                       json=data)
 
+def setup_whitelist():
+    data = {
+        "whitelisted_domains":[
+            "https://embeeblindchat.herokuapp.com/"
+        ]
+    }
+    r = requests.post(url=URL, params={'access_token': ACCESS_TOKEN},
+                      json=data)
+
 def setup_all():
     setup_menu()
     setup_getStarted()
     setup_greeting()
+    setup_whitelist()

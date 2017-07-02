@@ -1,6 +1,6 @@
 import os
 import config
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from analytics import Analytics
 
@@ -32,6 +32,10 @@ metrics = Analytics()
 Int = Interrupts()
 
 # --------------------------------------------------------------- #
+
+@app.route('/webview/', methods=['POST'])
+def render():
+    return render_template('profile.html')
 
 
 @app.route('/webhook/', methods=['GET', 'POST'])
@@ -97,7 +101,7 @@ def webhook():
 
                     try:
                         if text[:3] == ":::":
-                            handle_debug(text)
+                            handle_debug(text, id=sender)
                             message = TextTemplate(text="Debug command executed")
                             send_message(message.get_message(), id=recipient)
                             continue

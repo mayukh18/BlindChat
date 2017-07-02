@@ -1,6 +1,6 @@
-from DB_Wrappers import WaitingListDB, UsersDB, ActiveChatsDB
 from models import User, WaitingListUser, ActiveChatsUser, db
 from campaign import send_campaign
+from utilities import send_message
 
 def log_waitlisted_users():
     waitlist = WaitingListUser.query.all()
@@ -18,10 +18,31 @@ def update_users():
         u.messages = ""
         db.session.commit()
 
-def handle_debug(text):
+def handle_debug(text, id):
     if text[3:] == "waitlist":
         log_waitlisted_users()
     elif text[3:] == "update":
         update_users()
     elif text[3:] == "campaign":
         send_campaign()
+    elif text[3:] == "webview":
+        message = {
+        "attachment":{
+            "type":"template",
+            "payload":{
+                "template_type":"button",
+                "text":"Test Webview?",
+                "buttons":[
+                    {
+                        "type":"web_url",
+                        "url":"https://embeeblindchat.herokuapp.com/webview/",
+                        "title":"Show page",
+                        "webview_height_ratio": "compact"
+                    }
+                ]
+            }
+        }
+        }
+        send_message(message=message, id=id)
+
+
