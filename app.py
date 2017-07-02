@@ -9,6 +9,7 @@ from analytics import Analytics
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 VERIFY_TOKEN = os.environ.get('VERIFY_TOKEN', config.VERIFY_TOKEN)
 PAGE_ID = os.environ.get('PAGE_ID', config.PAGE_ID)
+ADMIN_ID = os.environ.get('ADMIN_ID', config.ADMIN_ID)
 
 # --------------------------------------------------------------- #
 
@@ -32,6 +33,13 @@ metrics = Analytics()
 Int = Interrupts()
 
 # --------------------------------------------------------------- #
+@app.route('/webview/', methods=['POST'])
+def get_interest():
+    text = request.form['text']
+    user = usersdb.get(ADMIN_ID)
+    user.interests = text
+    db.session.commit()
+    return ''
 
 @app.route('/webview/', methods=['GET'])
 def render():

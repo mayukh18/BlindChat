@@ -10,6 +10,7 @@ class User(db.Model):
     status = db.Column(db.Boolean) # pause status-- True if messages are paused, may be at a quick reply
     messages = db.Column(db.String(2000)) # upto two messages stored while convo is paused
     subscription = db.Column(db.String(10))
+    interests = db.Column(db.String(100))
 
     def __init__(self, id):
         self.id = id
