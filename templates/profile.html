@@ -11,7 +11,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="font-size:4em">
 <!-- shit starts here --->
 <div id="fb-root"></div>
 <script>
@@ -71,13 +71,13 @@ FB.Event.subscribe('edge.remove', function (response) {
 					<label>
 						Bio [Write a short bio about yourself, 80 letters]
 					</label>
-					<input type="text" id="bio" placeholder="Write your bio here"/>
+					<input type="text" id="bio" class="form-control" placeholder="Write your bio here"/>
 				</div>
 				<div class="form-group">
 					<label>
 						Interests [Enter upto 3 interests separated by commas]
 					</label>
-					<input type="text" id="interests" placeholder="interest1,interest2,interest3"/>
+					<input type="text" id="interests" class="form-control" placeholder="interest1,interest2,interest3"/>
 				</div>
                 <p>Click Save below to save your profile</p>
 				<button type="submit" class="btn btn-default">
