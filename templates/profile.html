@@ -45,15 +45,48 @@ FB.Event.subscribe('edge.remove', function (response) {
 
 </script>
 
-<h1>Click like to unlock the profile</h1>
+<!--<h1>Click like to unlock the profile</h1>
 
-<div class="fb-like" data-href="https://www.facebook.com/blindchat.go/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
 
 <form id="xxx" method="POST" style="display:none">
     <input type="text" name="text">
     <input type="submit" value="Submit">
-</form>
+</form>-->
 
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron well">
+				<h2>
+					Click the LIKE button below to unlock your profile section.
+				</h2>
+				<p>
+					<div class="fb-like" data-href="https://www.facebook.com/blindchat.go/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+				</p>
+			</div>
+			<form id="xxx" role="form">
+				<div class="form-group">
+					<label>
+						Bio [Write a short bio about yourself, 80 letters]
+					</label>
+					<input type="text" id="bio" placeholder="Write your bio here"/>
+				</div>
+				<div class="form-group">
+					<label>
+						Interests [Enter upto 3 interests separated by commas]
+					</label>
+					<input type="text" id="interests" placeholder="interest1,interest2,interest3"/>
+				</div>
+                <p>Click Save below to save your profile</p>
+				<button type="submit" class="btn btn-default">
+					Save
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
 
 
 </body>
