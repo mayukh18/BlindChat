@@ -26,9 +26,12 @@ FB.init({
 });
 
 FB.Event.subscribe('edge.create', function (response) {
-    $("#xxx").toggle(1000, function(){
-        //
-    });
+    var x = document.getElementById('xxx');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
 });
 }
 
