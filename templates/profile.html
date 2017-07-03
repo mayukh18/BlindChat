@@ -8,21 +8,6 @@
 <body>
 <!-- shit starts here --->
 <script>
-window.fbAsyncInit = function () {
-
-FB.init({
-    appId      : '1892929207634161',
-    xfbml      : true,
-    version    : 'v2.8'
-});
-
-FB.Event.subscribe('edge.create', function (response) {
-    $("form").show(800, function(){
-        //
-    });
-});
-
-
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -30,6 +15,22 @@ FB.Event.subscribe('edge.create', function (response) {
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1892929207634161";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+window.fbAsyncInit = function () {
+
+FB.init({
+    appId      : '1892929207634161',
+    xfbml      : true,
+    version    : 'v2.9'
+});
+
+FB.Event.subscribe('edge.create', function (response) {
+    $("#xxx").show(1000, function(){
+        //
+    });
+});
+}
+
 </script>
 
 <h1>Click like to unlock the profile</h1>
