@@ -106,7 +106,6 @@ window.extAsyncInit = function() {
     MessengerExtensions.getUserID(function success(uids) {
   	// User ID was successfully obtained.
       	var psid = uids.psid;
-      	alert("1", psid)
       	document.getElementById("idd").value=psid;
 
     }, function error(err, errorMessage) {
@@ -122,13 +121,12 @@ function urlParams() {
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         vars[key] = value;
     });
-    alert("2",vars);
     return vars;
 }
 </script>
 <script>
 document.getElementById("idd").value = urlParams()["id"];
-alert("3", document.getElementById("idd").value);
+//alert("3", document.getElementById("idd").value);
 </script>
 
 
