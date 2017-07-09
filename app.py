@@ -35,15 +35,18 @@ Int = Interrupts()
 # --------------------------------------------------------------- #
 @app.route('/webview/', methods=['POST'])
 def get_interest():
-    bio = request.form['bio']
-    interests = request.form['interests']
-    id = request.form['psid']
-    print("USER ID", id)
-    user = usersdb.get(id)
-    user.interests = interests
-    user.bio = bio
-    db.session.commit()
-    return render_template('result.html')
+    try:
+        bio = request.form['bio']
+        interests = request.form['interests']
+        id = request.form['psid']
+        print("USER ID", id)
+        user = usersdb.get(id)
+        user.interests = interests
+        user.bio = bio
+        db.session.commit()
+        return render_template('result.html')
+    except Exception, e:
+        print("FORM ERROR", str(e))
 
 @app.route('/webview/', methods=['GET'])
 def render():
