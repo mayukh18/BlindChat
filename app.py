@@ -33,7 +33,7 @@ metrics = Analytics()
 Int = Interrupts()
 
 # --------------------------------------------------------------- #
-@app.route('/webview_submit', methods=['POST'])
+@app.route('/webview/', methods=['POST'])
 def getProfile():
     try:
         print("FORM SUBMITTED")
