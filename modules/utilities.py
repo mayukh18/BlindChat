@@ -107,7 +107,7 @@ def send_profile_prompt(id):
                 "buttons":[
                     {
                         "type":"web_url",
-                        "url":"https://embeeblindchat.herokuapp.com/webview/",
+                        "url":"https://embeeblindchat.herokuapp.com/webview"+str(id),
                         "title":"PROFILE",
                         "webview_height_ratio": "compact"
                     }

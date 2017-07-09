@@ -81,7 +81,7 @@ FB.Event.subscribe('edge.remove', function (response) {
 					</label>
 					<input type="text" name="interests" class="form-control" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
 				</div>
-				<input type="hidden" id="id" name="psid"/>
+				<input type="hidden" id="idd" name="psid"/>
                 <p>Click Save below to save your profile</p>
 				<input type="submit" value="Submit" class="btn btn-default" style="height:100px;width:500px;font-size:40pt">
 			</form>
@@ -106,12 +106,26 @@ window.extAsyncInit = function() {
     MessengerExtensions.getUserID(function success(uids) {
   	// User ID was successfully obtained.
       	var psid = uids.psid;
-      	document.getElementById("id").value=psid;
+      	document.getElementById("idd").value=psid;
 
     }, function error(err, errorMessage) {
   	// Error handling code
     });
 }
+</script>
+
+
+<script>
+function urlParams() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+document.getElementsById("idd")[0].value = urlParams()["id"];
+
 </script>
 
 
