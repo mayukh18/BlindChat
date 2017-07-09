@@ -36,7 +36,7 @@ Int = Interrupts()
 @app.route('/webview/', methods=['POST'])
 def getProfile():
     try:
-        print("FORM SUBMITTED", request.form)
+        print("FORM SUBMITTED", dict(request.form))
         bio = request.form['bio']
         interests = request.form['interests']
         id = request.form['psid']
