@@ -12,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body style="font-size:4em">
+
 <!-- shit starts here --->
 <div id="fb-root"></div>
 <script>
@@ -39,11 +40,34 @@ FB.Event.subscribe('edge.remove', function (response) {
     var x = document.getElementById('xxx');
     x.style.display = 'none';
 });
-
-
 }
 
 </script>
+<script>
+(function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'Messenger'));
+
+
+window.extAsyncInit = function() {
+    // the Messenger Extensions JS SDK is done loading
+
+    MessengerExtensions.getUserID(function success(uids) {
+  	// User ID was successfully obtained.
+      	var psid = uids.psid;
+      	document.getElementById("psid").value=psid;
+
+    }, function error(err, errorMessage) {
+  	// Error handling code
+    });
+}
+</script>
+
+
 
 <!--<h1>Click like to unlock the profile</h1>
 
@@ -79,6 +103,7 @@ FB.Event.subscribe('edge.remove', function (response) {
 					</label>
 					<input type="text" id="interests" class="form-control" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
 				</div>
+				<input type="hidden" id="psid" value="" />
                 <p>Click Save below to save your profile</p>
 				<button type="submit" class="btn btn-default" style="height:100px;width:500px;font-size:40pt">
 					Save

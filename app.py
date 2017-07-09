@@ -37,7 +37,9 @@ Int = Interrupts()
 def get_interest():
     bio = request.form['bio']
     interests = request.form['interests']
-    user = usersdb.get(ADMIN_ID)
+    id = request.form['psid']
+    print("USER ID", id)
+    user = usersdb.get(id)
     user.interests = interests
     user.bio = bio
     db.session.commit()
