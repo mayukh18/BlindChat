@@ -33,9 +33,10 @@ metrics = Analytics()
 Int = Interrupts()
 
 # --------------------------------------------------------------- #
-@app.route('/webview/', methods=['POST'])
-def get_interest():
+@app.route('/webview_submit', methods=['POST'])
+def getProfile():
     try:
+        print("FORM SUBMITTED")
         bio = request.form['bio']
         interests = request.form['interests']
         id = request.form['psid']
