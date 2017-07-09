@@ -27,6 +27,8 @@ def send_newchat_prompt(id):
     message = add_quick_reply(message=message, title="Oh! Yes!", payload=json.dumps(payload))
     payload["ans"] = "n"
     message = add_quick_reply(message=message, title="No. Later", payload=json.dumps(payload))
+    payload["ans"] = "p"
+    message = add_quick_reply(message=message, title="Edit Profile", payload=json.dumps(payload))
     send_message(message, id)
 
 def send_message(message, id, pause_check=False):
@@ -60,7 +62,8 @@ def send_help(sender):
     helptext = "BlindChat allows you to chat with people without revealing your identity. "+\
         "The bot will match you with strangers all over the world. You can choose to share your profile with the other person after ending the chat.\n"+\
         "\nAvailable commands:\n1. quit/exit: quits from the active chat or from the waitlist"+\
-        "\n2. help: view the help menu\n4. start: starts to look for a new chat\n5. restart: restart the bot."
+        "\n2. help: view the help menu\n4. start: starts to look for a new chat\n5. restart: restart the bot"+\
+        "\n5. profile: modify your chat profile"
 
     message = TextTemplate(text=helptext)
     send_message(message.get_message(), sender)
@@ -93,3 +96,23 @@ def send_paused_messages(id):
             print("problem is here", m_list)
         for m in m_list:
             send_message(message=json.loads(m), id=id)
+
+def send_profile_prompt(id):
+    message = {
+            "attachment":{
+            "type":"template",
+            "payload":{
+                "template_type":"button",
+                "text":"To modify or edit your chat profile, click the PROFILE button",
+                "buttons":[
+                    {
+                        "type":"web_url",
+                        "url":"https://embeeblindchat.herokuapp.com/webview/",
+                        "title":"PROFILE",
+                        "webview_height_ratio": "compact"
+                    }
+                ]
+            }
+        }
+        }
+    send_message(message=message, id=id)

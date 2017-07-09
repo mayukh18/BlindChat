@@ -35,9 +35,11 @@ Int = Interrupts()
 # --------------------------------------------------------------- #
 @app.route('/webview/', methods=['POST'])
 def get_interest():
-    text = request.form['text']
+    bio = request.form['bio']
+    interests = request.form['interests']
     user = usersdb.get(ADMIN_ID)
-    user.interests = text
+    user.interests = interests
+    user.bio = bio
     db.session.commit()
     return render_template('result.html')
 

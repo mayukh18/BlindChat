@@ -22,6 +22,8 @@ def handle_quick_reply(sender, payload):
         if payload["ans"] == "n":
             message = TextTemplate(text="Cool. When you come back use the menu to look for a new chat")
             send_message(message=message.get_message(), id = sender)
+        if payload["ans"] == "p":
+            send_profile_prompt(id=sender)
 
     elif payload["keyword"] == "interest":
         print("interest selected")

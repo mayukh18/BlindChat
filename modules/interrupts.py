@@ -1,4 +1,4 @@
-from utilities import send_help, show_typing, send_newchat_prompt
+from utilities import send_help, send_newchat_prompt, send_profile_prompt
 from critical_operations import restart_bot, execute_exit
 
 
@@ -6,7 +6,7 @@ from critical_operations import restart_bot, execute_exit
 class Interrupts:
 
     def __init__(self):
-        self.commands = ["quit", "exit", "restart", "help", "start", "startchat"]
+        self.commands = ["quit", "exit", "restart", "help", "start", "startchat", "profile"]
 
     def isValidCommand(self, command):
         text = command.lower().replace(" ", "")
@@ -25,3 +25,5 @@ class Interrupts:
             execute_exit(id = sender)
         elif text == "start" or text == "startchat":
             send_newchat_prompt(id=sender)
+        elif text == "profile":
+            send_profile_prompt(id=sender)
