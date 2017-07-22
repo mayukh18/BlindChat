@@ -15,6 +15,21 @@
 
 <!-- shit starts here --->
 <div id="fb-root"></div>
+
+
+<script>
+	$(document).ready(function(){
+	var liked = '{{ liked }}'
+	if (liked=='1'){
+		var x = document.getElementById('xxx');
+    	x.style.display = 'block';
+    	var y = document.getElementById('unlock');
+    	y.style.display = 'none';
+	}
+	}
+</script>
+
+
 <script>
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -46,14 +61,6 @@ FB.Event.subscribe('edge.remove', function (response) {
 
 </script>
 
-<script>
-	var liked = '{{ liked }}'
-	if (liked=='1'){
-		var x = document.getElementById('unlock');
-    	x.style.display = 'none';
-	}
-</script>
-
 
 <div class="container-fluid">
 	<div class="row">
@@ -79,7 +86,6 @@ FB.Event.subscribe('edge.remove', function (response) {
 					</label>
 					<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
 				</div>
-				<input type="text" name="interests" class="form-control" value="{{ liked }}" style="height:100px;font-size:30pt" placeholder="test/>
 				<input type="hidden" id="idd" name="psid" value="{{ id }}"/>
                 <p>Click Save below to save your profile</p>
 				<input type="submit" value="Submit" class="btn btn-default" style="height:100px;width:500px;font-size:40pt">
