@@ -74,13 +74,13 @@ FB.Event.subscribe('edge.remove', function (response) {
 					<label>
 						Bio
 					</label>
-					<input type="text" name="bio" class="form-control" style="height:100px;font-size:30pt" placeholder="Write your bio here (max 80 letters)"/>
+					<input type="text" name="bio" class="form-control" value="{{ bio }}" style="height:100px;font-size:30pt" placeholder="Write your bio here (max 80 letters)"/>
 				</div>
 				<div class="form-group">
 					<label>
 						Interests
 					</label>
-					<input type="text" name="interests" class="form-control" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
+					<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
 				</div>
 				<input type="hidden" id="idd" name="psid"/>
 				<input type="hidden" id="like" name="like" value="0"/>

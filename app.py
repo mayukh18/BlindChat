@@ -53,7 +53,14 @@ def getProfile():
 def render():
     id = request.args.get('id')
     print("PROFILE ID", id)
-    return render_template('profile.html', id=id)
+    user = usersdb.get(id)
+    bio = user.bio
+    interests = user.interests
+    if bio is None:
+        bio = ""
+    if interests is None:
+        interests = ""
+    return render_template('profile.html', id=id, bio=bio, interests=interests)
 
 
 @app.route('/webhook/', methods=['GET', 'POST'])
