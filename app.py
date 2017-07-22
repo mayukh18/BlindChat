@@ -51,7 +51,9 @@ def getProfile():
 
 @app.route('/webview/', methods=['GET'])
 def render():
-    return render_template('profile.html')
+    id = request.args.get('id')
+    print("PROFILE ID", id)
+    return render_template('profile.html', id=id)
 
 
 @app.route('/webhook/', methods=['GET', 'POST'])
