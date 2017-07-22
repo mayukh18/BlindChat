@@ -44,6 +44,7 @@ def getProfile():
         user = usersdb.get(id)
         user.interests = interests
         user.bio = bio
+        user.liked = True
         db.session.commit()
         return render_template('result.html')
     except Exception, e:
@@ -56,11 +57,16 @@ def render():
     user = usersdb.get(id)
     bio = user.bio
     interests = user.interests
+    liked = user.liked
+    if liked == True:
+        liked = '1'
+    else:
+        liked = '0'
     if bio is None:
         bio = ""
     if interests is None:
         interests = ""
-    return render_template('profile.html', id=id, bio=bio, interests=interests)
+    return render_template('profile.html', id=id, bio=bio, interests=interests, liked=liked)
 
 
 @app.route('/webhook/', methods=['GET', 'POST'])
