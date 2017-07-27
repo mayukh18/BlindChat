@@ -40,21 +40,26 @@ def startChat(sender, interest):
         except Exception, e:
             print("ERROR #0004", str(e))
 
-        message = TextTemplate(text="You are matched with "+alias1)
+        message = TextTemplate(text="You are matched with "+alias1+". Say 'hi'")
         send_message(message.get_message(), id=match)
 
+        profile = ""
         sender_bio = usersdb.get(sender).bio
         if sender_bio is None:
-            sender_bio = "-----"
+            profile = "No bio, "
+        else:
+            profile = "bio: " + sender_bio + ". "
         sender_interests = usersdb.get(sender).interests
         if sender_interests is None:
-            sender_interests = "---,---,---"
+            profile = profile + " no interests."
+        else:
+            profile = profile + "interests: " + sender_interests
 
-        message = TextTemplate(text="Bio: " + sender_bio + "\nInterests: " + sender_interests)
+        message = TextTemplate(text=profile)
         send_message(message.get_message(), id=match)
 
 
-        message = TextTemplate(text="You are matched with " + alias2)
+        message = TextTemplate(text="You are matched with " + alias2 + ". Say 'hi'")
         send_message(message.get_message(), id=sender)
         match_bio = usersdb.get(match).bio
         if match_bio is None:
