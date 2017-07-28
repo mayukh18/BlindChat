@@ -61,13 +61,19 @@ def startChat(sender, interest):
 
         message = TextTemplate(text="You are matched with " + alias2 + ". Say 'hi'")
         send_message(message.get_message(), id=sender)
+
+        profile = ""
         match_bio = usersdb.get(match).bio
         if match_bio is None:
-            match_bio = "-----"
+            profile = "No bio, "
+        else:
+            profile = "bio: " + match_bio + ". "
 
         match_interests = usersdb.get(match).interests
         if match_interests is None:
-            match_interests = "---,---,---"
+            profile = profile + " no interests."
+        else:
+            profile = profile + "interests: " + match_interests
 
         message = TextTemplate(text="Bio: " + match_bio + "\nInterests: " + match_interests)
         send_message(message.get_message(), id=sender)
