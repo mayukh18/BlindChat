@@ -11,15 +11,15 @@ _adjectives = [
     ]
 
 _nouns_male = [
-        'King', 'Prince', 'Bandit', 'Hulk', 'Thor', 'Leo', 'Obama', 'Trump',
-        'Jackson', 'Shahrukh', 'Caspian', 'Horse', 'Frog', 'Monkey', 'Lion',
-        'Tiger', 'Cheetah', 'Eagle', 'Wizard', 'Kohli', 'Jack', 'Hippo'
+        'King', 'Prince', 'Bandit', 'Hulk', 'Thor', 'Leo', 'Deadpool', 'Trump',
+        'Moustache', 'Arrow', 'Caspian', 'Horse', 'Frog', 'Monkey', 'Lion',
+        'Tiger', 'Cheetah', 'Eagle', 'Wizard', 'Hawk', 'Jack', 'Hippo'
     ]
 
 _nouns_female = [
-        'Alexa', 'Lili', 'Princess', 'Rihanna', 'Alia', 'Queen', 'LaserGirl', 'Mermaid',
+        'Alexa', 'Lili', 'Princess', 'Rihanna', 'Swift', 'Queen', 'LaserGirl', 'Mermaid',
         'Butterfly', 'Batgirl', 'Madonna', 'Foxie', 'Lioness', 'Monroe', 'Eve', 'Xiry',
-        'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose'
+        'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose', 'Zebra', 'Seahorse', 'Squirrel'
     ]
 
 import random
