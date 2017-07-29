@@ -1,6 +1,6 @@
 from utilities import send_message
 from alias import generate_alias
-from templates.text import TextTemplate
+from templates import TextTemplate, GenericTemplate
 from app import waitlistdb, activechatsdb, usersdb
 
 
@@ -40,42 +40,49 @@ def startChat(sender, interest):
         except Exception, e:
             print("ERROR #0004", str(e))
 
-        message = TextTemplate(text="You are matched with "+alias1+". Say 'hi'")
-        send_message(message.get_message(), id=match)
 
-        profile = ""
+        imurl = "https://embeeblindchat.herokuapp.com/static/startchat.jpg/"
+
+        #message = TextTemplate(text="You are matched with "+alias1+". Say 'hi'")
+        #send_message(message.get_message(), id=match)
+
         sender_bio = usersdb.get(sender).bio
         if sender_bio is None:
-            profile = "No bio, "
+            bio = "No bio"
         else:
-            profile = "bio: " + sender_bio + ". "
+            bio = "Bio: " + sender_bio
         sender_interests = usersdb.get(sender).interests
         if sender_interests is None:
-            profile = profile + " no interests."
+            intr = "No interests."
         else:
-            profile = profile + "interests: " + sender_interests
+            intr = "Interests: " + sender_interests
 
-        message = TextTemplate(text=profile)
+        message = GenericTemplate()
+        message.add_element(title="You are matched with "+alias1, subtitle=bio, image_url=imurl)
+        send_message(message=message.get_message(), id=match)
+        message = TextTemplate(text=intr)
         send_message(message.get_message(), id=match)
 
 
-        message = TextTemplate(text="You are matched with " + alias2 + ". Say 'hi'")
-        send_message(message.get_message(), id=sender)
+        #message = TextTemplate(text="You are matched with " + alias2 + ". Say 'hi'")
+        #send_message(message.get_message(), id=sender)
 
-        profile = ""
         match_bio = usersdb.get(match).bio
         if match_bio is None:
-            profile = "No bio, "
+            bio = "No bio"
         else:
-            profile = "bio: " + match_bio + ". "
+            bio = "Bio: " + match_bio
 
         match_interests = usersdb.get(match).interests
         if match_interests is None:
-            profile = profile + " no interests."
+            intr = "No interests."
         else:
-            profile = profile + "interests: " + match_interests
+            intr = "Interests: " + match_interests
 
-        message = TextTemplate(text="Bio: " + match_bio + "\nInterests: " + match_interests)
+        message = GenericTemplate()
+        message.add_element(title="You are matched with " + alias2, subtitle=bio, image_url=imurl)
+        send_message(message=message.get_message(), id=sender)
+        message = TextTemplate(text=intr)
         send_message(message.get_message(), id=sender)
 
 
