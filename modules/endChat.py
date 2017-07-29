@@ -23,7 +23,7 @@ def endChat(sender):
         send_newchat_prompt(id=sender)
         return
 
-    imurl = "https://0.s3.envato.com/files/38938444/end%20title%20590.jpg"
+    imurl = "https://embeeblindchat.herokuapp.com/static/endchat1.jpg/"
 
     # -------------------------- SENDER --------------------------- #
 
