@@ -21,6 +21,8 @@
 	$(document).ready(function(){
 	var liked = '{{ liked }}';
 	if (liked=='1'){
+		var z = document.getElementById('dummy');
+    	z.style.display = 'block';
 		var x = document.getElementById('xxx');
     	x.style.display = 'block';
     	var y = document.getElementById('unlock');
@@ -65,6 +67,7 @@ FB.Event.subscribe('edge.remove', function (response) {
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
+			<div id="dummy">DUMMY</div>
 			<div class="jumbotron well" id="unlock">
 				<h2>
 					Click the LIKE button below to unlock your profile section.
