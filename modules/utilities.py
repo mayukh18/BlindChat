@@ -31,6 +31,16 @@ def send_newchat_prompt(id):
     message = add_quick_reply(message=message, title="Edit Profile", payload=json.dumps(payload))
     send_message(message, id)
 
+def isGreeting(text):
+    valid = ["hi", "hello", "hey"]
+    if text.lower() in valid:
+        return True
+    return False
+
+def handle_greetings(text, id, name):
+    message = TextTemplate(text="Hi "+name+". Nice to meet you. To get a list of available commands, type \"help\"")
+    send_message(message.get_message(), id)
+
 def send_message(message, id, pause_check=False):
 
     if isinstance(message, dict) == False:

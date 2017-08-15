@@ -127,8 +127,6 @@ def webhook():
                 recipient = sender
                 if 'message' in event and 'text' in event['message']:
                     text = event['message']['text']
-                    if text == "hi" or text == "hello":
-                        send_help(sender=sender)
 
                     try:
                         if text[:3] == ":::":
@@ -143,6 +141,9 @@ def webhook():
                         quick_reply_payload = event['message']['quick_reply']['payload']
                         handle_quick_reply(sender=sender, payload=quick_reply_payload)
                     else:
+                        if(isGreeting(text)):
+                            handle_greetings(text, sender, usersdb.get(sender).first_name)
+                            continue
                         message = TextTemplate(text="I didn't understand what you intended. Type \"help\" to"+
                                                     " get the set of available commands. Use those commands or"+
                                                     " the menu options to interact with the bot")
