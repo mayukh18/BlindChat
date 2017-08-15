@@ -1,8 +1,8 @@
 from utilities import send_message
 from alias import generate_alias
-from templates import TextTemplate, GenericTemplate
+from templates import TextTemplate, GenericTemplate, AttachmentTemplate
 from app import waitlistdb, activechatsdb, usersdb
-
+from gifs import get_start_hi
 
 def startChat(sender, interest):
     # handles the initiation of a new chat after the user selects the interest
@@ -43,8 +43,10 @@ def startChat(sender, interest):
 
         imurl = "https://embeeblindchat.herokuapp.com/static/startchat.jpg/"
 
-        #message = TextTemplate(text="You are matched with "+alias1+". Say 'hi'")
-        #send_message(message.get_message(), id=match)
+        # ------------------------------------ MATCH ---------------------------------------- #
+
+        message = AttachmentTemplate(url=get_start_hi(gender=gender),type="image")
+        send_message(message.get_message(), id=match)
 
         sender_bio = usersdb.get(sender).bio
         if sender_bio is None:
@@ -63,9 +65,10 @@ def startChat(sender, interest):
         message = TextTemplate(text=intr)
         send_message(message.get_message(), id=match)
 
+        # ------------------------------------- SENDER -------------------------------------------- #
 
-        #message = TextTemplate(text="You are matched with " + alias2 + ". Say 'hi'")
-        #send_message(message.get_message(), id=sender)
+        message = AttachmentTemplate(url=get_start_hi(gender=match_gender), type="image")
+        send_message(message.get_message(), id=sender)
 
         match_bio = usersdb.get(match).bio
         if match_bio is None:
