@@ -45,8 +45,8 @@ def startChat(sender, interest):
 
         # ------------------------------------ MATCH ---------------------------------------- #
 
-        message = AttachmentTemplate(url=get_start_hi(gender=gender),type="image")
-        send_message(message.get_message(), id=match)
+        #message = AttachmentTemplate(url=get_start_hi(gender=gender),type="image")
+        #send_message(message.get_message(), id=match)
 
         sender_bio = usersdb.get(sender).bio
         if sender_bio is None:
@@ -67,8 +67,8 @@ def startChat(sender, interest):
 
         # ------------------------------------- SENDER -------------------------------------------- #
 
-        message = AttachmentTemplate(url=get_start_hi(gender=match_gender), type="image")
-        send_message(message.get_message(), id=sender)
+        #message = AttachmentTemplate(url=get_start_hi(gender=match_gender), type="image")
+        #send_message(message.get_message(), id=sender)
 
         match_bio = usersdb.get(match).bio
         if match_bio is None:
