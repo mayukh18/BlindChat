@@ -120,16 +120,16 @@ def webhook():
                         quick_reply_payload = event['message']['quick_reply']['payload']
                         handle_quick_reply(sender=sender, payload=quick_reply_payload)
 
-                    elif 'attachments' in event['message'] and 'type' in event['message']['attachments'][0]:
-                        print("IMAGE 1")
-                        if event['message']['attachments'][0]['type'] == "image":
-                            print("IMAGE 2")
-                            handle_image(id=sender, url = event['message']['attachments'][0]['payload']['url'])
-
                     else:
                         message = TextTemplate(text=alias+": "+text)
                         recipient = activechatsdb.get_partner(sender)
                         send_message(message=message.get_message(), id=recipient)
+
+                elif 'message' in event and 'attachments' in event['message'] and 'type' in event['message']['attachments'][0]:
+                    print("IMAGE 1")
+                    if event['message']['attachments'][0]['type'] == "image":
+                        print("IMAGE 2")
+                        handle_image(id=sender, url=event['message']['attachments'][0]['payload']['url'])
             else:
                 recipient = sender
                 if 'message' in event and 'text' in event['message']:
