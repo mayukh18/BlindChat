@@ -10,6 +10,6 @@ def handle_image(sender, url):
         send_message(message.get_message(), id=partner)
         message = AttachmentTemplate(url=url, type='image')
         send_message(message.get_message(), id=partner)
-        #dummy
+        #dummy1
     except Exception, e:
         print("IMAGE ERROR", str(e))
