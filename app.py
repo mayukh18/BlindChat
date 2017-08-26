@@ -121,7 +121,9 @@ def webhook():
                         handle_quick_reply(sender=sender, payload=quick_reply_payload)
 
                     elif 'attachments' in event['message'] and 'type' in event['message']['attachments'][0]:
+                        print("IMAGE 1")
                         if event['message']['attachments'][0]['type'] == "image":
+                            print("IMAGE 2")
                             handle_image(id=sender, url = event['message']['attachments'][0]['payload']['url'])
 
                     else:
