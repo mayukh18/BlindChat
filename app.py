@@ -126,9 +126,7 @@ def webhook():
                         send_message(message=message.get_message(), id=recipient)
 
                 elif 'message' in event and 'attachments' in event['message'] and 'type' in event['message']['attachments'][0]:
-                    print("IMAGE 1")
                     if event['message']['attachments'][0]['type'] == "image":
-                        print("IMAGE 2")
                         handle_image(sender=sender, url=event['message']['attachments'][0]['payload']['url'])
             else:
                 recipient = sender
