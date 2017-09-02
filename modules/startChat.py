@@ -59,10 +59,15 @@ def startChat(sender, interest):
         else:
             intr = "Interests: " + sender_interests
 
+        sender_level = usersdb.get(sender).level
+        level_str = ""
+        for i in range(sender_level):
+            level_str = level_str + u'\U0002B50'
+
         message = GenericTemplate()
-        message.add_element(title="You are matched with "+alias1, subtitle=bio, image_url=imurl)
+        message.add_element(title="You are matched with "+alias1, subtitle=level_str, image_url=imurl)
         send_message(message=message.get_message(), id=match)
-        message = TextTemplate(text=intr)
+        message = TextTemplate(text=bio + " | "+ intr)
         send_message(message.get_message(), id=match)
 
         # ------------------------------------- SENDER -------------------------------------------- #
@@ -82,10 +87,15 @@ def startChat(sender, interest):
         else:
             intr = "Interests: " + match_interests
 
+        match_level = usersdb.get(match).level
+        level_str = ""
+        for i in range(match_level):
+            level_str = level_str + u'\U0002B50'
+
         message = GenericTemplate()
-        message.add_element(title="You are matched with " + alias2, subtitle=bio, image_url=imurl)
+        message.add_element(title="You are matched with " + alias2, subtitle=level_str, image_url=imurl)
         send_message(message=message.get_message(), id=sender)
-        message = TextTemplate(text=intr)
+        message = TextTemplate(text=bio + " | " + intr)
         send_message(message.get_message(), id=sender)
 
 
