@@ -40,6 +40,7 @@ class Game:
 
     def gamify(self, command, id):
         try:
+            text = command.lower().replace(" ", "")
             u_level = usersdb.get(id).level
             print("U_LEVEL", u_level)
             if u_level == None:
