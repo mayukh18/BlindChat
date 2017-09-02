@@ -63,7 +63,7 @@ def startChat(sender, interest):
         sender_level = usersdb.get(sender).level
         level_str = ''
         for i in range(sender_level):
-            level_str = level_str + '1'
+            level_str = level_str + u'\u2B50'
 
         message = GenericTemplate()
         message.add_element(title="You are matched with "+alias1, subtitle=level_str, image_url=imurl)
@@ -91,7 +91,7 @@ def startChat(sender, interest):
         match_level = usersdb.get(match).level
         level_str = ''
         for i in range(match_level):
-            level_str = level_str + 1
+            level_str = level_str + u'\u2B50'
 
         message = GenericTemplate()
         message.add_element(title="You are matched with " + alias2, subtitle=level_str, image_url=imurl)
