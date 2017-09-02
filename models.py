@@ -12,7 +12,7 @@ class User(db.Model):
     subscription = db.Column(db.String(10))
     interests = db.Column(db.String(100))
     bio = db.Column(db.String(100))
-    liked = db.Column(db.Boolean)
+    level = db.Column(db.Integer)
 
     def __init__(self, id):
         self.id = id

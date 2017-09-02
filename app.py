@@ -31,6 +31,7 @@ from modules import *
 setup_all()
 metrics = Analytics()
 Int = Interrupts()
+game = Game(db=db)
 
 # --------------------------------------------------------------- #
 @app.route('/webview/', methods=['POST'])
@@ -57,11 +58,7 @@ def render():
     user = usersdb.get(id)
     bio = user.bio
     interests = user.interests
-    liked = user.liked
-    if liked == True:
-        liked = '1'
-    else:
-        liked = '0'
+
     if bio is None:
         bio = ""
     if interests is None:
@@ -109,7 +106,10 @@ def webhook():
                 db.session.rollback()
                 return ''
 
-
+            if game.isGame(event):
+                x = game.gamify(event['message']['text'], id=sender)
+                if x == True:
+                    continue
 
             if activechatsdb.isActive(sender):
                 alias = activechatsdb.get_alias(sender)
