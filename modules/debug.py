@@ -21,8 +21,10 @@ def update_users():
 
 def send_emoticon(id):
     happy = u'\U0001F604'
+    print("EMOTICON")
     message = TextTemplate(text="Hi "+happy)
     send_message(message.get_message(), id=id)
+    print("EMOTICON 1")
 
 def handle_debug(text, id):
     if text[3:] == "waitlist":
