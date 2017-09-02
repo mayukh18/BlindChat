@@ -31,7 +31,7 @@ from modules import *
 setup_all()
 metrics = Analytics()
 Int = Interrupts()
-game = Game(db=db)
+game = Game(db)
 
 # --------------------------------------------------------------- #
 @app.route('/webview/', methods=['POST'])

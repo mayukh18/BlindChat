@@ -3,7 +3,7 @@ from utilities import send_message
 from app import usersdb
 
 class Game:
-    def __init(self, db):
+    def __init__(self, db):
         self.db = db
         self.hints = ["All is fair in ____ and war", "Hello in Spanish", "Yes in French", "How to train your _____", "Tom Marvolo Riddle <<>> I am Lord _________"]
         self.ans = ["love", "hola", "oui", "dragon", "voldemort"]
