@@ -13,7 +13,9 @@ class Game:
         if 'message' in event and 'text' in event['message']:
             text = event['message']['text']
             text = text.lower().replace(" ", "")
+            print("STOP THIS ALREADY", text, self.valid_words)
             if text in self.valid_words:
+                print("returning ")
                 return True
         return False
 
