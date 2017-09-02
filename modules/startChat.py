@@ -61,7 +61,7 @@ def startChat(sender, interest):
 
 
         sender_level = usersdb.get(sender).level
-        level_str = ""
+        level_str = unicode('')
         for i in range(sender_level):
             level_str = level_str + u'\U0002B50'
 
@@ -89,7 +89,7 @@ def startChat(sender, interest):
             intr = "Interests: " + match_interests
 
         match_level = usersdb.get(match).level
-        level_str = ""
+        level_str = ('')
         for i in range(match_level):
             level_str = level_str + u'\U0002B50'
 
