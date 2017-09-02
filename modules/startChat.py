@@ -59,6 +59,7 @@ def startChat(sender, interest):
         else:
             intr = "Interests: " + sender_interests
 
+
         sender_level = usersdb.get(sender).level
         level_str = ""
         for i in range(sender_level):
