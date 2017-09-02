@@ -14,7 +14,7 @@ class Game:
             text = event['message']['text']
             text = text.lower().replace(" ", "")
             if text in self.valid_words:
-                return text
+                return True
         return False
 
     def send_hint(self, level, id):

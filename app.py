@@ -31,7 +31,7 @@ from modules import *
 setup_all()
 metrics = Analytics()
 Int = Interrupts()
-game = Game(db)
+game = Game(db=db)
 
 # --------------------------------------------------------------- #
 @app.route('/webview/', methods=['POST'])
@@ -106,7 +106,7 @@ def webhook():
                 db.session.rollback()
                 return ''
 
-            if game.isGame(event):
+            if game.isGame(event) == True:
                 x = game.gamify(event['message']['text'], id=sender)
                 if x == True:
                     continue
