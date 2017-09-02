@@ -24,6 +24,7 @@ class Game:
         send_message(message=message.get_message(), id=id)
 
     def upgrade_level(self, id):
+        print("game upgrade")
         user = usersdb.get(id)
         if user.level == None:
             user.level = 0
@@ -38,12 +39,16 @@ class Game:
 
     def gamify(self, command, id):
         u_level = usersdb.get(id).level
+        print("U_LEVEL", u_level)
         if u_level == None:
             u_level = 0
+            print("game 1")
         if command == "hint" or command == "hints":
             self.send_hint(u_level, id)
+            print("game 2")
         else:
             a_level = self.ans.index(command)
+            print("game 3", a_level)
             if a_level - u_level == 1:
                 self.upgrade_level(id)
                 return True
