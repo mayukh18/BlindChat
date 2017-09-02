@@ -20,6 +20,7 @@ class Game:
         return False
 
     def send_hint(self, level, id):
+        print("game 1.5", self.hints[level])
         message = TextTemplate(text=self.hints[level])
         send_message(message=message.get_message(), id=id)
 
