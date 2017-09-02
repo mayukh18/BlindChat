@@ -39,19 +39,22 @@ class Game:
             send_message(message.get_message(), id)
 
     def gamify(self, command, id):
-        u_level = usersdb.get(id).level
-        print("U_LEVEL", u_level)
-        if u_level == None:
-            u_level = 0
-            print("game 1")
-        if command == "hint" or command == "hints":
-            self.send_hint(u_level, id)
-            print("game 2")
-        else:
-            a_level = self.ans.index(command)
-            print("game 3", a_level)
-            if a_level - u_level == 1:
-                self.upgrade_level(id)
-                return True
+        try:
+            u_level = usersdb.get(id).level
+            print("U_LEVEL", u_level)
+            if u_level == None:
+                u_level = 0
+                print("game 1")
+            if command == "hint" or command == "hints":
+                self.send_hint(u_level, id)
+                print("game 2")
             else:
-                return False
+                a_level = self.ans.index(command)
+                print("game 3", a_level)
+                if a_level - u_level == 1:
+                    self.upgrade_level(id)
+                    return True
+                else:
+                    return False
+        except Exception, e:
+            print("GAME ERROR", str(e))
