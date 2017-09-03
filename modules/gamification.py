@@ -49,6 +49,7 @@ class Game:
             if command == "hint" or command == "hints":
                 print("game 2")
                 self.send_hint(u_level, id)
+                return True
             else:
                 a_level = self.ans.index(command)
                 print("game 3", a_level)
