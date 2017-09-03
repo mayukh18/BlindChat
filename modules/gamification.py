@@ -40,15 +40,15 @@ class Game:
 
     def gamify(self, command, id):
         try:
-            text = command.lower().replace(" ", "")
+            command = command.lower().replace(" ", "")
             u_level = usersdb.get(id).level
             print("U_LEVEL", u_level)
             if u_level == None:
                 u_level = 0
-                print("game 1")
+                print("game 1", command)
             if command == "hint" or command == "hints":
-                self.send_hint(u_level, id)
                 print("game 2")
+                self.send_hint(u_level, id)
             else:
                 a_level = self.ans.index(command)
                 print("game 3", a_level)
