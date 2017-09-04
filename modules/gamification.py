@@ -35,7 +35,7 @@ class Game:
                                     "level "+str(user.level)+".")
         send_message(message.get_message(), id)
         if user.level!=5:
-            message = TextTemplate(text="The hint for the word for reaching your next level is:\n\n"+self.hints[user.level])
+            message = TextTemplate(text="Here is your hint for the next level:\n\n"+self.hints[user.level])
             send_message(message.get_message(), id)
 
     def gamify(self, command, id):
