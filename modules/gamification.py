@@ -53,7 +53,7 @@ class Game:
             else:
                 a_level = self.ans.index(command)
                 print("game 3", a_level)
-                if a_level - u_level == 1:
+                if a_level - u_level == 0:
                     self.upgrade_level(id)
                     return True
                 else:
