@@ -73,7 +73,7 @@ def startChat(sender, interest):
             level_str = level_str + u'\u2B50'
 
         message = GenericTemplate()
-        message.add_element(title="You are matched with "+alias1, subtitle='', image_url=imurl)
+        message.add_element(title="You are matched with "+alias1, subtitle=level_str, image_url=imurl)
         send_message(message=message.get_message(), id=match)
         message = TextTemplate(text=bio + " | "+ intr)
         send_message(message.get_message(), id=match)
@@ -105,7 +105,7 @@ def startChat(sender, interest):
             level_str = level_str + u'\u2B50'
 
         message = GenericTemplate()
-        message.add_element(title="You are matched with " + alias2, subtitle='', image_url=imurl)
+        message.add_element(title="You are matched with " + alias2, subtitle=level_str, image_url=imurl)
         send_message(message=message.get_message(), id=sender)
         message = TextTemplate(text=bio + " | " + intr)
         send_message(message.get_message(), id=sender)
