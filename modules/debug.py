@@ -20,7 +20,7 @@ def update_users():
         db.session.commit()
 
 def send_emoticon(id):
-    happy = u'\U0002B50'
+    happy = u'\u2B50'
     print("EMOTICON")
     message = TextTemplate(text="Hi "+happy)
     send_message(message.get_message(), id=id)
