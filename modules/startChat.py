@@ -3,9 +3,12 @@ from alias import generate_alias
 from templates import TextTemplate, GenericTemplate, AttachmentTemplate
 from app import waitlistdb, activechatsdb, usersdb
 from gifs import get_start_hi
+from debug import log_waitlisted_users
 
 def startChat(sender, interest):
     # handles the initiation of a new chat after the user selects the interest
+    print("START1", log_waitlisted_users())
+
     try:
         gender = usersdb.get(sender).gender # gets the gender from the
     except Exception, e:
@@ -14,6 +17,7 @@ def startChat(sender, interest):
     try:
         # returns the PSID of the match
         match = waitlistdb.get_match(gender, interest)
+        print("START2", match)
     except Exception, e:
         print("ERROR #0002", str(e))
 
@@ -59,8 +63,11 @@ def startChat(sender, interest):
         else:
             intr = "Interests: " + sender_interests
 
-
         sender_level = usersdb.get(sender).level
+        if sender_level == None:
+            usersdb.setLevel(sender, 0)
+            sender_level = usersdb.get(sender).level
+
         level_str = ''
         for i in range(sender_level):
             level_str = level_str + u'\u2B50'
@@ -89,6 +96,10 @@ def startChat(sender, interest):
             intr = "Interests: " + match_interests
 
         match_level = usersdb.get(match).level
+        if match_level == None:
+            usersdb.setLevel(match, 0)
+            match_level = usersdb.get(match).level
+
         level_str = ''
         for i in range(match_level):
             level_str = level_str + u'\u2B50'

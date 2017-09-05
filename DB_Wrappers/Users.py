@@ -92,3 +92,8 @@ class UsersDB:
         user = User.query.get(id)
         user.subscription = val
         self.db.session.commit()
+
+    def setLevel(self, id, level):
+        user = User.query.get(id)
+        user.level = level
+        self.db.session.commit()
