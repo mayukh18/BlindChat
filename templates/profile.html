@@ -52,9 +52,13 @@ FB.Event.subscribe('edge.remove', function (response) {
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<div>{{ level }}</div>
-			<p></p>
 			<form id="xxx" method="post">
+				<div class="form-group">
+					<label>
+						LEVEL
+					</label>
+					<p>{{ level }}</p>
+				</div>
 				<div class="form-group">
 					<label>
 						Bio

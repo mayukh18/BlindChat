@@ -59,12 +59,15 @@ def render():
     bio = user.bio
     interests = user.interests
     level = user.level
+    level_str = u'\u2B50'
+    for i in range(level):
+        level_str = level_str + u'\u2B50'
 
     if bio is None:
         bio = ""
     if interests is None:
         interests = ""
-    return render_template('profile.html', id=id, bio=bio, interests=interests, level=level)
+    return render_template('profile.html', id=id, bio=bio, interests=interests, level=level_str)
 
 
 @app.route('/webhook/', methods=['GET', 'POST'])
