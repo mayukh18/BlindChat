@@ -58,12 +58,13 @@ def render():
     user = usersdb.get(id)
     bio = user.bio
     interests = user.interests
+    level = user.level
 
     if bio is None:
         bio = ""
     if interests is None:
         interests = ""
-    return render_template('profile.html', id=id, bio=bio, interests=interests, liked=liked)
+    return render_template('profile.html', id=id, bio=bio, interests=interests, level=level)
 
 
 @app.route('/webhook/', methods=['GET', 'POST'])

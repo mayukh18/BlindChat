@@ -68,7 +68,7 @@ def startChat(sender, interest):
             usersdb.setLevel(sender, 0)
             sender_level = usersdb.get(sender).level
 
-        level_str = ''
+        level_str = u'\u2B50'
         for i in range(sender_level):
             level_str = level_str + u'\u2B50'
 
@@ -100,7 +100,7 @@ def startChat(sender, interest):
             usersdb.setLevel(match, 0)
             match_level = usersdb.get(match).level
 
-        level_str = ''
+        level_str = u'\u2B50'
         for i in range(match_level):
             level_str = level_str + u'\u2B50'
 
