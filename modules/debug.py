@@ -7,11 +7,14 @@ def log_waitlisted_users():
     waitlist = WaitingListUser.query.all()
     i=0
     print("WAITLIST IS BELOW")
-    for user in waitlist:
-        id = user.id
-        u = User.query.get(id)
-        print(i, u.name, user.gender, user.interest)
-        i = i+1
+    try:
+        for user in waitlist:
+            id = user.id
+            u = User.query.get(id)
+            print(i, u.name, user.gender, user.interest)
+            i = i+1
+    except Exception, e:
+        print("LOG WAITLIST ERROR", e)
 
 def update_users():
     for u in User.query.all():
