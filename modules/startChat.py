@@ -2,8 +2,10 @@ from utilities import send_message
 from alias import generate_alias
 from templates import TextTemplate, GenericTemplate, AttachmentTemplate
 from app import waitlistdb, activechatsdb, usersdb
-from gifs import get_start_hi
 from debug import log_waitlisted_users
+import os
+import config
+APP_URL = os.environ.get('APP_URL', config.APP_URL)
 
 def startChat(sender, interest):
     # handles the initiation of a new chat after the user selects the interest
@@ -45,7 +47,7 @@ def startChat(sender, interest):
             print("ERROR #0004", str(e))
 
 
-        imurl = "https://embeeblindchat.herokuapp.com/static/startchat.jpg/"
+        imurl = APP_URL+"static/startchat.jpg/"
 
         # ------------------------------------ MATCH ---------------------------------------- #
 

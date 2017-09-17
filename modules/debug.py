@@ -2,6 +2,10 @@ from models import User, WaitingListUser, ActiveChatsUser, db
 from campaign import send_campaign
 from utilities import send_message
 from templates import TextTemplate
+import os
+import config
+
+APP_URL = os.environ.get('APP_URL', config.APP_URL)
 
 def log_waitlisted_users():
     waitlist = WaitingListUser.query.all()
@@ -48,7 +52,7 @@ def handle_debug(text, id):
                 "buttons":[
                     {
                         "type":"web_url",
-                        "url":"https://embeeblindchat.herokuapp.com/webview/",
+                        "url":APP_URL+"webview/",
                         "title":"Show page",
                         "webview_height_ratio": "compact"
                     }

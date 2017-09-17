@@ -3,6 +3,7 @@ import config
 import os
 
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
+APP_URL = os.environ.get('APP_URL', config.APP_URL)
 URL = "https://graph.facebook.com/v2.6/me/messenger_profile"
 
 
@@ -59,7 +60,7 @@ def setup_greeting():
 def setup_whitelist():
     data = {
         "whitelisted_domains":[
-            "https://embeeblindchat.herokuapp.com/"
+            APP_URL
         ]
     }
     r = requests.post(url=URL, params={'access_token': ACCESS_TOKEN},

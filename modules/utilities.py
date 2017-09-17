@@ -6,6 +6,7 @@ import json
 from app import usersdb
 
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
+APP_URL = os.environ.get('APP_URL', config.APP_URL)
 
 def send_interest_menu(sender):
     out = {"keyword":"interest"}
@@ -117,7 +118,7 @@ def send_profile_prompt(id):
                 "buttons":[
                     {
                         "type":"web_url",
-                        "url":"https://embeeblindchat.herokuapp.com/webview?id="+str(id),
+                        "url":APP_URL+"webview?id="+str(id),
                         "title":"PROFILE",
                         "webview_height_ratio": "compact"
                     }

@@ -9,6 +9,7 @@ import json
 
 ADMIN_ID = os.environ.get('ADMIN_ID', config.ADMIN_ID)
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
+APP_URL = os.environ.get('APP_URL', config.APP_URL)
 
 def endChat(sender):
 
@@ -23,7 +24,7 @@ def endChat(sender):
         send_newchat_prompt(id=sender)
         return
 
-    imurl = "https://embeeblindchat.herokuapp.com/static/endchat1.jpg/"
+    imurl = APP_URL+"static/endchat1.jpg/"
 
     # -------------------------- SENDER --------------------------- #
 
