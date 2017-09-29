@@ -1,20 +1,20 @@
 # BlindChat
 
-a facebook messenger bot that allows users to chat with other people on facebook anonymously. It's more like omegle for messenger, with some differences.
+a facebook messenger bot that allows users to chat with other people on facebook anonymously. It's more like omegle for messenger, with some differences rather improvements.
 
-You can find it live [here](https://m.me/blindchat.go)
+You can find it live [<<here>>](https://m.me/blindchat.go)
 
 
 
 ### a bit of a background
 
-I started out building BlindChat just to try out the messenger platform of facebook and try to build something usable out of it and learning in the process. I tried more to build kind of an app rather than a AI chatbot. Luckily the result got a bit of traction too and I improved certain parts of it. But most of the code may be in a kind of dirty and hard-to-understand condition. So that remains a small challenge.
+I started out building BlindChat just to try out the messenger platform of facebook and try to build something usable out of it and learning in the process. It is more of an app rather than an AI chatbot. The outcome got a bit of traction and hence I improved certain parts of it. But most of the code may be in an unorganized condition since those are built for quick prototyping.
 
 
 
-## setup your version of the app
+### local development / setup your version of the app
 
-BlindChat is currently hosted on heroku and also uses their offered database. So the code and setup are written for it. If you don't want to use heroku, you'll have to modify a few places. If you are okay with heroku, then you are just fine.
+BlindChat is currently hosted on heroku and also uses their offered database. So the code and setup are written for it. If you don't want to use heroku, you'll have to modify a few places. If you are okay with heroku, then you are just fine. It's better to have a bit of a knowledge setting up a messenger bot.
 
 1. Clone the repository. Open terminal/cmd and run `git clone https://github.com/mayukh18/BlindChat.git/` and set up your local repository.
 
@@ -49,18 +49,19 @@ BlindChat is currently hosted on heroku and also uses their offered database. So
 10. Next, deploy to heroku with `git push heroku master`. And voila!
 
 
-## directory structure
+
+
+###  directory structure
 
 1. DB_Wrappers: Contains the wrapper classes for the models in the database.
-
 2. modules: Contains all the functionalities from starting a chat session to sending a message.
-
 3. templates: Contains different message templates and webviews.
 
 
-## contributing
-
-All contributions are welcome. Please discuss your ideas on the community first to avoid clash of others working on the same thing.
-A few issues are marked as beginner friendly which are suitable for beginners to try out.
 
 
+### contributing
+
+All contributions are welcome. Please discuss your ideas on the community first to avoid clash of others working on the same thing. A few issues are marked as beginner friendly which are suitable for beginners to try out.
+
+Ask in issues if you are not sure on something. Cheers!
