@@ -10,7 +10,10 @@ _adjectives = [
         'Square', 'Super', 'Sweet', 'Tight', 'Tiny', 'White', 'Wild', 'Yellow', 'Young', 'Sticky',
         'Fluffy', 'Petite', 'Grumpy', 'Happy', 'Sleepy', 'Gray', 'Average', 'Hungry', 'Honorable',
         'Kind', 'Lazy', 'Lethal', 'Macho', 'Massive', 'Puzzled', 'Rare', 'Spooky', 'Sassy', 'Tricky',
-        'Unique'
+        'Unique', 'Naive', 'Drowzy', 'Hot', 'Innocent', 'Naughty', 'Mischievous', 'Smart', 'Fun',
+        'Crazy', 'Shrewd', 'Basic', 'Gutsy', 'Cute', 'Drunk', 'Sober', 'Depressed', 'Slimy', 'Gross',
+        'Needy', 'Dark', 'Light', 'Roaring', 'Soaring', 'Noble', 'Vain', 'Terrifying', 'Scary',
+        'Studious', 'Huge', 'Enormous', 'Big', 'Giant', 'Great', 'Playful', 'Classy', 'Cold'
     ]
 
 _nouns_male = [
@@ -19,7 +22,11 @@ _nouns_male = [
         'Tiger', 'Cheetah', 'Eagle', 'Wizard', 'Hawk', 'Jack', 'Hippo' , 'Stallion' , 'Bull' , 'Buck',
         'Emperor','Ram', 'Captain', 'Batman', 'Robin', 'Deathstroke', 'Cyborg', 'Wolverine', 'Spiderman', 
         'Flash', 'Panther', 'Daredevil', 'Ironman', 'Joker', 'Aquaman', 'Necromancer', 'Warlock', 'Magneto',
-        'Gambit', 'Cyclops', 'Ronin', 'Warden'
+        'Gambit', 'Cyclops', 'Ronin', 'Warden', 'Duke', 'Lord', 'Darth', 'Vader', 'Goku', 'Gohan', 'Broly',
+        'Ash', 'Antman', 'Doom', 'General', 'Snake', 'Devil', 'Sergeant', 'Detective', 'Demon', 'Birdman',
+        'Jarvis', 'Ultron', 'Stark', 'Lannister', 'Baratheon', 'Tully', 'Greyjoy', 'Tarth', 'Phasma',
+        'Sailor', 'Mufasa', 'Simba', 'Ninja', 'Swordsman', 'Don', 'Gangster', 'Superman', 'Doomsday',
+        'Lucifer', 'Serpent', 'Count'
     ]
 
 _nouns_female = [
@@ -27,7 +34,10 @@ _nouns_female = [
         'Butterfly', 'Batgirl', 'Madonna', 'Foxie', 'Lioness', 'Monroe', 'Eve', 'Xiry',
         'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose', 'Zebra', 'Seahorse', 'Squirrel' , 'Doe', 'Empress',
         'Vixen', 'Widow', 'Supergirl', 'Storm', 'Catwoman', 'WonderWoman', 'Hawkgirl', 'Amazon', 'Mystique', 'Raven',
-        'Banshee', 'Enchantress', 'Ivy', 'Minx', 'Nova', 'Duchess'
+        'Banshee', 'Enchantress', 'Ivy', 'Minx', 'Nova', 'Duchess', 'Bachelorette', 'Cat', 'Flower', 'Daisy',
+        'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress', 
+        'Angel', 'Goddess', 'Mystery', 'Maiden', 'Dame', 'Damsel', 'Beauty', 'Artist', 'Chick', 'Snake',
+        'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness'
     ]
 
 import random
