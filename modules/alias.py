@@ -1,4 +1,4 @@
-_adjectives = [
+_prefixes = [
         'Aged', 'Ancient', 'Bubbly', 'Bitter', 'Black', 'Blue', 'Bold', 'Brave',
         'Broad', 'Broken', 'Calm', 'Cold','Colossal', 'Cool', 'Crimson', 'Curly', 'Damp',
         'Dark', 'Daring', 'Delicate', 'Falling', 'Fancy', 'Super', 'Jiggly',
@@ -40,13 +40,35 @@ _nouns_female = [
         'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness'
     ]
 
+_suffixes = [
+        'OfAdua', 'OfAtlantis', 'OfCimmeria', 'OfDarkWood', 'OfDune',
+        'OfEgypt', 'OfLalaland', 'OfMidgard', 'OfNowhere', 'OfOz', 'OfSparta',
+        'OfTheDesert', 'OfTheForest', 'OfTheFuture', 'OfTheIsland',
+        'OfTheJungle', 'OfTheLand', 'OfTheSea','OfTheWorld', 'TheAgeless',
+        'TheBabyface', 'TheBarbarian', 'TheBetrayer', 'TheBrave',
+        'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheLionheart',
+        'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
+        'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWeakest', 'TheWise',
+        'UnderThePass'
+]
+
 import random
 
+
 def generate_alias(gender):
-    adj = random.choice(_adjectives)
+    noun = ""
+    prefix = ""
+    suffix = ""
     if gender == "male":
         noun = random.choice(_nouns_male)
     else:
         noun = random.choice(_nouns_female)
+    if _toss_a_coin():
+        prefix = random.choice(_prefixes)
+    else:
+        suffix = random.choice(_suffixes)
+    return '{0}{1}{2}'.format(prefix, noun, suffix)
 
-    return adj+noun
+
+def _toss_a_coin():
+    return random.randint(0, 1) == 0
