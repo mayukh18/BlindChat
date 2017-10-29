@@ -1,83 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<title>Profile</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body style="font-size:4em">
 
-<!-- shit starts here --->
-<div id="fb-root"></div>
+<body style="font-size:3em;background-color:#050268;">
 
-
-<script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1892929207634161";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-window.fbAsyncInit = function () {
-
-FB.init({
-    appId      : '1892929207634161',
-    xfbml      : true,
-    version    : 'v2.9'
-});
-
-FB.Event.subscribe('edge.create', function (response) {
-    var x = document.getElementById('xxx');
-    x.style.display = 'block';
-    var y = document.getElementById('unlock');
-    y.style.display = 'none';
-});
-FB.Event.subscribe('edge.remove', function (response) {
-    var x = document.getElementById('xxx');
-    x.style.display = 'none';
-});
-}
-
-</script>
+	<div id="fb-root"></div>
 
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<form id="xxx" method="post">
-				<div class="form-group">
-					<label>
-						LEVEL
-					</label>
-					<p>{{ level }}</p>
+	<script>
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1892929207634161";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		window.fbAsyncInit = function () {
+
+			FB.init({
+				appId: '1892929207634161',
+				xfbml: true,
+				version: 'v2.9'
+			});
+
+			FB.Event.subscribe('edge.create', function (response) {
+				var x = document.getElementById('xxx');
+				x.style.display = 'block';
+				var y = document.getElementById('unlock');
+				y.style.display = 'none';
+			});
+			FB.Event.subscribe('edge.remove', function (response) {
+				var x = document.getElementById('xxx');
+				x.style.display = 'none';
+			});
+		}
+	</script>
+<!--Html code starts here-->
+
+	<div class="container-fluid" style="padding: 50px;padding-left: 50px;">
+		<div class="jumbotron">
+			<div class="row">
+				<div class="col-lg-12">
+					<form id="xxx" method="post">
+						<div class="form-group">
+							<h1 class="text-center" style="margin:5%;color: #0A0908;">Welcome to your profile</h1>
+							<hr style="width: 100%; color:#0A0908; height: 1px; background-color:#0A0908;" />
+							<label style="color:#0A0908;">
+								Level:
+							</label>
+							<p>{{ level }}</p>
+						</div>
+						<div class="form-group">
+							<label for="bio" style="color:#0A0908;">Bio:</label>
+							<input type="text" name="bio" class="form-control" value="{{ bio }}" style="height:100px;font-size:30pt" placeholder="Write your bio here (max 80 letters)"/>
+						</div>
+						<div class="form-group">
+							<label for="interests" style="color:#0A0908;">Intrests:</label>
+							<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
+						</div>
+						<input type="hidden" id="idd" name="psid" value="{{ id }}" />
+						<div class="text-center">
+							<h3>Click Save below to save your profile</h3>
+							<input type="submit" value="Submit" class="btn btn-default btn-primary" style="height:90px;width:500px;font-size:40pt;">
+						</div>
+					</form>
 				</div>
-				<div class="form-group">
-					<label>
-						Bio
-					</label>
-					<input type="text" name="bio" class="form-control" value="{{ bio }}" style="height:100px;font-size:30pt" placeholder="Write your bio here (max 80 letters)"/>
-				</div>
-				<div class="form-group">
-					<label>
-						Interests
-					</label>
-					<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
-				</div>
-				<input type="hidden" id="idd" name="psid" value="{{ id }}"/>
-                <p>Click Save below to save your profile</p>
-				<input type="submit" value="Submit" class="btn btn-default" style="height:100px;width:500px;font-size:40pt">
-			</form>
+			</div>
 		</div>
-	</div>
-</div>
+<!--Html ends here-->
 
-</body>
+
+</body>-->
+
 </html>
