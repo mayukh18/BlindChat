@@ -13,7 +13,8 @@ _prefixes = [
         'Unique', 'Naive', 'Drowzy', 'Hot', 'Innocent', 'Naughty', 'Mischievous', 'Smart', 'Fun',
         'Crazy', 'Shrewd', 'Basic', 'Gutsy', 'Cute', 'Drunk', 'Sober', 'Depressed', 'Slimy', 'Gross',
         'Needy', 'Dark', 'Light', 'Roaring', 'Soaring', 'Noble', 'Vain', 'Terrifying', 'Scary',
-        'Studious', 'Huge', 'Enormous', 'Big', 'Giant', 'Great', 'Playful', 'Classy', 'Cold'
+        'Studious', 'Huge', 'Enormous', 'Big', 'Giant', 'Great', 'Playful', 'Classy', 'Cold',
+        'Early', 'Deep', 'Awesome', 'Enhanced'
     ]
 
 _nouns_male = [
@@ -26,7 +27,7 @@ _nouns_male = [
         'Ash', 'Antman', 'Doom', 'General', 'Snake', 'Devil', 'Sergeant', 'Detective', 'Demon', 'Birdman',
         'Jarvis', 'Ultron', 'Stark', 'Lannister', 'Baratheon', 'Tully', 'Greyjoy', 'Tarth', 'Phasma',
         'Sailor', 'Mufasa', 'Simba', 'Ninja', 'Swordsman', 'Don', 'Gangster', 'Superman', 'Doomsday',
-        'Lucifer', 'Serpent', 'Count'
+        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo' 
     ]
 
 _nouns_female = [
@@ -37,7 +38,8 @@ _nouns_female = [
         'Banshee', 'Enchantress', 'Ivy', 'Minx', 'Nova', 'Duchess', 'Bachelorette', 'Cat', 'Flower', 'Daisy',
         'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress', 
         'Angel', 'Goddess', 'Mystery', 'Maiden', 'Dame', 'Damsel', 'Beauty', 'Artist', 'Chick', 'Snake',
-        'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness'
+        'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness',
+        'Ariana', 'Emma', 'Harley'
     ]
 
 _suffixes = [
@@ -49,7 +51,7 @@ _suffixes = [
         'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheLionheart',
         'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
         'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWeakest', 'TheWise',
-        'UnderThePass'
+        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight'
 ]
 
 import random
