@@ -4,19 +4,64 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Profile</title>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
 
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+    body {
+			font-size: 3em;
+			background-color: #22549e;
+			font-family: 'Lato', sans-serif;
+		}
+
+		hr {
+			width: 100%;
+			color: #212121;
+			height: 1px;
+			background-color: #212121;
+		}
+
+		label {
+			color: #0A0908;
+		}
+
+		.container-fluid {
+			padding: 50px;
+			padding-left: 50px;
+		}
+
+		.text-center {
+			margin: 5%;
+			color: #0A0908;
+			font-family: 'Roboto Slab', serif;
+		}
+
+		.form-control {
+			height: 100px;
+			font-size: 30pt
+		}
+
+		.btn, .btn-default, .btn-primary {
+			height: 90px;
+			width: 500px;
+			font-size: 40pt;
+		}
+	</style>
+
 </head>
 
-<body style="font-size:3em;background-color:#050268;">
+<body>
 
 	<div id="fb-root"></div>
-
 
 	<script>
 		(function (d, s, id) {
@@ -48,41 +93,42 @@
 			});
 		}
 	</script>
-<!--Html code starts here-->
 
-	<div class="container-fluid" style="padding: 50px;padding-left: 50px;">
+  <!--Html code starts here-->
+
+	<div class="container-fluid">
 		<div class="jumbotron">
 			<div class="row">
 				<div class="col-lg-12">
 					<form id="xxx" method="post">
 						<div class="form-group">
-							<h1 class="text-center" style="margin:5%;color: #0A0908;">Welcome to your profile</h1>
-							<hr style="width: 100%; color:#0A0908; height: 1px; background-color:#0A0908;" />
-							<label style="color:#0A0908;">
+							<h1 class="text-center">Welcome to your profile</h1>
+							<hr/>
+							<label>
 								Level:
 							</label>
-							<p>{{ level }}</p>
+							<p>Level</p>
 						</div>
 						<div class="form-group">
-							<label for="bio" style="color:#0A0908;">Bio:</label>
-							<input type="text" name="bio" class="form-control" value="{{ bio }}" style="height:100px;font-size:30pt" placeholder="Write your bio here (max 80 letters)"/>
+							<label for="bio">Bio:</label>
+							<input type="text" name="bio" class="form-control" placeholder="Write your bio here (max 80 letters)"/>
 						</div>
 						<div class="form-group">
-							<label for="interests" style="color:#0A0908;">Intrests:</label>
-							<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
+							<label for="interests">Intrests:</label>
+							<input type="text" name="interests" class="form-control" placeholder="Enter up to 3 interests separated by commas"/>
 						</div>
-						<input type="hidden" id="idd" name="psid" value="{{ id }}" />
+						<input type="hidden" id="idd" name="psid" value="ID" />
 						<div class="text-center">
 							<h3>Click Save below to save your profile</h3>
-							<input type="submit" value="Submit" class="btn btn-default btn-primary" style="height:90px;width:500px;font-size:40pt;">
+							<input type="submit" value="Submit" class="btn btn-default btn-primary">
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
-<!--Html ends here-->
 
+  <!--Html ends here-->
 
-</body>-->
+</body>
 
 </html>
