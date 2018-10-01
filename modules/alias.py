@@ -30,16 +30,11 @@ _nouns_female = [
     ]
 
 _suffixes = [
-        'OfAdua', 'OfAtlantis', 'OfCimmeria', 'OfDarkWood', 'OfDune',
-        'OfEgypt', 'OfLalaland', 'OfMidgard', 'OfNowhere', 'OfOz', 'OfSparta',
-        'OfTheDesert', 'OfTheForest', 'OfTheFuture', 'OfTheIsland',
-        'OfTheJungle', 'OfTheLand', 'OfTheSea','OfTheWorld', 'TheAgeless',
-        'TheAwesome', 'TheBabyface', 'TheBarbarian', 'TheBetrayer', 'TheBrave',
-        'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheIncredible', 'TheLegendary', 
-		'TheLionheart', 'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
-        'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWise',
-        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight'
-]
+	'OfAdua', 'OfAtlantis', 'OfCimmeria', 'OfDarkWood', 'OfDune',  'OfEgypt', 'OfLalaland', 'OfMidgard', 'OfNowhere', 'OfOz', 'OfSparta', 'OfTheDesert', 'OfTheForest', 
+	'OfTheFuture', 'OfTheIsland',  'OfTheJungle', 'OfTheLand', 'OfTheSea','OfTheWorld', 'TheAgeless',  'TheAwesome', 'TheBabyface', 'TheBarbarian', 'TheBetrayer', 'TheBrave',  
+	'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheIncredible', 'TheLegendary', 'TheLionheart', 'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall', 'TheTemplar', 
+	'TheTraveler', 'TheWanderer', 'TheWise',  'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight'
+    ]
 
 import random
 
