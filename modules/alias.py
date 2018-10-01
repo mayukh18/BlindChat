@@ -1,45 +1,32 @@
 _prefixes = [
-        'Aged', 'Ancient', 'Bubbly', 'Bitter', 'Black', 'Blue', 'Bold', 'Brave',
-        'Broad', 'Broken', 'Calm', 'Cold','Colossal', 'Cool', 'Crimson', 'Curly', 'Damp',
-        'Dark', 'Daring', 'Delicate', 'Falling', 'Fancy', 'Super', 'Jiggly',
-        'Flat', 'Fragrant', 'Frosty', 'Gentle', 'Green', 'Legendary',
-        'Icy', 'Jolly', 'Jumping', 'Little', 'Lively', 'Lucky', 'Lonely',
-        'Muddy', 'Mute', 'Noisy', 'Odd', 'Old', 'Orange', 'Polished', 'Proud',
-        'Purple', 'Quiet', 'Rapid', 'Red', 'Restless', 'Rough', 'Round', 'Royal', 'Shiny',
-        'Shy', 'Silent', 'Small', 'Snowy', 'Soft', 'Solitary', 'Sparkling', 'Spring',
-        'Square', 'Super', 'Sweet', 'Tight', 'Tiny', 'White', 'Wild', 'Yellow', 'Young', 'Sticky',
-        'Fluffy', 'Petite', 'Grumpy', 'Happy', 'Sleepy', 'Gray', 'Average', 'Hungry', 'Honorable',
-        'Kind', 'Lazy', 'Lethal', 'Macho', 'Massive', 'Puzzled', 'Rare', 'Spooky', 'Sassy', 'Tricky',
-        'Unique', 'Naive', 'Drowzy', 'Hot', 'Innocent', 'Naughty', 'Mischievous', 'Smart', 'Fun',
-        'Crazy', 'Shrewd', 'Basic', 'Gutsy', 'Cute', 'Drunk', 'Sober', 'Depressed', 'Slimy', 'Gross',
-        'Needy', 'Dark', 'Light', 'Roaring', 'Soaring', 'Noble', 'Vain', 'Terrifying', 'Scary',
-        'Studious', 'Huge', 'Enormous', 'Big', 'Giant', 'Great', 'Playful', 'Classy', 'Cold',
-        'Early', 'Deep', 'Awesome', 'Enhanced'
+	'Aged', 'Alluring', 'Ancient', 'Auspicious', 'Average', 'Awesome', 'Basic', 'Big', 'Bitter', 'Black', 'Blue', 'Bold', 'Brave', 'Broad', 
+	'Broken', 'Bubbly', 'Calculating', 'Calm', 'Classy', 'Cold', 'Colossal', 'Cool', 'Crazy', 'Crimson', 'Curly', 'Cute', 'Damp', 'Daring', 
+	'Dark', 'Deep', 'Delicate', 'Depressed', 'Diligent', 'Drowzy', 'Drunk', 'Early', 'Enhanced', 'Enormous', 'Falling', 'Fancy', 'Flat', 
+	'Fluffy', 'Fragrant', 'Frosty', 'Fun', 'Genius', 'Gentle', 'Giant', 'Godly', 'Gray', 'Great', 'Green', 'Gross', 'Grumpy', 'Gutsy', 'Happy', 
+	'Honorable', 'Hot', 'Huge', 'Hungry', 'Icy', 'Innocent', 'Jiggly', 'Jolly', 'Jumping', 'Kind', 'Lazy', 'Legendary', 'Lethal', 'Light', 'Little', 
+	'Lively', 'Lonely', 'Lucky', 'Macho', 'Massive', 'Mischievous', 'Modern', 'Muddy', 'Mute', 'Naive', 'Naughty', 'Needy', 'Noble', 'Noisy', 
+	'Odd', 'Old', 'Orange', 'Petite', 'Playful', 'Polished', 'Private', 'Proud', 'Purple', 'Puzzled', 'Questionable', 'Faithful', 'Quick', 'Quiet', 
+        'Rapid', 'Rare', 'Red', 'Restless', 'Roaring', 'Rough', 'Round', 'Royal', 'Sassy', 'Scary', 'Shiny', 'Shocking', 'Shrewd', 'Shy', 'Silent', 'Sleepy', 
+	'Slimy', 'Small', 'Smart', 'Snowy', 'Soaring', 'Sober', 'Soft', 'Solitary', 'Sparkling', 'Spooky', 'Spring', 'Square', 'Sticky', 'Studious', 'Super', 
+        'Sweet', 'Terrifying', 'Tight', 'Tiny', 'Tricky', 'Unique', 'Unusual', 'Valiant', 'Vain', 'Visionary', 'White', 'Wild', 'Yellow', 'Young'
     ]
 
 _nouns_male = [
-        'King', 'Prince', 'Bandit', 'Hulk', 'Thor', 'Leo', 'Deadpool', 'Trump',
-        'Moustache', 'Arrow', 'Caspian', 'Horse', 'Frog', 'Monkey', 'Lion',
-        'Tiger', 'Cheetah', 'Eagle', 'Wizard', 'Hawk', 'Jack', 'Hippo' , 'Stallion' , 'Bull' , 'Buck',
-        'Emperor','Ram', 'Captain', 'Batman', 'Robin', 'Deathstroke', 'Cyborg', 'Wolverine', 'Spiderman', 
-        'Flash', 'Panther', 'Daredevil', 'Ironman', 'Joker', 'Aquaman', 'Necromancer', 'Warlock', 'Magneto',
-        'Gambit', 'Cyclops', 'Ronin', 'Warden', 'Duke', 'Lord', 'Darth', 'Vader', 'Goku', 'Gohan', 'Broly',
-        'Ash', 'Antman', 'Doom', 'General', 'Snake', 'Devil', 'Sergeant', 'Detective', 'Demon', 'Birdman',
-        'Jarvis', 'Ultron', 'Stark', 'Lannister', 'Baratheon', 'Tully', 'Greyjoy', 'Tarth', 'Phasma',
-        'Sailor', 'Mufasa', 'Simba', 'Ninja', 'Swordsman', 'Don', 'Gangster', 'Superman', 'Doomsday',
-        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo' 
+	'Anakin', 'Antman', 'Aquaman', 'Arrow', 'Ash', 'Bandit', 'Baratheon', 'Batman', 'Birdman', 'Broly', 'Buck', 'Bull' 'Captain', 'Caspian', 'Cheetah', 
+	'Count', 'Cyborg', 'Cyclops', 'Daredevil', 'Darth', 'Deadpool', 'Deathstroke', 'Demon', 'Destroyer', 'Detective', 'Devil', 'Don', 'Doom', 'Doomsday', 
+	'Duke', 'Eagle', 'Emperor','Ram', 'Flash', 'Frog', 'Gambit', 'Gangster', 'General', 'Gohan', 'Goku', 'Greyjoy', 'Hawk', 'Hippo' 'Horse', 'House', 'Hulk', 
+	'Ironman', 'Jack', 'Jarvis', 'Joker', 'King', 'Klaus', 'Lannister', 'Leader', 'Leo', 'Lion', 'Lord', 'Lucifer', 'Luke', 'Magneto', 'McFly', 'Monkey', 'Moustache', 
+	'Mufasa', 'Necromancer', 'Nemo' 'Ninja', 'Panther', 'Patriarch', 'Phasma', 'Prince', 'Robin', 'Ronin', 'Sailor', 'Sergeant', 'Serpent', 'Sherlock', 'Simba', 
+	'Snake', 'Spiderman', 'Stallion' 'Stark', 'Superman', 'Swordsman', 'Tarth', 'Thor', 'Tiger', 'Tully', 'Ultron', 'Vader', 'Warden', 'Warlock', 'Watson', 
+	'Wizard', 'Wolverine'
     ]
 
 _nouns_female = [
-        'Alexa','Lili', 'Princess', 'Rihanna', 'Swift', 'Queen', 'LaserGirl', 'Mermaid',
-        'Butterfly', 'Batgirl', 'Madonna', 'Foxie', 'Lioness', 'Monroe', 'Eve', 'Xiry',
-        'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose', 'Zebra', 'Seahorse', 'Squirrel' , 'Doe', 'Empress',
-        'Vixen', 'Widow', 'Supergirl', 'Storm', 'Catwoman', 'WonderWoman', 'Hawkgirl', 'Amazon', 'Mystique', 'Raven',
-        'Banshee', 'Enchantress', 'Ivy', 'Minx', 'Nova', 'Duchess', 'Bachelorette', 'Cat', 'Flower', 'Daisy',
-        'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress', 
-        'Angel', 'Goddess', 'Mystery', 'Maiden', 'Dame', 'Damsel', 'Beauty', 'Artist', 'Chick', 'Snake',
-        'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness',
-        'Ariana', 'Emma', 'Harley'
+	'Alexa', 'Lili', 'Amazon', 'Angel', 'Ariana', 'Artist', 'Babe', 'Bachelorette', 'Banshee', 'Batgirl', 'Beauty', 'Bride', 'Butterfly', 'Cat', 'Catwoman', 'Chick', 
+	'Connoisseur', 'Countess', 'Daisy', 'Dame', 'Damsel', 'Doe', 'Doll', 'Dora', 'Dove', 'Duchess', 'Dynamo', 'Emma', 'Empress', 'Enchantress', 'Eve', 'Flower', 
+	'Foxie', 'Gal', 'Goddess', 'Harley' 'Hawkgirl', 'Heroine', 'Highness', 'Huntress', 'Ivy', 'Lady', 'LaserGirl', 'Lioness', 'Madonna', 'Maiden', 'Mermaid', 'Minx', 
+	'Mist', 'Mistress', 'Misty', 'Monroe', 'Moon', 'Mystery', 'Mystique', 'Nova', 'Princess', 'Queen', 'Raven', 'Rihanna', 'Rose', 'Seahorse', 'Snail', 'Snake', 
+	'Spinster', 'Squirrel' 'Storm', 'Sunflower', 'Supergirl', 'Superwoman', 'Swift', 'Tomboy', 'Unicorn', 'Vixen', 'Widow', 'Witch', 'WonderWoman', 'Xiry', 'Zebra'
     ]
 
 _suffixes = [
@@ -47,10 +34,10 @@ _suffixes = [
         'OfEgypt', 'OfLalaland', 'OfMidgard', 'OfNowhere', 'OfOz', 'OfSparta',
         'OfTheDesert', 'OfTheForest', 'OfTheFuture', 'OfTheIsland',
         'OfTheJungle', 'OfTheLand', 'OfTheSea','OfTheWorld', 'TheAgeless',
-        'TheBabyface', 'TheBarbarian', 'TheBetrayer', 'TheBrave',
-        'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheLionheart',
-        'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
-        'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWeakest', 'TheWise',
+        'TheAwesome', 'TheBabyface', 'TheBarbarian', 'TheBetrayer', 'TheBrave',
+        'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheIncredible', 'TheLegendary', 
+		'TheLionheart', 'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
+        'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWise',
         'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight'
 ]
 
