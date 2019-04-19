@@ -30,11 +30,11 @@ BlindChat is currently hosted on Heroku and also uses their offered database. So
 
 3. Create an app on Heroku. Open up terminal/cmd and run `heroku create yourappname`. You'll find the app url as `https://yourappname.herokuapp.com/`. Put it on **config.py**. Do note that you'll first have to install the *heroku CLI toolbelt* if you don't have it.
 
-4. Next run `pip install -r requirements.txt`. This will install the libraries onto your local environment.
+4. Next, run `pip install -r requirements.txt`. This will install the libraries onto your local environment.
 
-5. Next run `heroku addons:add heroku-postgresql:hobby-dev`. [This](https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-windows) is the official guide from Heroku on setting up a postgres db there. You'll find it pretty helpful.
+5. Next, run `heroku addons:add heroku-postgresql:hobby-dev`. [This](https://devcenter.heroku.com/articles/heroku-postgresql#set-up-postgres-on-windows) is the official guide from Heroku on setting up a postgres db there. You'll find it pretty helpful.
 
-6. Next run these:
+6. Next, run these:
 
    ```
    heroku run python
