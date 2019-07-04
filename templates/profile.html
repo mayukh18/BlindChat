@@ -13,7 +13,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body style="font-size:3em;background-color:#050268;">
+<body style="font-size:2em;background-color:#050268;">
 
 	<div id="fb-root"></div>
 
@@ -63,18 +63,22 @@
 							</label>
 							<p>{{ level }}</p>
 						</div>
+						<br>
 						<div class="form-group">
 							<label for="bio" style="color:#0A0908;">Bio:</label>
-							<input type="text" name="bio" class="form-control" value="{{ bio }}" style="height:100px;font-size:30pt" placeholder="Write your bio here (max 80 letters)"/>
+							<input type="text" name="bio" class="form-control" value="{{ bio }}" style="height:50px;font-size:15pt;" placeholder="Write your bio here (max 80 letters)"/>
 						</div>
+						<br>
 						<div class="form-group">
 							<label for="interests" style="color:#0A0908;">Intrests:</label>
-							<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
+							<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:50px;font-size:15pt" placeholder="Enter upto 3 interests separated by commas"/>
 						</div>
 						<input type="hidden" id="idd" name="psid" value="{{ id }}" />
+						<br>
 						<div class="text-center">
-							<h3>Click Save below to save your profile</h3>
-							<input type="submit" value="Submit" class="btn btn-default btn-primary" style="height:90px;width:500px;font-size:40pt;">
+							<h5>Click Save below to save your profile</h5>
+
+							<input type="submit" value="Submit" class="btn btn-default btn-primary" style="height:40px;width:300px;font-size:10pt;">
 						</div>
 					</form>
 				</div>
