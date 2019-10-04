@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -56,25 +56,51 @@
 				<div class="col-lg-12">
 					<form id="xxx" method="post">
 						<div class="form-group">
-							<h1 class="text-center" style="margin:5%;color: #0A0908;">Welcome to your profile</h1>
-							<hr style="width: 100%; color:#0A0908; height: 1px; background-color:#0A0908;" />
-							<label style="color:#0A0908;">
+							<h1 class="text-center" 
+                                style="margin:5%;
+                                color: #0A0908;">Welcome to Your Profile!
+                            </h1>
+							<h2
+							 	class="text-center"
+								style="margin:2%;">Please Insert some of your info below.
+							</h2>
+							<hr style="width: 100%; 
+                                color:#0A0908; 
+                                height: 1px; 
+                                background-color:#0A0908;" />
+							<label style="color:#0A0908;font-size:35px;margin-bottom: -15%;">
 								Level:
 							</label>
-							<p>{{ level }}</p>
+							<p style="margin-left:10%;font-size:20px;">
+
+								{{ level }}
+							</p>
 						</div>
 						<div class="form-group">
-							<label for="bio" style="color:#0A0908;">Bio:</label>
-							<input type="text" name="bio" class="form-control" value="{{ bio }}" style="height:100px;font-size:30pt" placeholder="Write your bio here (max 80 letters)"/>
+							<label for="bio" style="color:#0A0908;font-size:40px;margin-bottom:-15%;float:left;">
+								Bio:
+							</label>
+							<input type="text" name="bio" 
+                                   class="form-control" value="{{ bio }}" 
+                                   style="height:100px;font-size:30pt;width:90%;margin-left:10%;" 
+                                   placeholder="Write your bio here (max 80 letters)"/>
 						</div>
 						<div class="form-group">
-							<label for="interests" style="color:#0A0908;">Intrests:</label>
-							<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
+							<label for="interests" style="color:#0A0908;margin-bottom:-15%;float:left;">
+								Intrests:
+							</label>
+							<input type="text" name="interests" 
+                                   class="form-control" value="{{ interests }}" 
+                                   style="height:100px;font-size:30pt;width:90%;margin-left:10%;" 
+                                   placeholder="Enter upto 3 interests separated by commas"/>
 						</div>
 						<input type="hidden" id="idd" name="psid" value="{{ id }}" />
 						<div class="text-center">
 							<h3>Click Save below to save your profile</h3>
-							<input type="submit" value="Submit" class="btn btn-default btn-primary" style="height:90px;width:500px;font-size:40pt;">
+							<input type="submit" 
+                                   value="Submit" 
+                                   class="btn btn-default btn-primary" 
+                                   style="height:50px;width:200px;font-size:20pt;margin-bottom:2%;">
 						</div>
 					</form>
 				</div>
