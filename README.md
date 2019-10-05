@@ -1,6 +1,6 @@
 # BlindChat
 
-A [Facebook](https://www.facebook.com) messenger bot that allows users to chat with other people on Facebook anonymously. It's more like [Omegle](http://www.omegle.com/) for messenger, with some differences and improvements.
+A Facebook messenger bot that allows users to chat with other people on Facebook anonymously. It's more like [Omegle](http://www.omegle.com/) for messenger, with some differences and improvements.
 
 
 
@@ -55,14 +55,14 @@ BlindChat is currently hosted on [Heroku](https://www.heroku.com/) and uses thei
    ```
 - The URL returned from running the above commands is your *SQLALCHEMY_DATABASE_URI*.
 
-7. Next, to set up and migrate the models into your database, run
+7. Open the **config.py** file and replace `'YOUR_FACEBOOK_APP_ACCESS_TOKEN'` and `'FACEBOOK_APP_VERIFY_TOKEN'` with the respective tokens from Step 2, replace `'APP_URL'` with your Heroku app URL `https://yourappname.herokuapp.com/` and finally, replace `'YOUR_DATABASE_URI'` with your database URI from step 6..
+
+8. Next, to set up and migrate the models into your database, run
    ```
    python manage.py db init
    python manage.py db migrate
    python manage.py db upgrade
    ```
-
-8. Open the **config.py** file and replace `'YOUR_FACEBOOK_APP_ACCESS_TOKEN'` and `'FACEBOOK_APP_VERIFY_TOKEN'` with the respective tokens from Step 2, replace `'APP_URL'` with your Heroku app URL `https://yourappname.herokuapp.com/` and finally, replace `'YOUR_DATABASE_URI'` with your database URI from step 6..
 
 9. Lastly, deploy to Heroku with the following command, and Voila!
    ```
