@@ -61,16 +61,19 @@ def generate_alias(gender):
     noun = ""
     prefix = ""
     suffix = ""
+
     if gender == "male":
         noun = random.choice(_nouns_male)
     else:
         noun = random.choice(_nouns_female)
+        
     if _toss_a_coin():
         prefix = random.choice(_prefixes)
     else:
         suffix = random.choice(_suffixes)
-    return '{0}{1}{2}'.format(prefix, noun, suffix)
+ 
+    return prefix + noun + suffix
 
 
 def _toss_a_coin():
-    return random.randint(0, 1) == 0
+    return random.randint(0, 1)
