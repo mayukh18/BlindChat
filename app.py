@@ -34,8 +34,29 @@ Int = Interrupts()
 game = Game(db=db)
 
 # --------------------------------------------------------------- #
-@app.route('/webview/', methods=['POST'])
+
+
+@app.route('/webview/', methods=['GET', 'POST'])
 def getProfile():
+    if request.method == 'GET':
+        id = request.args.get('id')
+        print("PROFILE ID", id)
+        user = usersdb.get(id)
+        bio = user.bio
+        interests = user.interests
+        level = user.level
+        level_str = u'\u2B50'
+
+        for i in range(level):
+            level_str = level_str + u'\u2B50'
+
+        if bio is None:
+            bio = ""
+        if interests is None:
+            interests = ""
+        return render_template('profile.html', id=id, bio=bio, interests=interests, level=level_str)
+
+    # On POST calls
     try:
         print("FORM SUBMITTED", dict(request.form))
         bio = request.form['bio']
@@ -50,24 +71,6 @@ def getProfile():
         return render_template('result.html')
     except Exception, e:
         print("FORM ERROR", str(e))
-
-@app.route('/webview/', methods=['GET'])
-def render():
-    id = request.args.get('id')
-    print("PROFILE ID", id)
-    user = usersdb.get(id)
-    bio = user.bio
-    interests = user.interests
-    level = user.level
-    level_str = u'\u2B50'
-    for i in range(level):
-        level_str = level_str + u'\u2B50'
-
-    if bio is None:
-        bio = ""
-    if interests is None:
-        interests = ""
-    return render_template('profile.html', id=id, bio=bio, interests=interests, level=level_str)
 
 
 @app.route('/webhook/', methods=['GET', 'POST'])
