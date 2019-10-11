@@ -1,3 +1,11 @@
 .container-fluid{
-	background: #f5d9d5;
+	/* background: #f5d9d5; */
 }
+
+.unselectable {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+ }
