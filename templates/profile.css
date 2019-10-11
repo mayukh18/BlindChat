@@ -9,3 +9,13 @@
 	-ms-user-select: none;
 	user-select: none;
  }
+
+ .placeholder-text {
+	height:100px;
+	font-size:24pt;
+ }
+
+ .submit-button {
+	height:70px;
+	font-size:30pt;
+ }
