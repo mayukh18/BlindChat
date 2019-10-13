@@ -88,3 +88,5 @@ BlindChat is currently hosted on [Heroku](https://www.heroku.com/) and uses thei
 All contributions are welcome. Please discuss your ideas on the community first to avoid clash of others working on the same thing. A few issues are marked as "beginner friendly" which are suitable for beginners to try out.
 
 Ask in Issues if you are not sure on something. Cheers!
+
+![Cheers!](https://github.githubassets.com/images/icons/emoji/unicode/1f37b.png "Cheers!")
