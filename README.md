@@ -1,16 +1,16 @@
 # BlindChat
 
-A Facebook messenger bot that allows users to chat with other people on Facebook anonymously. It's more like [Omegle](http://www.omegle.com/) for messenger, with some differences and improvements.
+**BlindChat** is a Facebook messenger bot that allows users to chat with other people on Facebook anonymously. It's more like [Omegle](http://www.omegle.com/) for messenger, with some differences and improvements.
 
 
-
+**Where can I test it out?**  
 You can find it live [***here***](https://m.me/blindchat.go).
 
 
 
 
 
-### A bit of a background
+## A bit of a background
 
 I started out building BlindChat just to try out the messenger platform of Facebook and to try to build something usable out of it while learning in the process. It is more of an app rather than an AI chatbot. The outcome got a bit of traction and hence I improved certain parts of it, however, most of the code may be in an unorganized condition since those are built for quick prototyping.
 
@@ -18,7 +18,7 @@ I started out building BlindChat just to try out the messenger platform of Faceb
 
 
 
-### Local development / Setup your version of the app
+## Local development / Setup your version of the app
 
 BlindChat is currently hosted on [Heroku](https://www.heroku.com/) and uses their offered database. Thus, the code and setup are written for it. If you don't want to use Heroku, you'll have to modify the code in a few places but if you are okay with Heroku, then you are just fine. It helps to have a bit of knowledge setting up a messenger bot.
 
@@ -75,7 +75,7 @@ BlindChat is currently hosted on [Heroku](https://www.heroku.com/) and uses thei
 
 
 
-### Directory structure
+## Directory structure
 
 - DB_Wrappers: Contains the wrapper classes for the models in the database.
 - modules: Contains all the functionalities from starting a chat session to sending a message.
@@ -83,7 +83,7 @@ BlindChat is currently hosted on [Heroku](https://www.heroku.com/) and uses thei
 
 
 
-### Contributing
+## Contributing
 
 All contributions are welcome. Please discuss your ideas on the community first to avoid clash of others working on the same thing. A few issues are marked as "beginner friendly" which are suitable for beginners to try out.
 
