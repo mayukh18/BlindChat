@@ -26,7 +26,7 @@ class WaitingListDB():
         self.db.session.add(user)
         self.db.session.commit()
 
-    def isWaiting(self, id):
+    def is_waiting(self, id):
         user = WaitingListUser.query.get(id)
         if user is None:
             return False
