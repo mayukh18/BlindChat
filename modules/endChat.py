@@ -11,7 +11,7 @@ ADMIN_ID = os.environ.get('ADMIN_ID', config.ADMIN_ID)
 ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
 APP_URL = os.environ.get('APP_URL', config.APP_URL)
 
-def endChat(sender):
+def end_chat(sender):
 
     try:
         partner = activechatsdb.get_partner(sender)
@@ -98,12 +98,12 @@ def share_profile(sender, payload):
             'fields': 'first_name,last_name,profile_pic',
             'access_token': os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
         })
-        userData = r.json()
+        user_data = r.json()
 
         message = TextTemplate(text=alias + " has shared his/her profile with you")
         send_message(message=message.get_message(), id=partner, pause_check=True)
         message = GenericTemplate()
-        message.add_element(title=userData["first_name"] + " " + userData["last_name"],image_url=userData["profile_pic"],
+        message.add_element(title=user_data["first_name"] + " " + user_data["last_name"],image_url=user_data["profile_pic"],
                             subtitle="Search on Facebook by the name and recognise by the profile picture")
         send_message(message=message.get_message(), id=partner, pause_check=True)
 
