@@ -16,10 +16,6 @@ def send_campaign():
                                 "We'll guide you, but make it within the 36 hours because after that, the feature will be out.")
     print("IN CAMPAIGN")
     message = TextTemplate(text="FUCKING TEST")
-    #users = User.query.all()
-    #for user in users:
-    #    id = user.id
-    #send_message(message, id=id)
     users = ["1708022462556195", "1145959985508112"]
     for user in users:
         send_message(message, id=user)
