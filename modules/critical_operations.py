@@ -19,7 +19,7 @@ def restart_bot(id):
         send_newchat_prompt(id=partner)
 
 
-    if waitlistdb.isWaiting(id):
+    if waitlistdb.is_waiting(id):
         waitlistdb.delist(id)
         message = TextTemplate(text="You have been removed from the waitlist")
         send_message(message=message.get_message(), id=id)
@@ -35,7 +35,7 @@ def execute_exit(id):
     if activechatsdb.isActive(id):
         endChat(id)
 
-    elif waitlistdb.isWaiting(id):
+    elif waitlistdb.is_waiting(id):
         waitlistdb.delist(id)
         message = TextTemplate(text="You have been removed from the waitlist")
         send_message(message=message.get_message(), id=id)
