@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="profile.css">
 
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- jQuery library -->vel }}
+	<script src="https://ajvel }}n.js"></script>
 
-	<!-- Latest compiled JavaScript -->
+	<!-- Latest compiled Javel }}
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body style="font-size:3em;background-color:#050268;">
+<body style="font-size:3em;background-color:#3343a0;">
 
 	<div id="fb-root"></div>
 
@@ -57,22 +57,24 @@
 				<div class="col-lg-12">
 					<form id="xxx" method="post">
 						<div class="form-group">
-							<h1 class="text-center" style="margin:5%;color: #0A0908;">Welcome to your profile</h1>
+							<h1 class="text-center" style="margin:5%;color: #0A0908;"><marquee><b>| Welcome to your Profile |</b></marquee></h1>
 							<hr style="width: 100%; color:#0A0908; height: 1px; background-color:#0A0908;" />
-							<label style="color:#0A0908;">
-								Level:
+							<label style="color:rgb(63, 58, 53); font-size: 35pt;">
+								Level : 
 							</label>
-							<p>{{ level }}</p>
+							<input type="text" name="level" class="form-control" value=" "  placeholder="Write your level here " style="height: 50px;font-size:30pt" />
+							
 						</div>
 						<div class="form-group">
-							<label for="bio" style="color:#0A0908;">Bio:</label>
-							<input type="text" name="bio" class="form-control" value="{{ bio }}"  placeholder="Write your bio here (max 80 letters)" style="height:100px;font-size:30pt" />
+							<label for="bio" style="color:rgb(63, 58, 53); font-size: 35pt;">Bio :</label>
+							<input type="text" name="bio" class="form-control" value=" "  placeholder="Write your bio here (max 80 letters)" style="height: 50px;font-size:30pt" />
 						</div>
 						<div class="form-group">
-							<label for="interests" style="color:#0A0908;">Interests:</label>
-							<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
+							<label for="interests" style="color:rgb(63, 58, 53); font-size: 35pt;">Interests :</label>
+							<input type="text" name="interests" class="form-control" value=" " style="height: 50px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
 						</div>
-						<input type="hidden" id="idd" name="psid" value="{{ id }}" />
+						<label for="Id" style="color:rgb(63, 58, 53); font-size: 35pt;">ID :</label><br>
+						<input type="text" id="idd" name="psid" value=" "  style="height: 50px; font-size:30pt" placeholder="Write ID"/>
 						<div class="text-center">
 							<h3>Click Save below to save your profile</h3>
 							<input type="submit" value="Submit" class="btn btn-default btn-primary" style="height:90px;font-size:40pt;">
