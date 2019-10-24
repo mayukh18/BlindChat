@@ -1,3 +1,27 @@
+body{
+	background: rgb(66,66,66) !important;
+
+}
+
+h1{
+	color: rgb(189,189,189);
+}
+
 .container-fluid{
-	background: #f5d9d5;
+	background: rgb(66,66,66);
+
+}
+
+.jumbotron{
+	border-radius: 25px !important;
+	background: rgb(97,97,97);
+}
+.row{
+	border-radius: 25px;
+}
+
+input[type = "submit"]{
+	background: rgb(255,111,0);
+	border-radius: 60px;
+	box-shadow: 
 }
