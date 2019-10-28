@@ -63,10 +63,10 @@ def render():
     for i in range(level):
         level_str = level_str + u'\u2B50'
 
-    if bio is None:
-        bio = ""
-    if interests is None:
-        interests = ""
+   
+    bio = "" if bio is None else ""
+    interests = "" if  interests is None else ""
+    
     return render_template('profile.html', id=id, bio=bio, interests=interests, level=level_str)
 
 
@@ -110,9 +110,9 @@ def webhook():
                 db.session.rollback()
                 return ''
 
-            if game.isGame(event) == True:
+            if game.isGame(event):
                 x = game.gamify(event['message']['text'], id=sender)
-                if x == True:
+                if x:
                     continue
 
             if activechatsdb.isActive(sender):
