@@ -1,3 +1,20 @@
 .container-fluid{
-	background: #f5d9d5;
+	background: #004385;
+}
+
+div.form-group {
+	font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+div.form-group input.form-control {
+	padding: 20px 20px; 
+}
+
+input.btn.btn-default.btn-primary{
+	height: 30px;
+}
+
+input.btn.btn-default.btn-primary:hover {
+	background: #14cc60;
+	color: black;
 }
