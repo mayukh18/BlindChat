@@ -1,3 +1,73 @@
-.container-fluid{
-	background: #f5d9d5;
+body{
+	font-size: 1.3rem;
+	color: #9d9d9d;
+	font-family: helvetica;
+	background-color: #673ab7;
+}
+
+.container{
+	min-width: 554px;
+	max-width: 80%;
+	min-height: 100vh;
+	padding: 3rem;
+	background-color: white;
+}
+
+.btn, .btn-primary, .btn-default{
+	background-color: #673ab7 !important;
+}
+
+.btn:hover, .btn-primary:hover, .btn-default:hover{
+	background-color: white !important;
+	border: solid 2px #673ab7;
+	color: #673ab7;
+}
+
+.form-control:focus, .btn:focus{
+	  border-color: #673ab7;
+  box-shadow: inset 0 1px 1px #673ab7, 0 0 8px #673ab7;
+}
+
+h1{
+	margin: auto;
+	text-align: center; 
+	padding: 2rem;
+	color: #673ab7;
+}
+
+h3{
+	padding: 0 !important;
+}
+
+p{
+	padding: 0px;
+}
+
+.dark-grey{
+	color: #7e7d80;
+}
+
+.level, .form-group{
+	margin: 2rem 0;
+}
+
+@media (max-width: @screen-md) {
+    body{
+    	font-size: 10em;
+    }
+
+    .container{
+    	max-height: 100vh;
+    }
+
+    textarea{
+    	height: 10em;
+    }
+}
+
+@media (max-width: @screen-sm) {
+    body{font-size: 7em;}
+    textarea{
+    	height: 10em;
+    }
 }
