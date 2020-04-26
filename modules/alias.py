@@ -14,7 +14,9 @@ _prefixes = [
         'Crazy', 'Shrewd', 'Basic', 'Gutsy', 'Cute', 'Drunk', 'Sober', 'Depressed', 'Slimy', 'Gross',
         'Needy', 'Dark', 'Light', 'Roaring', 'Soaring', 'Noble', 'Vain', 'Terrifying', 'Scary',
         'Studious', 'Huge', 'Enormous', 'Big', 'Giant', 'Great', 'Playful', 'Classy', 'Cold',
-        'Early', 'Deep', 'Awesome', 'Enhanced'
+        'Early', 'Deep', 'Awesome', 'Enhanced', 'Vengeful', 'Blazing', 'Sophisticated', 'Braveheart',
+        'Valiant', 'Real', 'Dreaming', 'Elegant', 'Clumsy', 'Wandering', 'Whimsical', 'Diabolical', 
+        'Gigantic', 'Master', 'Deceitful', 'Bersker', 'Raging', 'Wasted'
     ]
 
 _nouns_male = [
@@ -27,7 +29,9 @@ _nouns_male = [
         'Ash', 'Antman', 'Doom', 'General', 'Snake', 'Devil', 'Sergeant', 'Detective', 'Demon', 'Birdman',
         'Jarvis', 'Ultron', 'Stark', 'Lannister', 'Baratheon', 'Tully', 'Greyjoy', 'Tarth', 'Phasma',
         'Sailor', 'Mufasa', 'Simba', 'Ninja', 'Swordsman', 'Don', 'Gangster', 'Superman', 'Doomsday',
-        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo' 
+        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo', 'Luffy',
+        'Samurai', 'Nightwing', 'Dante', 'Vergil', 'Sparda', 'Spartacus', 'Aries', 'Mundus', 'Link', 'Zoro'
+        'Knight', 'Akira', 'Dracula'    
     ]
 
 _nouns_female = [
@@ -43,15 +47,16 @@ _nouns_female = [
     ]
 
 _suffixes = [
-        'OfAdua', 'OfAtlantis', 'OfCimmeria', 'OfDarkWood', 'OfDune',
-        'OfEgypt', 'OfLalaland', 'OfMidgard', 'OfNowhere', 'OfOz', 'OfSparta',
-        'OfTheDesert', 'OfTheForest', 'OfTheFuture', 'OfTheIsland',
-        'OfTheJungle', 'OfTheLand', 'OfTheSea','OfTheWorld', 'TheAgeless',
-        'TheBabyface', 'TheBarbarian', 'TheBetrayer', 'TheBrave',
-        'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheLionheart',
-        'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
-        'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWeakest', 'TheWise',
-        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight'
+        'Of Adua', 'Of Atlantis', 'OfCimmeria', 'Of DarkWood', 'Of Dune',
+        'Of Egypt', 'Of Lalaland', 'Of Midgard', 'Of Nowhere', 'Of Oz', 'Of Sparta',
+        'Of The Desert', 'Of The Forest', 'Of The Future', 'Of The Island',
+        'Of The Jungle', 'Of The Land', 'Of The Sea','Of The World', 'The Ageless',
+        'The Baby face', 'The Barbarian', 'The Betrayer', 'The Brave',
+        'The Destroyer', 'The Ghost', 'The Great', 'The Hammer', 'The Lionheart',
+        'The Old', 'The Quiet', 'The Second', 'The Shadow', 'The Tall',
+        'The Templar', 'The Traveler', 'The Wanderer', 'The Weakest', 'The Wise',
+        'Under The Pass', 'of The Bay', 'of The Day', 'of The Night', 'The Gallant', 'Of The North',
+        'Of The South', 'Of The West', 'Of The East'
 ]
 
 import random
@@ -62,15 +67,25 @@ def generate_alias(gender):
     prefix = ""
     suffix = ""
     if gender == "male":
-        noun = random.choice(_nouns_male)
+        # Shuffling the list:
+        shuffleList(_nouns_male)
+        noun = random.choice(_nouns_male) 
     else:
+        shuffleList(_nouns_female)
         noun = random.choice(_nouns_female)
     if _toss_a_coin():
-        prefix = random.choice(_prefixes)
+        shuffleList(_prefixes)
+        prefix = random.choice(_prefixes) + " "
     else:
-        suffix = random.choice(_suffixes)
+        shuffleList(_suffixes)
+        suffix = " " + random.choice(_suffixes)
     return '{0}{1}{2}'.format(prefix, noun, suffix)
 
 
 def _toss_a_coin():
     return random.randint(0, 1) == 0
+
+def shuffleList(array):
+    random.shuffle(array)
+
+print(generate_alias("male"))
