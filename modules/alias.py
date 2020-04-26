@@ -87,5 +87,3 @@ def _toss_a_coin():
 
 def shuffleList(array):
     random.shuffle(array)
-
-print(generate_alias("male"))
