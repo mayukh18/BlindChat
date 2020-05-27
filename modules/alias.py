@@ -1,5 +1,5 @@
 _prefixes = [
-        'Aged', 'Ancient', 'Bubbly', 'Bitter', 'Black', 'Blue', 'Bold', 'Brave',
+        'Aged', 'Ancient', 'Beginner', 'Bubbly', 'Bitter', 'Black', 'Blue', 'Bold', 'Brave',
         'Broad', 'Broken', 'Calm', 'Cold','Colossal', 'Cool', 'Crimson', 'Curly', 'Damp',
         'Dark', 'Daring', 'Delicate', 'Falling', 'Fancy', 'Super', 'Jiggly',
         'Flat', 'Fragrant', 'Frosty', 'Gentle', 'Green', 'Legendary',
@@ -18,7 +18,7 @@ _prefixes = [
     ]
 
 _nouns_male = [
-        'King', 'Prince', 'Bandit', 'Hulk', 'Thor', 'Leo', 'Deadpool', 'Trump',
+        'Contributor', 'King', 'Prince', 'Bandit', 'Hulk', 'Thor', 'Leo', 'Deadpool', 'Trump',
         'Moustache', 'Arrow', 'Caspian', 'Horse', 'Frog', 'Monkey', 'Lion',
         'Tiger', 'Cheetah', 'Eagle', 'Wizard', 'Hawk', 'Jack', 'Hippo' , 'Stallion' , 'Bull' , 'Buck',
         'Emperor','Ram', 'Captain', 'Batman', 'Robin', 'Deathstroke', 'Cyborg', 'Wolverine', 'Spiderman', 
@@ -31,7 +31,7 @@ _nouns_male = [
     ]
 
 _nouns_female = [
-        'Alexa','Lili', 'Princess', 'Rihanna', 'Swift', 'Queen', 'LaserGirl', 'Mermaid',
+        'Contributor', 'Alexa','Lili', 'Princess', 'Rihanna', 'Swift', 'Queen', 'LaserGirl', 'Mermaid',
         'Butterfly', 'Batgirl', 'Madonna', 'Foxie', 'Lioness', 'Monroe', 'Eve', 'Xiry',
         'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose', 'Zebra', 'Seahorse', 'Squirrel' , 'Doe', 'Empress',
         'Vixen', 'Widow', 'Supergirl', 'Storm', 'Catwoman', 'WonderWoman', 'Hawkgirl', 'Amazon', 'Mystique', 'Raven',
@@ -51,7 +51,7 @@ _suffixes = [
         'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheLionheart',
         'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
         'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWeakest', 'TheWise',
-        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight'
+        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight', 'OfGit'
 ]
 
 import random
