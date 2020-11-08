@@ -80,7 +80,7 @@ def endChat(sender):
 
     try:
         activechatsdb.delete_chat_entries(user=sender)
-    except Exception, e:
+    except Exception as e:
         print("ENDCHAT ERROR", str(e))
 
 
