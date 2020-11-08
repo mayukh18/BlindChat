@@ -11,5 +11,5 @@ def handle_image(sender, url):
         message = AttachmentTemplate(url=url, type='image')
         send_message(message.get_message(), id=partner)
         #dummy1
-    except Exception, e:
+    except Exception as e:
         print("IMAGE ERROR", str(e))

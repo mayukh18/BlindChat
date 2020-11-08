@@ -58,5 +58,5 @@ class Game:
                     return True
                 else:
                     return False
-        except Exception, e:
+        except Exception as e:
             print("GAME ERROR", str(e))

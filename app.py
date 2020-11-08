@@ -48,7 +48,7 @@ def getProfile():
         user.liked = True
         db.session.commit()
         return render_template('result.html')
-    except Exception, e:
+    except Exception as e:
         print("FORM ERROR", str(e))
 
 @app.route('/webview/', methods=['GET'])
@@ -86,7 +86,7 @@ def webhook():
             try:
                 if sender != PAGE_ID and usersdb.hasDataOf(sender) is False:
                     usersdb.add(sender)
-            except Exception, e:
+            except Exception as e:
                 print("ERROR", str(e))
 
 
@@ -105,7 +105,7 @@ def webhook():
                         continue
                 else:
                     print("NOT POSTBACK OR INTERRUPT")
-            except Exception, e:
+            except Exception as e:
                 print("POSTBACK/INTERRUPT ERROR", str(e))
                 db.session.rollback()
                 return ''
@@ -143,7 +143,7 @@ def webhook():
                             message = TextTemplate(text="Debug command executed")
                             send_message(message.get_message(), id=recipient)
                             continue
-                    except Exception, e:
+                    except Exception as e:
                         print("DEBUG ERROR", str(e))
 
                     if 'quick_reply' in event['message'] and 'payload' in event['message']['quick_reply']:

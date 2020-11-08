@@ -10,7 +10,7 @@ def handle_quick_reply(sender, payload):
         usersdb.setPauseStatus(id=sender, status=False)
         print("1")
         send_paused_messages(id=sender)
-    except Exception, e:
+    except Exception as e:
         print("QUICK_REPLY_ERROR", str(e))
 
     payload = json.loads(payload)
