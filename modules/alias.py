@@ -51,7 +51,7 @@ _NAMES_MALE = [
 ]
 
 _NAMES_FEMALE = [
-    'Lili', 'Lilith', 'Rihanna', 'Alexa',
+    'Lili', 'Lilith', 'Rihanna', 'Alexa', 'Cortana'
     'Mermaid', 'Madona', 'Lioness',
     'Eve', 'Rose', 'Princess', 'Queen',
     'huntress', 'vixen', 'Ivy', 'Minx',
@@ -59,7 +59,7 @@ _NAMES_FEMALE = [
     'gal', 'goddess', 'emma', 'dora',
     'ariana', 'mistress', 'highness',
     'babe', 'tomboy', 'bride', 'doll',
-    'emperess'
+    'empress'
 ]
 
 _NAMES_UNISEX = [
@@ -75,7 +75,7 @@ _NAMES_UNISEX = [
     'Ant', 'Vader', 'Stark', 'Lannister',
     'Baratheon', 'Greyjoy', 'Sailor',
     'General', 'Captain', 'Corporal',
-    'Cyclops', 'Trump', 'Tully',
+    'Cyclops', 'Tully',
     'Phasma', 'Bird', 'Birb', 'ninja',
     'Sargeant', 'Detective', 'snake',
     'serpent', 'sherlock', 'watson',
@@ -87,8 +87,7 @@ _NAMES_UNISEX = [
     'sunflower', 'mist', 'snail',
     'zebra', 'unicorn', 'seahorse',
     'squirrel', 'storm', 'banshee',
-    'flower', 'angel', 'beauty',
-    'Connoisseur', 'artist'
+    'flower', 'angel', 'beauty', 'artist'
 ]
 
 _suffixes = [
@@ -126,8 +125,8 @@ def random_color():
 def random_suffix():
     return random.choice(_suffixes)
 
-format = lambda *array: "".join(
-    map(lambda word: word[0].upper() + word[1:], array))
+
+format = lambda *array: "".join(map(lambda word: word[0].upper() + word[1:], array))
 
 
 def generate_alias(gender, size=30):
