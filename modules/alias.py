@@ -1,4 +1,4 @@
-_prefixes = [
+prefixes = [
         'Aged', 'Ancient', 'Bubbly', 'Bitter', 'Black', 'Blue', 'Bold', 'Brave',
         'Broad', 'Broken', 'Calm', 'Cold','Colossal', 'Cool', 'Crimson', 'Curly', 'Damp',
         'Dark', 'Daring', 'Delicate', 'Falling', 'Fancy', 'Super', 'Jiggly',
@@ -17,7 +17,7 @@ _prefixes = [
         'Early', 'Deep', 'Awesome', 'Enhanced'
     ]
 
-_nouns_male = [
+nouns_male = [
         'King', 'Prince', 'Bandit', 'Hulk', 'Thor', 'Leo', 'Deadpool', 'Trump',
         'Moustache', 'Arrow', 'Caspian', 'Horse', 'Frog', 'Monkey', 'Lion',
         'Tiger', 'Cheetah', 'Eagle', 'Wizard', 'Hawk', 'Jack', 'Hippo' , 'Stallion' , 'Bull' , 'Buck',
@@ -30,7 +30,7 @@ _nouns_male = [
         'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo' 
     ]
 
-_nouns_female = [
+nouns_female = [
         'Alexa','Lili', 'Princess', 'Rihanna', 'Swift', 'Queen', 'LaserGirl', 'Mermaid',
         'Butterfly', 'Batgirl', 'Madonna', 'Foxie', 'Lioness', 'Monroe', 'Eve', 'Xiry',
         'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose', 'Zebra', 'Seahorse', 'Squirrel' , 'Doe', 'Empress',
@@ -42,7 +42,7 @@ _nouns_female = [
         'Ariana', 'Emma', 'Harley'
     ]
 
-_suffixes = [
+suffixes = [
         'OfAdua', 'OfAtlantis', 'OfCimmeria', 'OfDarkWood', 'OfDune',
         'OfEgypt', 'OfLalaland', 'OfMidgard', 'OfNowhere', 'OfOz', 'OfSparta',
         'OfTheDesert', 'OfTheForest', 'OfTheFuture', 'OfTheIsland',
@@ -62,15 +62,15 @@ def generate_alias(gender):
     prefix = ""
     suffix = ""
     if gender == "male":
-        noun = random.choice(_nouns_male)
+        noun = random.choice(nouns_male)
     else:
-        noun = random.choice(_nouns_female)
-    if _toss_a_coin():
-        prefix = random.choice(_prefixes)
+        noun = random.choice(nouns_female)
+    if (toss_a_coin()==0):
+        prefix = random.choice(prefixes)
     else:
-        suffix = random.choice(_suffixes)
+        suffix = random.choice(suffixes)
     return '{0}{1}{2}'.format(prefix, noun, suffix)
 
 
-def _toss_a_coin():
-    return random.randint(0, 1) == 0
+def toss_a_coin():
+    return random.randint(0, 1)
