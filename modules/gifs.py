@@ -13,4 +13,9 @@ def get_start_hi(gender):
         #return random.choice(_female_start_hi)
         return _female_start_hi[1]
     else:
-        return random.choice(_male_start_hi)
+        #return random.choice(_male_start_hi)
+        r = random.randint(0, 1)
+        if r == 0:
+          return random.choice(_male_start_hi)
+        else:
+          return random.choice(_female_start_hi)
