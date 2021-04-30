@@ -26,7 +26,8 @@ class GenericTemplate:
     def __init__(self):
         self.template = copy(template['value'])
         self.elements = []
-    def add_element(self, title='', item_url='', image_url='', subtitle='', buttons=[]):
+    def add_element(self, title='', item_url='', image_url='', subtitle='', buttons=None):
+        buttons = [] if buttons is None else buttons
         element = {}
         element['title'] = title[:TITLE_CHARACTER_LIMIT]
         if item_url != '':
