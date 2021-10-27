@@ -11,6 +11,6 @@ requests==2.17.3
 requests-cache==0.4.13
 simplejson==3.10.0
 six==1.10.0
-SQLAlchemy==1.1.10
+SQLAlchemy==1.3.0
 sqlalchemy-migrate==0.11.0
 psycopg2==2.7.1
