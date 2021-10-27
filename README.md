@@ -1,13 +1,11 @@
 # BlindChat
 
-A Facebook messenger bot that allows users to chat with other people on Facebook anonymously. It's more like [Omegle](http://www.omegle.com/) for messenger, with some differences and improvements.
-
-
+A Facebook messenger bot that allows users to chat with other people on Facebook anonymously.
 
 You can find it live [***here***](https://m.me/blindchat.go).
 
 
-
+#### NOTE: The app and the project is not maintained anymore. PRs will be unattended.
 
 
 ### A bit of a background
