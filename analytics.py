@@ -13,7 +13,7 @@ class Analytics:
             data["entry"] = entry
             r = requests.post(url="https://api.chatbottle.co/v2/updates/messenger/"+self.token+"/", data=json.dumps(data))
             print("analytics result", r.json(), data)
-        except Exception, e:
+        except Exception as e:
             print("ANALYTICS ERROR", str(e))
 
 

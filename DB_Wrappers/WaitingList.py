@@ -37,5 +37,5 @@ class WaitingListDB():
             user = WaitingListUser.query.get(id)
             self.db.session.delete(user)
             self.db.session.commit()
-        except Exception, e:
+        except Exception as e:
             print("Not in waitlist", str(e))
