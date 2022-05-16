@@ -117,3 +117,41 @@ def share_profile(sender, payload):
     elif usersdb.getSubsValue(id=sender) != "x":
         send_subscription_prompt(id=sender)
 
+# mutal acceptance of profile sharing
+def request_share(sender, payload, request):
+    if isinstance(payload, str) or isinstance(payload, unicode):
+        payload = json.loads(str(payload))
+    print("SHAREPROFILE PAYLOAD", payload)
+
+    alias = payload["alias"]
+    partner = payload["partner"]
+
+    # request is true if receiver also requests
+    if payload["ans"] == "y" && request == true:
+        r = requests.get('https://graph.facebook.com/v2.6/' + str(sender), params={
+            'fields': 'first_name,last_name,profile_pic',
+            'access_token': os.environ.get('ACCESS_TOKEN', config.ACCESS_TOKEN)
+        })
+        userData = r.json()
+
+        message = TextTemplate(text=alias + " has shared his/her profile with you")
+        send_message(message=message.get_message(), id=partner, pause_check=True)
+        message = GenericTemplate()
+        message.add_element(title=userData["first_name"] + " " + userData["last_name"],image_url=userData["profile_pic"],
+                            subtitle="Search on Facebook by the name and recognise by the profile picture")
+        send_message(message=message.get_message(), id=partner, pause_check=True)
+
+    # you request but they do not
+    elif payload["ans"] == "y" && request == false:
+        message = TextTemplate(text=alias + " has attempted to share.")
+        send_message(message=message.get_message(), id=partner, pause_check=True)
+
+    else:
+        message = TextTemplate(text=alias + " has chosen not to share his/her profile with you")
+        send_message(message=message.get_message(), id=partner, pause_check=True)
+
+    show_typing(id=sender, duration=1)
+    if sender != ADMIN_ID:
+        send_newchat_prompt(id=sender)
+    elif usersdb.getSubsValue(id=sender) != "x":
+        send_subscription_prompt(id=sender)
