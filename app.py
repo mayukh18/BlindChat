@@ -34,8 +34,29 @@ Int = Interrupts()
 game = Game(db=db)
 
 # --------------------------------------------------------------- #
-@app.route('/webview/', methods=['POST'])
+
+
+@app.route('/webview/', methods=['GET', 'POST'])
 def getProfile():
+    if request.method == 'GET':
+        id = request.args.get('id')
+        print("PROFILE ID", id)
+        user = usersdb.get(id)
+        bio = user.bio
+        interests = user.interests
+        level = user.level
+        level_str = u'\u2B50'
+
+        for i in range(level):
+            level_str = level_str + u'\u2B50'
+
+        if bio is None:
+            bio = ""
+        if interests is None:
+            interests = ""
+        return render_template('profile.html', id=id, bio=bio, interests=interests, level=level_str)
+
+    # On POST calls
     try:
         print("FORM SUBMITTED", dict(request.form))
         bio = request.form['bio']
@@ -48,26 +69,8 @@ def getProfile():
         user.liked = True
         db.session.commit()
         return render_template('result.html')
-    except Exception, e:
-        print("FORM ERROR", str(e))
-
-@app.route('/webview/', methods=['GET'])
-def render():
-    id = request.args.get('id')
-    print("PROFILE ID", id)
-    user = usersdb.get(id)
-    bio = user.bio
-    interests = user.interests
-    level = user.level
-    level_str = u'\u2B50'
-    for i in range(level):
-        level_str = level_str + u'\u2B50'
-
-    if bio is None:
-        bio = ""
-    if interests is None:
-        interests = ""
-    return render_template('profile.html', id=id, bio=bio, interests=interests, level=level_str)
+    except Exception as e:
+        print("FORM ERROR: ", str(e))
 
 
 @app.route('/webhook/', methods=['GET', 'POST'])
@@ -86,8 +89,8 @@ def webhook():
             try:
                 if sender != PAGE_ID and usersdb.hasDataOf(sender) is False:
                     usersdb.add(sender)
-            except Exception, e:
-                print("ERROR", str(e))
+            except Exception as e:
+                print("ERROR: ", str(e))
 
 
             try:
@@ -105,8 +108,8 @@ def webhook():
                         continue
                 else:
                     print("NOT POSTBACK OR INTERRUPT")
-            except Exception, e:
-                print("POSTBACK/INTERRUPT ERROR", str(e))
+            except Exception as e:
+                print("POSTBACK/INTERRUPT ERROR: ", str(e))
                 db.session.rollback()
                 return ''
 
@@ -143,8 +146,8 @@ def webhook():
                             message = TextTemplate(text="Debug command executed")
                             send_message(message.get_message(), id=recipient)
                             continue
-                    except Exception, e:
-                        print("DEBUG ERROR", str(e))
+                    except Exception as e:
+                        print("DEBUG ERROR: ", str(e))
 
                     if 'quick_reply' in event['message'] and 'payload' in event['message']['quick_reply']:
                         quick_reply_payload = event['message']['quick_reply']['payload']
