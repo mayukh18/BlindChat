@@ -3,6 +3,10 @@ import config
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from analytics import Analytics
+from models import User, WaitingListUser, ActiveChatsUser
+from templates import TextTemplate
+from DB_Wrappers import *
+from modules import *
 
 # --------------------------------------------------------------- #
 
@@ -19,15 +23,10 @@ db = SQLAlchemy(app)
 
 # --------------------------------------------------------------- #
 
-from models import User, WaitingListUser, ActiveChatsUser
-from templates import TextTemplate
-from DB_Wrappers import *
-
 usersdb = UsersDB(db=db)
 waitlistdb = WaitingListDB(db=db)
 activechatsdb = ActiveChatsDB(db=db)
 
-from modules import *
 setup_all()
 metrics = Analytics()
 Int = Interrupts()
