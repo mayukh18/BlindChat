@@ -1,3 +1,28 @@
 .container-fluid{
 	background: #f5d9d5;
 }
+
+.lbl {
+	display: flex;
+	justify-content: center;
+	font-family: "Arial", sans-serif;
+}
+
+.lbl-2 {
+	display: flex;
+	justify-content: center;
+}
+
+.submit-btn {
+	padding-left: 23px;;
+	padding-right: 28px;
+	padding-bottom: 23px;
+}
+
+.background-class {
+	background-color: gray;
+}
+
+.background-test {
+	background-color: #f5f5f5;
+}
