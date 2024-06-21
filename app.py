@@ -35,7 +35,7 @@ game = Game(db=db)
 
 # --------------------------------------------------------------- #
 @app.route('/webview/', methods=['POST'])
-def getProfile():
+def get_profile():
     try:
         print("FORM SUBMITTED", dict(request.form))
         bio = request.form['bio']
@@ -60,7 +60,7 @@ def render():
     interests = user.interests
     level = user.level
     level_str = u'\u2B50'
-    for i in range(level):
+    for _ in range(level):
         level_str = level_str + u'\u2B50'
 
     if bio is None:
@@ -129,8 +129,7 @@ def webhook():
                         recipient = activechatsdb.get_partner(sender)
                         send_message(message=message.get_message(), id=recipient)
 
-                elif 'message' in event and 'attachments' in event['message'] and 'type' in event['message']['attachments'][0]:
-                    if event['message']['attachments'][0]['type'] == "image":
+                elif 'message' in event and 'attachments' in event['message'] and 'type' in event['message']['attachments'][0] and event['message']['attachments'][0]['type'] == "image":
                         handle_image(sender=sender, url=event['message']['attachments'][0]['payload']['url'])
             else:
                 recipient = sender
