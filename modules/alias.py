@@ -27,7 +27,8 @@ _nouns_male = [
         'Ash', 'Antman', 'Doom', 'General', 'Snake', 'Devil', 'Sergeant', 'Detective', 'Demon', 'Birdman',
         'Jarvis', 'Ultron', 'Stark', 'Lannister', 'Baratheon', 'Tully', 'Greyjoy', 'Tarth', 'Phasma',
         'Sailor', 'Mufasa', 'Simba', 'Ninja', 'Swordsman', 'Don', 'Gangster', 'Superman', 'Doomsday',
-        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo' 
+        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo', 
+        'Sherlock', 'Guru', 'Rock', 'Alpha', 'Bear', 'Chef', 'Rocky', 'Romeo', 'Boss'
     ]
 
 _nouns_female = [
@@ -39,7 +40,7 @@ _nouns_female = [
         'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress', 
         'Angel', 'Goddess', 'Mystery', 'Maiden', 'Dame', 'Damsel', 'Beauty', 'Artist', 'Chick', 'Snake',
         'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness',
-        'Ariana', 'Emma', 'Harley'
+        'Ariana', 'Emma', 'Harley', 'Blondie', 'Cutie', 'Candy', 'Flame', 'Gaga'
     ]
 
 _suffixes = [
