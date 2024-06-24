@@ -21,13 +21,13 @@ _nouns_male = [
         'King', 'Prince', 'Bandit', 'Hulk', 'Thor', 'Leo', 'Deadpool', 'Trump',
         'Moustache', 'Arrow', 'Caspian', 'Horse', 'Frog', 'Monkey', 'Lion',
         'Tiger', 'Cheetah', 'Eagle', 'Wizard', 'Hawk', 'Jack', 'Hippo' , 'Stallion' , 'Bull' , 'Buck',
-        'Emperor','Ram', 'Captain', 'Batman', 'Robin', 'Deathstroke', 'Cyborg', 'Wolverine', 'Spiderman', 
+        'Emperor','Ram', 'Captain', 'Batman', 'Robin', 'Deathstroke', 'Cyborg', 'Wolverine', 'Spiderman',
         'Flash', 'Panther', 'Daredevil', 'Ironman', 'Joker', 'Aquaman', 'Necromancer', 'Warlock', 'Magneto',
         'Gambit', 'Cyclops', 'Ronin', 'Warden', 'Duke', 'Lord', 'Darth', 'Vader', 'Goku', 'Gohan', 'Broly',
         'Ash', 'Antman', 'Doom', 'General', 'Snake', 'Devil', 'Sergeant', 'Detective', 'Demon', 'Birdman',
         'Jarvis', 'Ultron', 'Stark', 'Lannister', 'Baratheon', 'Tully', 'Greyjoy', 'Tarth', 'Phasma',
         'Sailor', 'Mufasa', 'Simba', 'Ninja', 'Swordsman', 'Don', 'Gangster', 'Superman', 'Doomsday',
-        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo' 
+        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo'
     ]
 
 _nouns_female = [
@@ -36,7 +36,7 @@ _nouns_female = [
         'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose', 'Zebra', 'Seahorse', 'Squirrel' , 'Doe', 'Empress',
         'Vixen', 'Widow', 'Supergirl', 'Storm', 'Catwoman', 'WonderWoman', 'Hawkgirl', 'Amazon', 'Mystique', 'Raven',
         'Banshee', 'Enchantress', 'Ivy', 'Minx', 'Nova', 'Duchess', 'Bachelorette', 'Cat', 'Flower', 'Daisy',
-        'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress', 
+        'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress',
         'Angel', 'Goddess', 'Mystery', 'Maiden', 'Dame', 'Damsel', 'Beauty', 'Artist', 'Chick', 'Snake',
         'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness',
         'Ariana', 'Emma', 'Harley'
@@ -66,11 +66,11 @@ def generate_alias(gender):
     else:
         noun = random.choice(_nouns_female)
     if _toss_a_coin():
-        prefix = random.choice(_prefixes)
+        prefix = random.choice(_prefixes) + " "
     else:
-        suffix = random.choice(_suffixes)
+        suffix = " " + random.choice(_suffixes)
     return '{0}{1}{2}'.format(prefix, noun, suffix)
 
 
 def _toss_a_coin():
-    return random.randint(0, 1) == 0
+    return random.randint(0, 1)
