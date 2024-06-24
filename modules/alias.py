@@ -14,7 +14,8 @@ _prefixes = [
         'Crazy', 'Shrewd', 'Basic', 'Gutsy', 'Cute', 'Drunk', 'Sober', 'Depressed', 'Slimy', 'Gross',
         'Needy', 'Dark', 'Light', 'Roaring', 'Soaring', 'Noble', 'Vain', 'Terrifying', 'Scary',
         'Studious', 'Huge', 'Enormous', 'Big', 'Giant', 'Great', 'Playful', 'Classy', 'Cold',
-        'Early', 'Deep', 'Awesome', 'Enhanced'
+        'Early', 'Deep', 'Awesome', 'Enhanced', 'Rattled', 'Raving', 'Charismatic', 'Bossy', 
+        'Late', 'Frantic', 'Snarky', 'Iridescent', 'Wistfull', 'Blisfull'
     ]
 
 _nouns_male = [
@@ -27,7 +28,8 @@ _nouns_male = [
         'Ash', 'Antman', 'Doom', 'General', 'Snake', 'Devil', 'Sergeant', 'Detective', 'Demon', 'Birdman',
         'Jarvis', 'Ultron', 'Stark', 'Lannister', 'Baratheon', 'Tully', 'Greyjoy', 'Tarth', 'Phasma',
         'Sailor', 'Mufasa', 'Simba', 'Ninja', 'Swordsman', 'Don', 'Gangster', 'Superman', 'Doomsday',
-        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo' 
+        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo', 'Carter'
+        'Steve', 'Balto', 'Karl', 'Tanner', 'Tom', 'Tim', 'Samwise', 'Frodo', 'Bilbo'
     ]
 
 _nouns_female = [
@@ -39,7 +41,8 @@ _nouns_female = [
         'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress', 
         'Angel', 'Goddess', 'Mystery', 'Maiden', 'Dame', 'Damsel', 'Beauty', 'Artist', 'Chick', 'Snake',
         'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness',
-        'Ariana', 'Emma', 'Harley'
+        'Ariana', 'Emma', 'Harley', 'Khaleesi', 'Anastasia', 'Dorothy', 'Caroline', 'Leslie', 'Fela', 'Denna',
+        'Shakira', 'Miss', 'Tina'
     ]
 
 _suffixes = [
@@ -49,9 +52,11 @@ _suffixes = [
         'OfTheJungle', 'OfTheLand', 'OfTheSea','OfTheWorld', 'TheAgeless',
         'TheBabyface', 'TheBarbarian', 'TheBetrayer', 'TheBrave',
         'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheLionheart',
-        'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
+        'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall', 'TheWise',
         'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWeakest', 'TheWise',
-        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight'
+        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight',
+        'Stormborn', 'BreakerOfChains', 'HandOfTheKing', 'Oathkeeper', 'Kingslayer',
+        'Dreamweaver', 'TheUnburnt', 'TheBloodless', 'QuickFooted', 'HeavyHanded'
 ]
 
 import random
