@@ -3,18 +3,29 @@
 
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Profile</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="profile.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/bootstrap.css">
+
 
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .container:hover{
+    border-color: #0d6efd!important;
+    border-width: 0.2rem;
+    transition: all 1s ;
+    box-shadow: 0 0.05rem .2rem #0d6dfdb0 !important;
+}
+    </style>
 </head>
 
-<body style="font-size:3em;background-color:#050268;">
+<body>
+
 
 	<div id="fb-root"></div>
 
@@ -51,31 +62,30 @@
 	</script>
 <!--Html code starts here-->
 
-	<div class="container-fluid" style="padding: 50px;padding-left: 50px;">
+	<div class="container col-11 col-md-7 col-lg-5 col-xl-4 border rounded mt-2 shadow shadow-sm p-3  ">
 		<div class="jumbotron">
 			<div class="row">
-				<div class="col-lg-12">
+				<div class="">
 					<form id="xxx" method="post">
-						<div class="form-group">
-							<h1 class="text-center" style="margin:5%;color: #0A0908;">Welcome to your profile</h1>
-							<hr style="width: 100%; color:#0A0908; height: 1px; background-color:#0A0908;" />
-							<label style="color:#0A0908;">
-								Level:
+						<div class="form-group d-flex align-items-center flex-column">
+                            <img src="https://cdn.freebiesupply.com/logos/large/2x/facebook-logo-2019.png" alt="LogoImg" srcset="" class="img-fluid w-50">
+							<p class="text-center fs-3 fw-bold mb-0">Welcome to your profile</p>
+							<hr style="width: 50%; color:#0A0908; height: 1px; background-color:#0A0908;" class="m-0 mt-1 mb-2"/>
+							<label class="fs-4 fw-bold">Level<span class="fw-bolder badge bg-primary p-2 ms-1">{{ level }}</span>
 							</label>
-							<p>{{ level }}</p>
 						</div>
-						<div class="form-group">
-							<label for="bio" style="color:#0A0908;">Bio:</label>
-							<input type="text" name="bio" class="form-control" value="{{ bio }}"  placeholder="Write your bio here (max 80 letters)" style="height:100px;font-size:30pt" />
+						<div class="d-flex flex-column m-2 mt-3">
+							<label for="bio" class="fs-6 fw-bold" >Bio</label>
+							<input type="text" name="bio" class="form-control" value="{{ bio }}"  placeholder="Write your bio here (max 80 letters)"/>
 						</div>
-						<div class="form-group">
-							<label for="interests" style="color:#0A0908;">Interests:</label>
-							<input type="text" name="interests" class="form-control" value="{{ interests }}" style="height:100px;font-size:30pt" placeholder="Enter upto 3 interests separated by commas"/>
+						<div class="d-flex flex-column m-2 mt-3">
+							<label for="interests" class="fs-6 fw-bold">Interests</label>
+							<input type="text" name="interests" class="form-control" value="{{ interests }}" placeholder="Enter upto 3 interests separated by commas"/>
 						</div>
 						<input type="hidden" id="idd" name="psid" value="{{ id }}" />
-						<div class="text-center">
-							<h3>Click Save below to save your profile</h3>
-							<input type="submit" value="Submit" class="btn btn-default btn-primary" style="height:90px;font-size:40pt;">
+						<div class="d-flex mt-3 justify-content-between align-items-center p-2">
+							<i class="form-lable fs-6 fst-normal">Click <span class="fw-bold">Save</span> to save your profile</i>
+							<button type="submit" value="Submit" class="btn btn-default btn-primary" >Save</button>
 						</div>
 					</form>
 				</div>
@@ -85,6 +95,6 @@
 	</div>
 
 
-</body>-->
+</body>
 
 </html>
