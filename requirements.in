@@ -1,0 +1,16 @@
+alembic
+Flask 
+Flask-Migrate 
+Flask-SQLAlchemy
+gunicorn
+html5lib
+Jinja2
+jsonschema
+requests
+requests-cache
+simplejson
+six
+SQLAlchemy
+sqlalchemy-migrate
+psycopg2-binary
+python-dotenv

@@ -1,7 +1,9 @@
+import sys
+sys.path.append('..')
 from app import waitlistdb, activechatsdb
 from templates import TextTemplate
-from utilities import send_message, show_typing, send_newchat_prompt
-from endChat import endChat
+from modules.utilities import send_message, show_typing, send_newchat_prompt
+from modules.endChat import endChat
 
 def restart_bot(id):
     show_typing(id=id, duration=1)

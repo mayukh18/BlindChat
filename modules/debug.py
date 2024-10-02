@@ -1,6 +1,8 @@
+import sys
+sys.path.append('..')
 from models import User, WaitingListUser, ActiveChatsUser, db
-from campaign import send_campaign
-from utilities import send_message
+from modules.campaign import send_campaign
+from modules.utilities import send_message
 from templates import TextTemplate
 import os
 import config
@@ -17,7 +19,7 @@ def log_waitlisted_users():
             u = User.query.get(id)
             print(i, u.name, user.gender, user.interest)
             i = i+1
-    except Exception, e:
+    except Exception as e:
         print("LOG WAITLIST ERROR", e)
 
 def update_users():

@@ -1,8 +1,11 @@
-from utilities import send_message
-from alias import generate_alias
+import sys
+sys.path.append('..')
+
+from modules.utilities import send_message
+from modules.alias import generate_alias
 from templates import TextTemplate, GenericTemplate, AttachmentTemplate
 from app import waitlistdb, activechatsdb, usersdb
-from debug import log_waitlisted_users
+from modules.debug import log_waitlisted_users
 import os
 import config
 APP_URL = os.environ.get('APP_URL', config.APP_URL)
@@ -13,21 +16,21 @@ def startChat(sender, interest):
 
     try:
         gender = usersdb.get(sender).gender # gets the gender from the
-    except Exception, e:
+    except Exception as e:
         gender = "male"
         print("ERROR #0001", str(e))
     try:
         # returns the PSID of the match
         match = waitlistdb.get_match(gender, interest)
         print("START2", match)
-    except Exception, e:
+    except Exception as e:
         print("ERROR #0002", str(e))
 
     if match == None:
         try:
             waitlistdb.delist(id=sender) # delist because there's no guarantee that it already isn't there
             waitlistdb.enlist(id=sender, gender=gender, interest=interest)
-        except Exception, e:
+        except Exception as e:
             print("ERROR #0003", str(e))
         message = TextTemplate(text="No match found right now. You are in the wait list. We will match you as soon"+\
                                     " as someone becomes available")
@@ -43,7 +46,7 @@ def startChat(sender, interest):
             activechatsdb.create_new_chat(user1=sender, user2=match)
             activechatsdb.set_alias(user=sender, alias=alias1)
             activechatsdb.set_alias(user=match, alias=alias2)
-        except Exception, e:
+        except Exception as e:
             print("ERROR #0004", str(e))
 
 

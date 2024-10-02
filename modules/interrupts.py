@@ -1,5 +1,7 @@
-from utilities import send_help, send_newchat_prompt, send_profile_prompt
-from critical_operations import restart_bot, execute_exit
+import sys
+sys.path.append('..')
+from modules.utilities import send_help, send_newchat_prompt, send_profile_prompt
+from modules.critical_operations import restart_bot, execute_exit
 
 
 

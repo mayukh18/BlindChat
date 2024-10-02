@@ -1,7 +1,9 @@
+import sys
+sys.path.append('..')
 from templates import *
 from app import activechatsdb, usersdb
-from subscription import send_subscription_prompt
-from utilities import send_message, send_newchat_prompt, show_typing
+from .subscription import send_subscription_prompt
+from modules.utilities import send_message, send_newchat_prompt, show_typing
 import requests
 import config
 import os
@@ -80,7 +82,7 @@ def endChat(sender):
 
     try:
         activechatsdb.delete_chat_entries(user=sender)
-    except Exception, e:
+    except Exception as e:
         print("ENDCHAT ERROR", str(e))
 
 

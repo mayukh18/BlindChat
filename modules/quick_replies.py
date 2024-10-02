@@ -1,7 +1,9 @@
-from startChat import startChat
-from endChat import share_profile
-from subscription import handle_subscribe_payload
-from utilities import *
+import sys
+sys.path.append('..')
+from modules.startChat import startChat
+from modules.endChat import share_profile
+from modules.subscription import handle_subscribe_payload
+from modules.utilities import *
 from app import usersdb
 import json
 
@@ -10,7 +12,7 @@ def handle_quick_reply(sender, payload):
         usersdb.setPauseStatus(id=sender, status=False)
         print("1")
         send_paused_messages(id=sender)
-    except Exception, e:
+    except Exception as e:
         print("QUICK_REPLY_ERROR", str(e))
 
     payload = json.loads(payload)

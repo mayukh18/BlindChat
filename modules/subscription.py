@@ -1,6 +1,8 @@
+import sys
+sys.path.append('..')
 from templates import TextTemplate, add_quick_reply
 import json
-from utilities import send_message
+from modules.utilities import send_message
 from app import usersdb
 
 

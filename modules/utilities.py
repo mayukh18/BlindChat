@@ -1,3 +1,6 @@
+import sys
+sys.path.append('..')
+
 from templates import TextTemplate, add_quick_reply
 import requests
 import config
@@ -51,7 +54,7 @@ def send_message(message, id, pause_check=False):
             print("USER PAUSED, MESSAGE STORED")
             usersdb.addMessage(id=id, message=json.dumps(message))
             return
-    except Exception, e:
+    except Exception as e:
         print("STORAGE", str(e))
 
     try:
@@ -108,7 +111,7 @@ def send_paused_messages(id):
         try:
             if m_list is None or len(m_list[0])==0:
                 return
-        except Exception, e:
+        except Exception as e:
             print("problem is here", m_list)
         for m in m_list:
             send_message(message=json.loads(m), id=id)

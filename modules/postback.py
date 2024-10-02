@@ -1,7 +1,9 @@
+import sys
+sys.path.append('..')
 from templates import TextTemplate
-from utilities import send_help, send_message, send_newchat_prompt
-from endChat import endChat, share_profile
-from interrupts import Interrupts
+from modules.utilities import send_help, send_message, send_newchat_prompt
+from modules.endChat import endChat, share_profile
+from modules.interrupts import Interrupts
 import json
 
 valid_payloads = [

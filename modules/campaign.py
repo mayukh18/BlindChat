@@ -1,6 +1,8 @@
+import sys
+sys.path.append('..')
 from models import User
 from templates import TextTemplate
-from utilities import send_message
+from modules.utilities import send_message
 
 def send_campaign():
     message = TextTemplate(text="NEW FEATURE: SUBSCRIPTIONS \n\n"+

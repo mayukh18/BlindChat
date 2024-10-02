@@ -1,5 +1,8 @@
+import sys
+sys.path.append('..')
+
 from templates import TextTemplate
-from utilities import send_message
+from modules.utilities import send_message
 from app import usersdb
 
 class Game:
@@ -58,5 +61,5 @@ class Game:
                     return True
                 else:
                     return False
-        except Exception, e:
+        except Exception as e:
             print("GAME ERROR", str(e))
