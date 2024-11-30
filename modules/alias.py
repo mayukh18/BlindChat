@@ -1,7 +1,7 @@
 _prefixes = [
         'Aged', 'Ancient', 'Bubbly', 'Bitter', 'Black', 'Blue', 'Bold', 'Brave',
-        'Broad', 'Broken', 'Calm', 'Cold','Colossal', 'Cool', 'Crimson', 'Curly', 'Damp',
-        'Dark', 'Daring', 'Delicate', 'Falling', 'Fancy', 'Super', 'Jiggly',
+        'Broad', 'Broken', 'Calm', 'Cold', 'Colossal', 'Cool', 'Crimson', 'Curly', 'Damp',
+        'Dark', 'Daring', 'Delicate', 'Dignified', 'Falling', 'Fancy', 'Super', 'Jiggly',
         'Flat', 'Fragrant', 'Frosty', 'Gentle', 'Green', 'Legendary',
         'Icy', 'Jolly', 'Jumping', 'Little', 'Lively', 'Lucky', 'Lonely',
         'Muddy', 'Mute', 'Noisy', 'Odd', 'Old', 'Orange', 'Polished', 'Proud',
@@ -14,7 +14,10 @@ _prefixes = [
         'Crazy', 'Shrewd', 'Basic', 'Gutsy', 'Cute', 'Drunk', 'Sober', 'Depressed', 'Slimy', 'Gross',
         'Needy', 'Dark', 'Light', 'Roaring', 'Soaring', 'Noble', 'Vain', 'Terrifying', 'Scary',
         'Studious', 'Huge', 'Enormous', 'Big', 'Giant', 'Great', 'Playful', 'Classy', 'Cold',
-        'Early', 'Deep', 'Awesome', 'Enhanced'
+        'Early', 'Deep', 'Awesome', 'Enhanced', 'Delightful', 'Gargantuan', 'Flexible', 'Limber', 'Dangling',
+        'Descending', 'Ballyhooed', 'Very', 'Bedazzled', 'Aquatic', 'Ambiguous', 'Colossal', 'Deadpan', 'Debonair',
+        'Diligent', 'Ultimate', 'Dashing', 'Superior', 'Exuberant', 'Exalted', 'Glorified', 'Dynamic', 'Mellifluous'
+
     ]
 
 _nouns_male = [
@@ -27,19 +30,21 @@ _nouns_male = [
         'Ash', 'Antman', 'Doom', 'General', 'Snake', 'Devil', 'Sergeant', 'Detective', 'Demon', 'Birdman',
         'Jarvis', 'Ultron', 'Stark', 'Lannister', 'Baratheon', 'Tully', 'Greyjoy', 'Tarth', 'Phasma',
         'Sailor', 'Mufasa', 'Simba', 'Ninja', 'Swordsman', 'Don', 'Gangster', 'Superman', 'Doomsday',
-        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo' 
+        'Lucifer', 'Serpent', 'Count', 'Anakin', 'Luke', 'Sherlock', 'Watson', 'House', 'Nemo', 'Warrior', 'Mustang',
+        'Chief', 'Ace', 'Shark', 'Boulder', 'Bushman', 'Maverick', 'Goose', 'Pugilist', 'Wolf', 'Eagle', 'Captain',
+        'Dude', 'Mason', 'Scout'
     ]
 
 _nouns_female = [
-        'Alexa','Lili', 'Princess', 'Rihanna', 'Swift', 'Queen', 'LaserGirl', 'Mermaid',
+        'Alexa', 'Lili', 'Princess', 'Rihanna', 'Swift', 'Queen', 'LaserGirl', 'Mermaid',
         'Butterfly', 'Batgirl', 'Madonna', 'Foxie', 'Lioness', 'Monroe', 'Eve', 'Xiry',
-        'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose', 'Zebra', 'Seahorse', 'Squirrel' , 'Doe', 'Empress',
+        'Snail', 'Unicorn', 'Moon', 'Dove', 'Witch', 'Rose', 'Zebra', 'Seahorse', 'Squirrel', 'Doe', 'Empress',
         'Vixen', 'Widow', 'Supergirl', 'Storm', 'Catwoman', 'WonderWoman', 'Hawkgirl', 'Amazon', 'Mystique', 'Raven',
         'Banshee', 'Enchantress', 'Ivy', 'Minx', 'Nova', 'Duchess', 'Bachelorette', 'Cat', 'Flower', 'Daisy',
         'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress', 
         'Angel', 'Goddess', 'Mystery', 'Maiden', 'Dame', 'Damsel', 'Beauty', 'Artist', 'Chick', 'Snake',
         'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness',
-        'Ariana', 'Emma', 'Harley'
+        'Ariana', 'Emma', 'Harley', 'Darling', 'Diva', 'Precious', 'Laurel', 'Sunbeams', 'Gaia'
     ]
 
 _suffixes = [
@@ -51,7 +56,7 @@ _suffixes = [
         'TheDestroyer', 'TheGhost', 'TheGreat', 'TheHammer', 'TheLionheart',
         'TheOld', 'TheQuiet', 'TheSecond', 'TheShadow', 'TheTall',
         'TheTemplar', 'TheTraveler', 'TheWanderer', 'TheWeakest', 'TheWise',
-        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight'
+        'UnderThePass', 'ofTheBay', 'ofTheDay', 'ofTheNight', 'ofTheBog'
 ]
 
 import random
