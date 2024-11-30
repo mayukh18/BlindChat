@@ -14,7 +14,7 @@ _prefixes = [
         'Crazy', 'Shrewd', 'Basic', 'Gutsy', 'Cute', 'Drunk', 'Sober', 'Depressed', 'Slimy', 'Gross',
         'Needy', 'Dark', 'Light', 'Roaring', 'Soaring', 'Noble', 'Vain', 'Terrifying', 'Scary',
         'Studious', 'Huge', 'Enormous', 'Big', 'Giant', 'Great', 'Playful', 'Classy', 'Cold',
-        'Early', 'Deep', 'Awesome', 'Enhanced'
+        'Early', 'Deep', 'Awesome', 'Enhanced', 'Amusing'
     ]
 
 _nouns_male = [
@@ -39,7 +39,7 @@ _nouns_female = [
         'Sunflower', 'Lady', 'Mist', 'Misty', 'Superwoman', 'Gal', 'Dynamo', 'Connoisseur', 'Huntress', 
         'Angel', 'Goddess', 'Mystery', 'Maiden', 'Dame', 'Damsel', 'Beauty', 'Artist', 'Chick', 'Snake',
         'Heroine', 'Tomboy', 'Doll', 'Spinster', 'Bride', 'Countess', 'Babe', 'Dora', 'Mistress', 'Highness',
-        'Ariana', 'Emma', 'Harley'
+        'Ariana', 'Emma', 'Harley', 'Banshee'
     ]
 
 _suffixes = [
