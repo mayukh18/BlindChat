@@ -1,3 +1,4 @@
+This is very amazing BlindChat project 
 # BlindChat
 
 A Facebook messenger bot that allows users to chat with other people on Facebook anonymously.
